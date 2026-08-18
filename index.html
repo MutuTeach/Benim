@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>IB ACADEMY — De Trader a Empresario | Formación gratuita para IBs</title>
+<meta name="description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+
+<!-- Social preview -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_LA">
+<meta property="og:site_name" content="IB ACADEMY">
+<meta property="og:title" content="De Trader a Empresario — la primera academia para IBs de Latinoamérica">
+<meta property="og:description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+<!-- Before publishing: fill og:url, og:image and twitter:image with absolute https URLs (image 1200x630, .jpg or .png) -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:title" content="De Trader a Empresario — la primera academia para IBs de Latinoamérica">
+<meta name="twitter:description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+<meta name="theme-color" content="#08090b">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090b'/%3E%3Ctext x='32' y='43' font-family='Inter,Helvetica,Arial,sans-serif' font-size='30' font-weight='800' fill='%233ecf8e' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#08090b; --bg2:#0d0f12; --panel:#111316;
+  --line:rgba(255,255,255,.07);
+  --text:#f4f6f8; --muted:#888f9c;
+  --accent:#3ecf8e; --gold:#e7c88a;
+  --radius:14px; --maxw:1000px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:
+    radial-gradient(52% 40% at 50% -8%, rgba(62,207,142,.08), transparent 62%),
+    radial-gradient(46% 34% at 96% 2%, rgba(231,200,138,.05), transparent 58%),
+    var(--bg);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.62; letter-spacing:-.006em;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.lang-en .es{display:none!important}
+body:not(.lang-en) .en{display:none!important}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+@media(min-width:768px){section{padding:76px 0}}
+/* sayfa-modu: tek bölüm açıkken üstte bu kadar boşluğa gerek yok */
+body.view-mode main > section{padding-top:44px}
+@media(min-width:768px){body.view-mode main > section{padding-top:60px}}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.6);
+  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;cursor:pointer}
+/* sayfa-modu: geri butonu */
+.backbtn{display:none;align-items:center;gap:6px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);color:var(--text);font-weight:600;font-size:13px;
+  padding:8px 14px;border-radius:9px;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
+.backbtn:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+body.view-mode .backbtn{display:inline-flex}
+@media(max-width:560px){.backbtn{padding:8px 11px}.backbtn span{display:none}}
+.logo b{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;color:var(--muted);font-weight:700;font-size:12px;
+  padding:7px 13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.lang-toggle button.on{background:var(--accent);color:#05130c}
+nav .nav-cta{display:inline-flex;white-space:nowrap}
+/* masaüstü menü */
+.menu{display:none;align-items:center;gap:2px}
+@media(min-width:900px){.menu{display:flex}}
+.menu a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500;
+  padding:8px 13px;border-radius:9px;transition:all .22s;white-space:nowrap}
+.menu a:hover{color:var(--text);background:rgba(255,255,255,.055)}
+.menu a.active{color:var(--accent);background:rgba(62,207,142,.10)}
+/* burger */
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;padding:10px;background:transparent;
+  border:1px solid var(--line);border-radius:10px;cursor:pointer;flex-shrink:0}
+@media(min-width:900px){.burger{display:none}}
+.burger span{display:block;height:2px;width:100%;background:var(--text);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* mobil menü paneli */
+.mobile-menu{display:none;flex-direction:column;padding:10px 20px 18px;
+  border-top:1px solid var(--line);background:rgba(8,9,11,.98)}
+.mobile-menu.open{display:flex}
+@media(min-width:900px){.mobile-menu.open{display:none}}
+.mobile-menu a{color:var(--text);text-decoration:none;font-size:15px;font-weight:600;
+  padding:14px 4px;border-bottom:1px dashed var(--line);display:flex;align-items:center;gap:12px}
+.mobile-menu a .mn{width:26px;height:26px;border-radius:8px;background:rgba(62,207,142,.12);
+  color:var(--accent);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mobile-menu .mm-cta{justify-content:center;border-bottom:0;margin-top:14px;
+  background:var(--accent);color:#05130c;border-radius:11px;padding:14px 18px;font-weight:700}
+@media(max-width:560px){
+  .nav-inner{gap:8px;padding:10px 14px}
+  .logo{font-size:13px}
+  .lang-toggle button{padding:6px 10px;font-size:11.5px}
+  nav .nav-cta{display:none}
+}
+
+/* type */
+h1{font-size:clamp(2rem,5.6vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.06}
+h2{font-size:clamp(1.2rem,4vw,1.95rem);font-weight:700;letter-spacing:-.028em;line-height:1.16}
+h3{font-size:clamp(1.02rem,3vw,1.2rem);font-weight:650;letter-spacing:-.016em}
+.grad{background:linear-gradient(96deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.lead{font-size:clamp(1.02rem,2.6vw,1.24rem);color:var(--muted);max-width:660px}
+.muted{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;
+  padding:14px 26px;border-radius:11px;transition:all .22s;font-family:inherit;cursor:pointer;border:0;letter-spacing:-.01em}
+.btn-primary{background:var(--accent);color:#05130c;box-shadow:0 1px 0 rgba(255,255,255,.15) inset}
+.btn-primary:hover{transform:translateY(-1px);background:#4ad99a;box-shadow:0 8px 30px rgba(62,207,142,.20)}
+.btn-sm{padding:9px 17px;font-size:13.5px}
+.btn-ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* hero */
+#hero{padding-top:108px;padding-bottom:20px}
+.hero-sub{margin-top:24px}
+#hero h1{margin-top:26px}
+/* "¿Qué es?" kartları */
+.qa .card h3{color:var(--accent);margin-bottom:6px;font-size:1.02rem}
+/* founder credential — otorite şeridi */
+.founder{display:inline-flex;align-items:center;gap:13px;margin-top:0;padding:12px 18px;max-width:640px;
+  border:1px solid rgba(231,200,138,.26);border-radius:99px;
+  background:linear-gradient(92deg,rgba(231,200,138,.08),rgba(231,200,138,.01) 72%)}
+.f-mark{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(231,200,138,.13);border:1px solid rgba(231,200,138,.34);color:var(--gold);font-size:.95rem}
+.f-role{font-size:clamp(.86rem,1.9vw,1.02rem);color:var(--gold);font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.f-name{font-size:clamp(.76rem,1.4vw,.84rem);color:var(--muted);margin-top:2px}
+@media(max-width:560px){.founder{border-radius:14px;align-items:flex-start}}
+.f-name b{color:var(--text);font-weight:700}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:rgba(255,255,255,.022);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:0 1px 0 rgba(255,255,255,.03) inset;transition:border-color .3s,background .3s,transform .3s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.038)}}
+.card p,.card li{font-size:.94rem;color:var(--muted)}
+.q-card h3{color:var(--gold);line-height:1.4}
+.glabel{display:flex;align-items:center;gap:12px;margin:34px 0 14px;font-size:.76rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.glabel::after{content:"";flex:1;height:1px;background:var(--line)}
+ul.clean{list-style:none}
+ul.clean li{padding:7px 0 7px 24px;position:relative;font-size:.94rem;color:var(--muted)}
+ul.clean li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+ul.clean.no li::before{content:"✕";color:#f87171}
+
+/* etapas */
+.etapa{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022);
+  padding:26px;margin-bottom:14px;display:grid;gap:20px;grid-template-columns:1fr}
+.etapa:last-child{margin-bottom:0}
+@media(min-width:820px){.etapa{grid-template-columns:1fr 1fr;align-items:center;padding:32px}}
+.etapa .e-num{font-size:clamp(2.6rem,7vw,3.6rem);font-weight:800;line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.06));
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px}
+.etapa h3{color:var(--gold);margin-bottom:10px;font-size:clamp(1.15rem,3.4vw,1.45rem)}
+.etapa .out{color:var(--text);font-size:.98rem;line-height:1.6}
+
+/* role play */
+.rp-tag{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);background:rgba(231,200,138,.09);
+  border:1px solid rgba(231,200,138,.24);border-radius:99px;padding:4px 11px;margin-bottom:12px}
+.rp-how{counter-reset:rp}
+.rp-how li{padding:9px 0 9px 40px;position:relative;font-size:.95rem;color:var(--muted);list-style:none;
+  border-bottom:1px dashed var(--line)}
+.rp-how li:last-child{border-bottom:0}
+.rp-how li::before{counter-increment:rp;content:counter(rp);position:absolute;left:0;top:7px;
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--accent);font-weight:800;font-size:.76rem;display:flex;align-items:center;justify-content:center}
+.rp-how li b{color:var(--text)}
+/* locked preview */
+.peek{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:16px;overflow:hidden}
+.peek .plabel{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px;display:block}
+.peek .open{font-size:.9rem;color:var(--text);line-height:1.55}
+.peek .blur{filter:blur(5.5px);user-select:none;pointer-events:none;opacity:.55;font-size:.9rem;line-height:1.55;margin-top:8px}
+.peek .lock{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:.74rem;font-weight:700;
+  color:var(--gold);background:rgba(231,200,138,.08);border:1px solid rgba(231,200,138,.22);
+  border-radius:99px;padding:6px 13px}
+/* mini chat */
+.mchat .b{max-width:88%;padding:8px 12px;border-radius:12px;margin:6px 0;font-size:.88rem;line-height:1.5}
+.mchat .them{background:rgba(255,255,255,.04);border:1px solid var(--line);border-top-left-radius:4px;margin-right:auto;color:var(--text)}
+.mchat .me{background:rgba(62,207,142,.10);border:1px solid rgba(62,207,142,.25);border-top-right-radius:4px;margin-left:auto;color:var(--text)}
+/* mini funnel */
+.mfunnel{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-weight:700;color:var(--text);font-size:.95rem}
+.mfunnel .n{display:inline-block;min-width:34px;text-align:center;border-bottom:2px dashed rgba(255,255,255,.25);color:var(--muted)}
+.mfunnel .arr{color:var(--accent)}
+/* mini board */
+.mboard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.mcol{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);padding:8px}
+.mcol b{display:block;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.mcard{height:9px;border-radius:4px;background:rgba(255,255,255,.10);margin-bottom:5px}
+.mcard.s{width:70%}
+
+/* steps */
+.steps{display:grid;gap:0;margin-top:10px}
+.step{display:flex;gap:18px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:0}
+.step-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
+.step h3{margin-bottom:3px;font-size:1rem}
+.step p{font-size:.93rem;color:var(--muted)}
+
+.note{border:1px solid rgba(231,200,138,.22);background:rgba(231,200,138,.05);border-radius:var(--radius);
+  padding:16px 18px;margin-top:18px;font-size:.9rem;color:var(--muted)}
+.note b{color:var(--gold)}
+
+.final{text-align:center}
+.final .cta-row{justify-content:center}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:.76rem;color:#5d6472;line-height:1.6;max-width:760px}
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-size:.8rem;color:#5d6472}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo" id="logo">IB <b>ACADEMY</b></div>
+    <button class="backbtn" id="backbtn" type="button">← <span class="es">Volver</span><span class="en">Back</span></button>
+    <div class="menu">
+      <a href="#camino"><span class="es">Las 5 etapas</span><span class="en">The 5 stages</span></a>
+      <a href="#roleplay">Role Play</a>
+      <a href="#confianza"><span class="es">Por qué confiar</span><span class="en">Why trust us</span></a>
+      <a href="#paraquien"><span class="es">Para quién es</span><span class="en">Who it's for</span></a>
+      <a href="#acceso"><span class="es">Cómo acceder</span><span class="en">How to access</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-es" class="on" type="button">ES</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+      <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">
+        <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#camino"><span class="mn">1</span><span class="es">Las 5 etapas</span><span class="en">The 5 stages</span></a>
+    <a href="#roleplay"><span class="mn">2</span>Role Play</a>
+    <a href="#confianza"><span class="mn">3</span><span class="es">Por qué confiar</span><span class="en">Why trust us</span></a>
+    <a href="#paraquien"><span class="mn">4</span><span class="es">Para quién es</span><span class="en">Who it's for</span></a>
+    <a href="#acceso"><span class="mn">5</span><span class="es">Cómo acceder</span><span class="en">How to access</span></a>
+    <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="mm-cta">
+      📅 <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="founder">
+        <div class="f-mark">★</div>
+        <div>
+          <div class="f-role"><span class="es">Fundador de la primera academia para IBs de Latinoamérica</span><span class="en">Founder of the first IB academy in Latin America</span></div>
+          <div class="f-name"><b>Umut Simsek</b></div>
+        </div>
+      </div>
+      <h1><span class="es">De Trader a <span class="grad">Empresario</span></span><span class="en">From Trader to <span class="grad">Entrepreneur</span></span></h1>
+      <p class="lead hero-sub">
+        <span class="es"><b style="color:var(--text)">Formación gratuita para IBs —y para quienes quieren serlo:</b> el sistema completo para conseguir, cuidar y multiplicar tu cartera —y convertir tu trabajo de IB en una empresa que crece cada mes.</span>
+        <span class="en"><b style="color:var(--text)">Free training for IBs —and for those who want to become one:</b> the complete system to win, keep and multiply your portfolio —and turn your IB work into a business that grows every month.</span>
+      </p>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+        </a>
+        <a href="#camino" class="btn btn-ghost"><span class="es">Ver de qué trata</span><span class="en">See what it covers</span> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section id="quees">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">En resumen</span><span class="en">In short</span></div>
+      <h2><span class="es">¿Qué es IB ACADEMY?</span><span class="en">What is IB ACADEMY?</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">Una academia gratuita creada con un objetivo claro: que aprendas a <b style="color:var(--text)">gestionar y hacer crecer tu comunidad como un negocio</b>. Aquí no se enseña a operar ni se prometen ingresos — se enseña el trabajo del IB: cómo atraer clientes, cómo atenderlos para que se queden, y cómo organizarlo todo en un sistema que no dependa de tu memoria.</span>
+        <span class="en">A free academy built with one clear goal: that you learn to <b style="color:var(--text)">manage and grow your community like a business</b>. It doesn't teach you to trade and it promises no income — it teaches the IB's job: how to attract clients, how to support them so they stay, and how to organize all of it into a system that doesn't depend on your memory.</span>
+      </p>
+    </div>
+    <div class="grid c2 qa" style="margin-top:30px">
+      <div class="card reveal">
+        <h3><span class="es">¿Qué es?</span><span class="en">What is it?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">Una academia gratuita en <b style="color:var(--text)">5 etapas</b>: de tu primer cliente a tu propia empresa.</span><span class="en">A free academy in <b style="color:var(--text)">5 stages</b>: from your first client to your own company.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Formación + práctica:</b> contenido para estudiar y role play 1 a 1 para aplicarlo.</span><span class="en"><b style="color:var(--text)">Training + practice:</b> content to study and 1-on-1 role play to apply it.</span></li>
+          <li><span class="es">Sobre <b style="color:var(--text)">el trabajo del IB</b>, no sobre operar: captar, atender, retener y sistematizar.</span><span class="en">About <b style="color:var(--text)">the IB's job</b>, not about trading: attract, support, retain and systemize.</span></li>
+          <li><span class="es">Avanzas a tu ritmo, y cada etapa se aplica el mismo día que la lees.</span><span class="en">You go at your own pace, and every stage applies the same day you read it.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Para quién?</span><span class="en">Who is it for?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">IBs con una comunidad activa que quieren <b style="color:var(--text)">dejar de improvisar</b>.</span><span class="en">IBs with an active community who want to <b style="color:var(--text)">stop improvising</b>.</span></li>
+          <li><span class="es">IBs que traen clientes pero <b style="color:var(--text)">los pierden en el primer mes</b>.</span><span class="en">IBs who bring clients in but <b style="color:var(--text)">lose them in the first month</b>.</span></li>
+          <li><span class="es">Traders y creadores de contenido que quieren monetizar su audiencia como IB.</span><span class="en">Traders and content creators who want to monetize their audience as an IB.</span></li>
+          <li><span class="es">Y si <b style="color:var(--text)">todavía no eres IB</b>: para empezar con un sistema desde el día uno.</span><span class="en">And if <b style="color:var(--text)">you're not an IB yet</b>: to start with a system from day one.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Qué te llevas?</span><span class="en">What do you get?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es"><b style="color:var(--text)">De dónde salen tus clientes</b> — las cuatro fuentes y cuántas conversaciones necesitas cada día.</span><span class="en"><b style="color:var(--text)">Where your clients come from</b> — the four sources and how many conversations you need daily.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Guiones para cada conversación</b> — primer mensaje, las seis objeciones, el cliente que perdió, y cuándo decir «todavía no».</span><span class="en"><b style="color:var(--text)">Scripts for every conversation</b> — first message, the six objections, the client who lost, and when to say "not yet".</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tus números y qué hacer con ellos</b> — qué medir cada noche y la tabla que te dice qué arreglar cuando algo falla.</span><span class="en"><b style="color:var(--text)">Your numbers and what to do with them</b> — what to track each night and the table that tells you what to fix when something's off.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tu cartera, ordenada</b> — cómo repartir a tus clientes en grupos, detectar al que se enfría y pedir referidos sin incomodar.</span><span class="en"><b style="color:var(--text)">Your portfolio, organised</b> — how to split clients into groups, spot the one going cold and ask for referrals without being awkward.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Sistemas que trabajan por ti</b> — CRM, bots, calendario de contenido y qué delegar primero.</span><span class="en"><b style="color:var(--text)">Systems that work for you</b> — CRM, bots, content calendar and what to delegate first.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tu propia red</b> — cómo eliges, formas y sigues a un sub-IB que replica tu método.</span><span class="en"><b style="color:var(--text)">Your own network</b> — how you choose, train and follow up a sub-IB who replicates your method.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Cómo entras?</span><span class="en">How do you get in?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">Agendas una reunión de <b style="color:var(--text)">30 minutos</b> conmigo, sin costo y sin compromiso.</span><span class="en">You book a <b style="color:var(--text)">30-minute</b> meeting with me, free and with no commitment.</span></li>
+          <li><span class="es">Hablamos de tu comunidad, tus números y qué te está frenando.</span><span class="en">We talk about your community, your numbers and what's holding you back.</span></li>
+          <li><span class="es">Si encajas, recibes <b style="color:var(--text)">acceso completo</b> a las 5 etapas.</span><span class="en">If it's a fit, you get <b style="color:var(--text)">full access</b> to the 5 stages.</span></li>
+          <li><span class="es">Después agendamos tus sesiones de <b style="color:var(--text)">role play</b>, una por escenario.</span><span class="en">Then we schedule your <b style="color:var(--text)">role play</b> sessions, one per scenario.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El problema</span><span class="en">The problem</span></div>
+      <h2><span class="es">Si algo de esto te suena, esta academia es para ti.</span><span class="en">If any of this sounds familiar, this academy is for you.</span></h2>
+    </div>
+
+    <div class="glabel reveal"><span class="es">Si empiezas desde cero</span><span class="en">If you're starting from zero</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por dónde empiezo si todavía no tengo un solo cliente?</span><span class="en">Where do I start if I don't have a single client yet?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Cómo hablo con alguien sin sonar a vendedor?</span><span class="en">How do I talk to someone without sounding like a salesperson?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Y si escribo y nadie me responde?</span><span class="en">What if I write and nobody replies?</span></h3></div>
+    </div>
+
+    <div class="glabel reveal"><span class="es">Si ya tienes clientes</span><span class="en">If you already have clients</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tus clientes desaparecen en el primer mes?</span><span class="en">Why do your clients disappear in the first month?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué ganas dos clientes y pierdes dos?</span><span class="en">Why do you win two clients and lose two?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tu negocio se detiene cuando tú te detienes?</span><span class="en">Why does your business stop when you stop?</span></h3></div>
+    </div>
+
+    <p class="lead reveal" style="margin-top:26px;color:var(--text)">
+      <span class="es">Ninguna de estas es mala suerte. Cada una tiene un proceso que la resuelve — y eso es exactamente lo que se enseña dentro.</span>
+      <span class="en">None of these is bad luck. Each one has a process that solves it — and that's exactly what's taught inside.</span>
+    </p>
+  </div>
+</section>
+
+<!-- CAMINO / 5 ETAPAS -->
+<section id="camino">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El camino</span><span class="en">The path</span></div>
+      <h2><span class="es">5 etapas, de tu primer cliente a tu propia empresa.</span><span class="en">5 stages, from your first client to your own company.</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">Esto es lo que consigues en cada etapa. El método completo —guiones, plantillas y números— se comparte dentro de la academia.</span>
+        <span class="en">This is what you get in each stage. The full method —scripts, templates and numbers— is shared inside the academy.</span>
+      </p>
+    </div>
+
+    <div style="margin-top:38px">
+      <!-- 01 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">01</div>
+          <h3><span class="es">El Primer Cliente</span><span class="en">The First Client</span></h3>
+          <p class="out"><span class="es">Sabrás exactamente qué decir desde el primer mensaje hasta el primer depósito — sin improvisar y sin prometer nada.</span><span class="en">You'll know exactly what to say from the first message to the first deposit — no improvising, no promises.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Un momento real</span><span class="en">A real moment</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Hola, vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">Hi, I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+            <div class="b me blur"><span class="es">Respuesta completa disponible dentro de la academia, junto con el guión de la conversación entera y las seis objeciones más frecuentes.</span><span class="en">Full answer available inside the academy, along with the complete conversation script and the six most frequent objections.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Guión completo en la academia</span><span class="en">Full script inside the academy</span></span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">02</div>
+          <h3><span class="es">La Disciplina Diaria</span><span class="en">The Daily Discipline</span></h3>
+          <p class="out"><span class="es">Tendrás un número diario que depende solo de ti — y un sistema para cumplirlo incluso en tus peores días.</span><span class="en">You'll have a daily number that depends only on you — and a system to hit it even on your worst days.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu embudo diario</span><span class="en">Your daily funnel</span></span>
+          <div class="mfunnel">
+            <span><span class="n">?</span> <span class="es">conversaciones</span><span class="en">conversations</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">?</span> <span class="es">registros</span><span class="en">sign-ups</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">?</span> FTD</span>
+          </div>
+          <p class="blur" style="text-align:center"><span class="es">Las proporciones exactas y cómo subirlas sin romper tu constancia.</span><span class="en">The exact ratios and how to raise them without breaking your consistency.</span></p>
+          <span class="lock">🔒 <span class="es">Los números, dentro</span><span class="en">The numbers, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">03</div>
+          <h3><span class="es">Retener y Multiplicar</span><span class="en">Retain &amp; Multiply</span></h3>
+          <p class="out"><span class="es">Dejarás de perder dos clientes por cada dos que ganas: tu cartera deja de ser un balde y se vuelve un motor.</span><span class="en">You'll stop losing two clients for every two you win: your portfolio stops being a bucket and becomes an engine.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Señales de fuga</span><span class="en">Churn signals</span></span>
+          <p class="open"><span class="es">7+ días sin operar · salió del grupo · responde en monosílabos…</span><span class="en">7+ days without trading · left the group · one-word replies…</span></p>
+          <p class="blur"><span class="es">Qué hacer en las primeras 24 horas, con los mensajes exactos para cada caso y el punto de control semanal.</span><span class="en">What to do in the first 24 hours, with the exact messages for each case and the weekly control point.</span></p>
+          <span class="lock">🔒 <span class="es">El plan de 24h, dentro</span><span class="en">The 24h plan, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">04</div>
+          <h3><span class="es">La Sistematización</span><span class="en">Systemization</span></h3>
+          <p class="out"><span class="es">Tu negocio dejará de vivir en tu cabeza: web, bots y un CRM trabajando por ti, incluso cuando duermes.</span><span class="en">Your business will stop living in your head: website, bots and a CRM working for you, even while you sleep.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu CRM: nadie se pierde</span><span class="en">Your CRM: nobody slips away</span></span>
+          <div class="mboard">
+            <div class="mcol"><b><span class="es">Nuevo</span><span class="en">New</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b>FTD</b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b><span class="es">Inactivo</span><span class="en">Inactive</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+          </div>
+          <span class="lock">🔒 <span class="es">El sistema completo, dentro</span><span class="en">The full system, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">05</div>
+          <h3><span class="es">La Empresa Profesional</span><span class="en">The Professional Company</span></h3>
+          <p class="out"><span class="es">Pasarás de ser «un IB con clientes» a dueño de una empresa con mentalidad, equipo y números.</span><span class="en">You'll go from being "an IB with clients" to the owner of a business with mindset, a team and numbers.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Lo que puedes hacer como empresa</span><span class="en">What you can do as a company</span></span>
+          <p class="open"><span class="es">1 · Contratar un equipo real</span><span class="en">1 · Hire a real team</span></p>
+          <p class="blur"><span class="es">2 · Construir una marca propia · 3 · Llegar a clientes corporativos · 4 · Reinvertir capital · 5 · Diversificar ingresos · 6 · Escalar y replicar tu método</span><span class="en">2 · Build your own brand · 3 · Reach corporate clients · 4 · Reinvest capital · 5 · Diversify income · 6 · Scale and replicate your method</span></p>
+          <span class="lock">🔒 <span class="es">Las 6 puertas, dentro</span><span class="en">The 6 doors, inside</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE PLAY -->
+<section id="roleplay">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Práctica 1 a 1</span><span class="en">1-on-1 practice</span></div>
+      <h2><span class="es">Role Play: practica conmigo, no con tus clientes.</span><span class="en">Role Play: practice with me, not with your clients.</span></h2>
+    </div>
+
+    <div class="grid c2" style="margin-top:28px">
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Qué es un role play?</span><span class="en">What is a role play?</span></h3>
+        <p><span class="es">Es una simulación: <b style="color:var(--text)">yo hago de cliente y tú de IB</b>. No es una clase ni una charla — es la conversación real, con sus silencios, sus objeciones y sus momentos incómodos. La única diferencia es que aquí equivocarte no te cuesta un cliente.</span><span class="en">It's a simulation: <b style="color:var(--text)">I play the client and you play the IB</b>. It's not a class or a chat — it's the real conversation, with its silences, its objections and its uncomfortable moments. The only difference is that here, getting it wrong doesn't cost you a client.</span></p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Por qué funciona?</span><span class="en">Why does it work?</span></h3>
+        <p><span class="es">Ningún piloto aprende a aterrizar estrellando aviones: entrena en un simulador. Con las conversaciones pasa igual. Puedes leer diez veces el guión perfecto, pero cuando un lead real dice algo que no esperabas, se te olvida todo. <b style="color:var(--text)">Lo que se practica bajo presión sale solo; lo que solo se lee, se improvisa</b> — y cada conversación improvisada es un lead que se enfría.</span><span class="en">No pilot learns to land by crashing planes: they train in a simulator. Conversations work the same way. You can read the perfect script ten times, but when a real lead says something you didn't expect, it all disappears. <b style="color:var(--text)">What you practice under pressure comes out on its own; what you only read, you improvise</b> — and every improvised conversation is a lead going cold.</span></p>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin:38px 0 6px;color:var(--gold)"><span class="es">Cómo es una sesión</span><span class="en">What a session looks like</span></h3>
+    <div class="card reveal" style="margin-top:12px">
+      <ul class="rp-how" style="margin:0">
+        <li><span class="es"><b>Elegimos el escenario</b> según la etapa en la que estás.</span><span class="en"><b>We pick the scenario</b> based on the stage you're in.</span></li>
+        <li><span class="es"><b>Primero lo hago yo:</b> ves cómo se maneja.</span><span class="en"><b>First I do it:</b> you see how it's handled.</span></li>
+        <li><span class="es"><b>Ahora tú:</b> yo soy el cliente, y no te lo pongo fácil.</span><span class="en"><b>Now you:</b> I'm the client, and I don't make it easy.</span></li>
+        <li><span class="es"><b>Paramos, corrijo dos cosas concretas</b> y repetimos la misma escena.</span><span class="en"><b>We stop, I correct two specific things</b> and we run the same scene again.</span></li>
+      </ul>
+    </div>
+
+    <h3 class="reveal" style="margin:44px 0 6px;color:var(--gold)"><span class="es">Los escenarios, uno por uno</span><span class="en">The scenarios, one by one</span></h3>
+    <p class="muted reveal" style="font-size:.92rem;max-width:680px">
+      <span class="es">Cada escenario practica una etapa de la academia. Aquí ves la situación; la técnica se trabaja en la sesión.</span>
+      <span class="en">Each scenario practices one stage of the academy. Here you see the situation; the technique is worked in the session.</span>
+    </p>
+
+    <div style="margin-top:28px">
+      <!-- RP 1 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 1</span><span class="en">Practices Stage 1</span></div>
+          <h3><span class="es">El primer contacto</span><span class="en">The first contact</span></h3>
+          <p class="out"><span class="es">Abrir una conversación con alguien que no te conoce, diagnosticar en dos preguntas y responder a la desconfianza sin sonar a vendedor.</span><span class="en">Open a conversation with someone who doesn't know you, diagnose in two questions and answer distrust without sounding like a salesperson.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 2 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que perdió</span><span class="en">The client who lost</span></h3>
+          <p class="out"><span class="es">La conversación que más IBs evitan: estar presente cuando tu cliente pierde, sin prometer nada y sin desaparecer.</span><span class="en">The conversation most IBs avoid: being there when your client loses, promising nothing and not disappearing.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Perdí casi todo lo que puse. Esto no funciona.</span><span class="en">I lost almost everything I put in. This doesn't work.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 3 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que se va</span><span class="en">The client who's leaving</span></h3>
+          <p class="out"><span class="es">Reconocer las señales de fuga y saber qué decir en las primeras 24 horas, antes de que sea tarde.</span><span class="en">Recognize the churn signals and know what to say in the first 24 hours, before it's too late.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">ok</span><span class="en">ok</span></div>
+          </div>
+          <p class="open" style="margin-top:8px"><span class="es">Lleva 10 días sin operar. Responde en una palabra.</span><span class="en">10 days without trading. One-word replies.</span></p>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 4 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">Subir de paquete</span><span class="en">Moving up a package</span></h3>
+          <p class="out"><span class="es">Hacer evidente el valor del siguiente nivel sin presionar — y reconocer cuándo el cliente todavía no está listo.</span><span class="en">Make the value of the next level obvious without pressuring — and recognize when the client isn't ready yet.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Estoy bien así. No necesito más.</span><span class="en">I'm fine like this. I don't need more.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 5 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 5</span><span class="en">Practices Stage 5</span></div>
+          <h3><span class="es">Reclutar un sub-IB</span><span class="en">Recruiting a sub-IB</span></h3>
+          <p class="out"><span class="es">Detectar al cliente que puede convertirse en tu socio y proponérselo sin que suene a venta.</span><span class="en">Spot the client who can become your partner and propose it without sounding like a pitch.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">¿Y yo también podría hacer lo que haces tú?</span><span class="en">Could I do what you do, too?</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <span class="es"><b>Sesiones 1 a 1, en vivo y sin grabación.</b> Cada sesión dura <b>30 minutos</b> y trabaja <b>un solo escenario</b>; se agendan en fechas separadas, a medida que avanzas por las etapas. Nadie más escucha: es tu espacio para equivocarte sin que te cueste un cliente.</span>
+      <span class="en"><b>1-on-1 sessions, live and never recorded.</b> Each session lasts <b>30 minutes</b> and works on <b>a single scenario</b>; they're scheduled on separate dates as you move through the stages. Nobody else listens: it's your space to get it wrong without it costing you a client.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section id="confianza">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Respaldo</span><span class="en">Backing</span></div>
+      <h2><span class="es">¿Por qué confiar en esta academia?</span><span class="en">Why trust this academy?</span></h2>
+    </div>
+    <div class="card reveal" style="margin-top:28px;border-color:rgba(231,200,138,.24)">
+      <ul class="clean" style="margin:0">
+        <li><span class="es"><b style="color:var(--text)">Respaldada por Weltrade</b> — un bróker regulado, en el mercado desde 2006, presente en +40 países y con +1M de usuarios.</span><span class="en"><b style="color:var(--text)">Backed by Weltrade</b> — a regulated broker, in the market since 2006, present in +40 countries and with +1M users.</span></li>
+        <li><span class="es"><b style="color:var(--text)">La primera academia para IBs de Latinoamérica</b> — no existe otra así en la región.<br><span style="font-size:.82em;color:var(--muted);font-style:italic">por Umut Simsek</span></span><span class="en"><b style="color:var(--text)">The first IB academy in Latin America</b> — there's no other like it in the region.<br><span style="font-size:.82em;color:var(--muted);font-style:italic">by Umut Simsek</span></span></li>
+        <li><span class="es"><b style="color:var(--text)">Método práctico, no teoría</b> — cada etapa se aplica desde el primer día.</span><span class="en"><b style="color:var(--text)">Practical method, not theory</b> — every stage applies from day one.</span></li>
+        <li><span class="es"><b style="color:var(--text)">Gratuita</b> — tu única inversión es tu tiempo y tu constancia.</span><span class="en"><b style="color:var(--text)">Free</b> — your only investment is your time and consistency.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="paraquien">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Filtro</span><span class="en">Filter</span></div>
+      <h2><span class="es">No es para todos.</span><span class="en">It's not for everyone.</span></h2>
+    </div>
+    <div class="grid c2 reveal" style="margin-top:28px">
+      <div class="card" style="border-color:rgba(62,207,142,.24)">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">Es para ti si…</span><span class="en">It's for you if…</span></h3>
+        <ul class="clean">
+          <li><span class="es">Tienes una comunidad o la estás construyendo en serio.</span><span class="en">You have a community or you're building one seriously.</span></li>
+          <li><span class="es">Trabajas —o quieres trabajar— como IB con Weltrade.</span><span class="en">You work —or want to work— as an IB with Weltrade.</span></li>
+          <li><span class="es">Estás dispuesto a aplicar, no solo a leer.</span><span class="en">You're willing to apply, not just read.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(248,113,113,.2)">
+        <h3 style="color:#f87171;margin-bottom:8px"><span class="es">No es para ti si…</span><span class="en">It's not for you if…</span></h3>
+        <ul class="clean no">
+          <li><span class="es">Ofreces garantías o promesas de ganancia a tu comunidad.</span><span class="en">You offer guarantees or profit promises to your community.</span></li>
+          <li><span class="es">Ves a tus clientes como depósitos, no como una cartera a largo plazo.</span><span class="en">You see your clients as deposits, not as a long-term portfolio.</span></li>
+          <li><span class="es">Desapareces cuando tu cliente pierde.</span><span class="en">You disappear when your client loses.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESO -->
+<section id="acceso">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Acceso</span><span class="en">Access</span></div>
+      <h2><span class="es">Cómo se accede</span><span class="en">How to get access</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">El contenido completo no es público: se comparte solo con los IBs de nuestra red.</span>
+        <span class="en">The full content isn't public: it's shared only with the IBs in our network.</span>
+      </p>
+    </div>
+    <div class="steps reveal" style="margin-top:22px">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3><span class="es">Agenda una reunión de 30 minutos</span><span class="en">Book a 30-minute meeting</span></h3>
+          <p><span class="es">Conmigo, sin compromiso y sin costo.</span><span class="en">With me, no commitment and no cost.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3><span class="es">Hablamos de tu comunidad y tus objetivos</span><span class="en">We talk about your community and your goals</span></h3>
+          <p><span class="es">Dónde estás hoy, a dónde quieres llegar y qué te está frenando.</span><span class="en">Where you are today, where you want to go and what's holding you back.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3><span class="es">Si encajas, te doy acceso completo a la academia</span><span class="en">If it's a fit, I give you full access to the academy</span></h3>
+          <p><span class="es">Las 5 etapas completas —guiones, plantillas y números— y las sesiones de <b style="color:var(--text)">role play</b>, que agendamos aparte a medida que avanzas.</span><span class="en">The 5 full stages —scripts, templates and numbers— plus the <b style="color:var(--text)">role play</b> sessions, scheduled separately as you progress.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="note reveal">
+      <span class="es"><b>¿Por qué no está abierto?</b> Porque el sistema es el resultado de años de trabajo con IBs reales — y porque acompañarte de verdad solo es posible con un grupo cuidado, no con una lista abierta.</span>
+      <span class="en"><b>Why isn't it open?</b> Because the system is the result of years of work with real IBs — and because truly supporting you is only possible with a curated group, not an open list.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <div class="wrap final">
+    <div class="reveal">
+      <h2><span class="es">Tu comunidad ya existe.<br><span class="grad">Ahora conviértela en un negocio.</span></span><span class="en">Your community already exists.<br><span class="grad">Now turn it into a business.</span></span></h2>
+      <p class="lead" style="margin:20px auto 0"><span class="es">Media hora de conversación puede cambiar cómo trabajas los próximos doce meses.</span><span class="en">Half an hour of conversation can change how you work for the next twelve months.</span></p>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          📅 <span class="es">Agenda una reunión conmigo</span><span class="en">Book a meeting with me</span>
+        </a>
+      </div>
+    </div>
+    <div class="legal reveal" style="margin-left:auto;margin-right:auto">
+      <span class="es">Aviso: este contenido es formativo y está dirigido a IBs. No constituye asesoría financiera ni una promesa de ingresos: los resultados de cada IB dependen de su propio trabajo, su constancia y las condiciones del mercado. La operativa en los mercados financieros conlleva riesgo de pérdida.</span>
+      <span class="en">Notice: this content is educational and intended for IBs. It is not financial advice or an income promise: each IB's results depend on their own work, their consistency and market conditions. Trading in financial markets carries risk of loss.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  IB ACADEMY — <span class="es">De trader a empresario.</span><span class="en">From trader to entrepreneur.</span>
+  · <span class="es">Diseñado por Umut Simsek</span><span class="en">Designed by Umut Simsek</span>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+function setLang(l){
+  document.body.classList.toggle('lang-en',l==='en');
+  document.documentElement.lang=l;
+  btnEs.classList.toggle('on',l==='es');
+  btnEn.classList.toggle('on',l==='en');
+  try{localStorage.setItem('ibinv-lang',l)}catch(e){}
+}
+btnEs.addEventListener('click',function(){setLang('es')});
+btnEn.addEventListener('click',function(){setLang('en')});
+try{var s=localStorage.getItem('ibinv-lang');if(s==='en')setLang('en')}catch(e){}
+
+/* burger menu */
+var burger=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+function closeMenu(){burger.classList.remove('open');mm.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+burger.addEventListener('click',function(){
+  var open=mm.classList.toggle('open');
+  burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open?'true':'false');
+});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+window.addEventListener('resize',function(){if(window.innerWidth>=900)closeMenu()});
+
+/* ===== sayfa-modu navigasyon: menü = bölümü tek başına aç ===== */
+var navLinks=document.querySelectorAll('.menu a');
+var allViews=['hero','quees','problema','camino','roleplay','confianza','paraquien','acceso'];
+var finalSec=document.getElementById('final');
+var backbtn=document.getElementById('backbtn'),logo=document.getElementById('logo');
+
+function setActive(id){
+  navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)});
+}
+function openView(id){
+  var target=document.getElementById(id);
+  if(!target)return false;
+  allViews.forEach(function(v){
+    var el=document.getElementById(v);
+    if(el)el.style.display=(v===id)?'':'none';
+  });
+  if(finalSec)finalSec.style.display='';           // kapanış CTA'sı her zaman görünür
+  document.body.classList.add('view-mode');
+  target.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+  if(finalSec)finalSec.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+  setActive(id);
+  window.scrollTo(0,0);
+  return true;
+}
+function closeViews(){
+  allViews.forEach(function(v){var el=document.getElementById(v);if(el)el.style.display=''});
+  if(finalSec)finalSec.style.display='';
+  document.body.classList.remove('view-mode');
+  setActive('');
+  window.scrollTo(0,0);
+}
+function hookViewLinks(list){
+  list.forEach(function(a){
+    var href=a.getAttribute('href')||'';
+    if(href.charAt(0)!=='#')return;
+    var id=href.slice(1);
+    if(allViews.indexOf(id)===-1)return;
+    a.addEventListener('click',function(ev){ev.preventDefault();openView(id)});
+  });
+}
+hookViewLinks([].slice.call(navLinks));
+hookViewLinks([].slice.call(mm.querySelectorAll('a')));
+hookViewLinks([].slice.call(document.querySelectorAll('#hero a[href^="#"]')));
+if(backbtn)backbtn.addEventListener('click',closeViews);
+if(logo)logo.addEventListener('click',closeViews);
+
+var rev=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  rev.forEach(function(el){io.observe(el)});
+}else{rev.forEach(function(el){el.classList.add('visible')})}
+})();
+</script>
+</body>
+</html>
