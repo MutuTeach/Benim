@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>IB ACADEMY — De Trader a Empresario | Formación gratuita para IBs</title>
+<meta name="description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+
+<!-- Social preview -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_LA">
+<meta property="og:site_name" content="IB ACADEMY">
+<meta property="og:title" content="De Trader a Empresario — la primera academia para IBs de Latinoamérica">
+<meta property="og:description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+<meta property="og:url" content="https://www.umutsimsek.co/">
+<meta property="og:image" content="https://www.umutsimsek.co/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.umutsimsek.co/og.png">
+<meta name="twitter:title" content="De Trader a Empresario — la primera academia para IBs de Latinoamérica">
+<meta name="twitter:description" content="Formación gratuita para IBs —y para quienes quieren serlo: aprende a gestionar y hacer crecer tu comunidad como un negocio.">
+<meta name="theme-color" content="#08090b">
+<link rel="canonical" href="https://www.umutsimsek.co/">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090b'/%3E%3Ctext x='32' y='43' font-family='Inter,Helvetica,Arial,sans-serif' font-size='30' font-weight='800' fill='%233ecf8e' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#08090b; --bg2:#0d0f12; --panel:#111316;
+  --line:rgba(255,255,255,.07);
+  --text:#f4f6f8; --muted:#888f9c;
+  --accent:#3ecf8e; --gold:#e7c88a;
+  --radius:14px; --maxw:1000px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:
+    radial-gradient(52% 40% at 50% -8%, rgba(62,207,142,.08), transparent 62%),
+    radial-gradient(46% 34% at 96% 2%, rgba(231,200,138,.05), transparent 58%),
+    var(--bg);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.62; letter-spacing:-.006em;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.lang-en .es{display:none!important}
+body:not(.lang-en) .en{display:none!important}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+@media(min-width:768px){section{padding:76px 0}}
+/* sayfa-modu: tek bölüm açıkken üstte bu kadar boşluğa gerek yok */
+body.view-mode main > section{padding-top:44px}
+@media(min-width:768px){body.view-mode main > section{padding-top:60px}}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.6);
+  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;cursor:pointer}
+/* sayfa-modu: geri butonu */
+.backbtn{display:none;align-items:center;gap:6px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);color:var(--text);font-weight:600;font-size:13px;
+  padding:8px 14px;border-radius:9px;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
+.backbtn:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+body.view-mode .backbtn{display:inline-flex}
+@media(max-width:560px){.backbtn{padding:8px 11px}.backbtn span{display:none}}
+.logo b{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;color:var(--muted);font-weight:700;font-size:12px;
+  padding:7px 13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.lang-toggle button.on{background:var(--accent);color:#05130c}
+nav .nav-cta{display:inline-flex;white-space:nowrap}
+/* masaüstü menü */
+.menu{display:none;align-items:center;gap:2px}
+@media(min-width:900px){.menu{display:flex}}
+.menu a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500;
+  padding:8px 13px;border-radius:9px;transition:all .22s;white-space:nowrap}
+.menu a:hover{color:var(--text);background:rgba(255,255,255,.055)}
+.menu a.active{color:var(--accent);background:rgba(62,207,142,.10)}
+/* burger */
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;padding:10px;background:transparent;
+  border:1px solid var(--line);border-radius:10px;cursor:pointer;flex-shrink:0}
+@media(min-width:900px){.burger{display:none}}
+.burger span{display:block;height:2px;width:100%;background:var(--text);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* mobil menü paneli */
+.mobile-menu{display:none;flex-direction:column;padding:10px 20px 18px;
+  border-top:1px solid var(--line);background:rgba(8,9,11,.98)}
+.mobile-menu.open{display:flex}
+@media(min-width:900px){.mobile-menu.open{display:none}}
+.mobile-menu a{color:var(--text);text-decoration:none;font-size:15px;font-weight:600;
+  padding:14px 4px;border-bottom:1px dashed var(--line);display:flex;align-items:center;gap:12px}
+.mobile-menu a .mn{width:26px;height:26px;border-radius:8px;background:rgba(62,207,142,.12);
+  color:var(--accent);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mobile-menu .mm-cta{justify-content:center;border-bottom:0;margin-top:14px;
+  background:var(--accent);color:#05130c;border-radius:11px;padding:14px 18px;font-weight:700}
+.mobile-menu .mm-enter{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--line);margin-top:10px}
+@media(max-width:560px){
+  .nav-inner{gap:8px;padding:10px 14px}
+  .logo{font-size:13px}
+  .lang-toggle button{padding:10px 12px;font-size:12px}
+  #hero .cta-row .btn{width:100%;justify-content:center}
+  nav .nav-cta{display:none}
+  nav .nav-enter{display:none}
+}
+
+/* type */
+h1{font-size:clamp(2rem,5.6vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.06}
+h2{font-size:clamp(1.2rem,4vw,1.95rem);font-weight:700;letter-spacing:-.028em;line-height:1.16}
+h3{font-size:clamp(1.02rem,3vw,1.2rem);font-weight:650;letter-spacing:-.016em}
+.grad{background:linear-gradient(96deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.lead{font-size:clamp(1.02rem,2.6vw,1.24rem);color:var(--muted);max-width:660px}
+.muted{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;
+  padding:14px 26px;border-radius:11px;transition:all .22s;font-family:inherit;cursor:pointer;border:0;letter-spacing:-.01em}
+.btn-primary{background:var(--accent);color:#05130c;box-shadow:0 1px 0 rgba(255,255,255,.15) inset}
+.btn-primary:hover{transform:translateY(-1px);background:#4ad99a;box-shadow:0 8px 30px rgba(62,207,142,.20)}
+.btn-sm{padding:9px 17px;font-size:13.5px}
+.btn-ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* hero */
+#hero{padding-top:108px;padding-bottom:20px}
+.hero-sub{margin-top:24px}
+#hero h1{margin-top:26px}
+/* "¿Qué es?" kartları */
+.qa .card h3{color:var(--accent);margin-bottom:6px;font-size:1.02rem}
+/* founder credential — otorite şeridi */
+.founder{display:inline-flex;align-items:center;gap:13px;margin-top:0;padding:12px 18px;max-width:640px;
+  border:1px solid rgba(231,200,138,.26);border-radius:99px;
+  background:linear-gradient(92deg,rgba(231,200,138,.08),rgba(231,200,138,.01) 72%)}
+.f-mark{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(231,200,138,.13);border:1px solid rgba(231,200,138,.34);color:var(--gold);font-size:.95rem}
+.f-role{font-size:clamp(.86rem,1.9vw,1.02rem);color:var(--gold);font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.f-name{font-size:clamp(.76rem,1.4vw,.84rem);color:var(--muted);margin-top:2px}
+@media(max-width:560px){.founder{border-radius:14px;align-items:flex-start}}
+.f-name b{color:var(--text);font-weight:700}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:rgba(255,255,255,.022);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:0 1px 0 rgba(255,255,255,.03) inset;transition:border-color .3s,background .3s,transform .3s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.038)}}
+.card p,.card li{font-size:.94rem;color:var(--muted)}
+.q-card h3{color:var(--gold);line-height:1.4}
+.glabel{display:flex;align-items:center;gap:12px;margin:34px 0 14px;font-size:.76rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.glabel::after{content:"";flex:1;height:1px;background:var(--line)}
+ul.clean{list-style:none}
+ul.clean li{padding:7px 0 7px 24px;position:relative;font-size:.94rem;color:var(--muted)}
+ul.clean li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+ul.clean.no li::before{content:"✕";color:#f87171}
+
+/* etapas */
+.etapa{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022);
+  padding:26px;margin-bottom:14px;display:grid;gap:20px;grid-template-columns:1fr}
+.etapa:last-child{margin-bottom:0}
+@media(min-width:820px){.etapa{grid-template-columns:1fr 1fr;align-items:center;padding:32px}}
+.etapa .e-num{font-size:clamp(2.6rem,7vw,3.6rem);font-weight:800;line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.06));
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px}
+.etapa h3{color:var(--gold);margin-bottom:10px;font-size:clamp(1.15rem,3.4vw,1.45rem)}
+.etapa .out{color:var(--text);font-size:.98rem;line-height:1.6}
+
+/* role play */
+.rp-tag{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);background:rgba(231,200,138,.09);
+  border:1px solid rgba(231,200,138,.24);border-radius:99px;padding:4px 11px;margin-bottom:12px}
+.rp-how{counter-reset:rp}
+.rp-how li{padding:9px 0 9px 40px;position:relative;font-size:.95rem;color:var(--muted);list-style:none;
+  border-bottom:1px dashed var(--line)}
+.rp-how li:last-child{border-bottom:0}
+.rp-how li::before{counter-increment:rp;content:counter(rp);position:absolute;left:0;top:7px;
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--accent);font-weight:800;font-size:.76rem;display:flex;align-items:center;justify-content:center}
+.rp-how li b{color:var(--text)}
+/* locked preview */
+.peek{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:16px;overflow:hidden}
+.peek .plabel{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px;display:block}
+.peek .open{font-size:.9rem;color:var(--text);line-height:1.55}
+.peek .blur{filter:blur(5.5px);user-select:none;pointer-events:none;opacity:.55;font-size:.9rem;line-height:1.55;margin-top:8px}
+.peek .mcard.blur{margin-top:0}
+.peek .lock{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:.78rem;font-weight:700;
+  color:var(--gold);background:rgba(231,200,138,.08);border:1px solid rgba(231,200,138,.22);
+  border-radius:99px;padding:6px 13px}
+/* mini chat */
+.mchat .b{max-width:88%;padding:8px 12px;border-radius:12px;margin:6px 0;font-size:.88rem;line-height:1.5}
+.mchat .them{background:rgba(255,255,255,.04);border:1px solid var(--line);border-top-left-radius:4px;margin-right:auto;color:var(--text)}
+.mchat .me{background:rgba(62,207,142,.10);border:1px solid rgba(62,207,142,.25);border-top-right-radius:4px;margin-left:auto;color:var(--text)}
+/* mini funnel */
+.mfunnel{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-weight:700;color:var(--text);font-size:.95rem}
+.mfunnel .n{display:inline-block;min-width:34px;text-align:center;border-bottom:2px dashed rgba(255,255,255,.25);color:var(--muted)}
+.mfunnel .arr{color:var(--accent)}
+/* mini board */
+.mboard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.mcol{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);padding:8px}
+.mcol b{display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.mcard{height:9px;border-radius:4px;background:rgba(255,255,255,.10);margin-bottom:5px}
+.mcard.s{width:70%}
+
+/* steps */
+.steps{display:grid;gap:0;margin-top:10px}
+.step{display:flex;gap:18px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:0}
+.step-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
+.step h3{margin-bottom:3px;font-size:1rem}
+.step p{font-size:.93rem;color:var(--muted)}
+
+/* blog */
+.blog-list .card{display:block;text-decoration:none;color:inherit;cursor:pointer;margin-bottom:14px}
+.blog-list .card h3{margin:0 0 8px}
+.blog-list .card p{margin:0;color:var(--muted)}
+.blog-list .card .bmeta{margin-top:12px;font-size:.84rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.blog-list .card .bmeta .tag{color:var(--gold)}
+.blog-list.hidden{display:none}
+.post{display:none;max-width:760px}
+.post.open{display:block}
+#blog.reading .bhead{display:none}
+.post .back{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:.92rem;margin-bottom:22px;cursor:pointer;background:none;border:0;font-family:inherit;padding:0}
+.post .ptitle{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.14;margin:8px 0 10px}
+.post .pmeta{color:var(--muted);font-size:.9rem;margin-bottom:22px;display:flex;gap:10px;flex-wrap:wrap}
+.post h3{font-size:clamp(1.12rem,3vw,1.38rem);font-weight:700;letter-spacing:-.022em;margin:38px 0 10px}
+.post h4{color:var(--gold);font-size:1.04rem;font-weight:650;margin:26px 0 8px}
+.post p{color:var(--muted);margin:0 0 16px;line-height:1.72}
+.post p b{color:var(--text)}
+.post .plead{font-size:1.08rem;color:#aab2be}
+/* faq */
+.faq details{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022);margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:650;font-size:1rem;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-weight:700;font-size:1.25rem;line-height:1;flex-shrink:0;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 22px 18px;font-size:.94rem;color:var(--muted);line-height:1.6}
+@media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+.note{border:1px solid rgba(231,200,138,.22);background:rgba(231,200,138,.05);border-radius:var(--radius);
+  padding:16px 18px;margin-top:18px;font-size:.9rem;color:var(--muted)}
+.note b{color:var(--gold)}
+
+.final{text-align:center}
+.final .cta-row{justify-content:center}
+/* mobil yapışık CTA — hero butonu ekrandan çıkınca görünür */
+.mcta{display:none}
+@media(max-width:560px){
+  .mcta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:49;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(8,9,11,.84);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-top:1px solid var(--line);
+    transform:translateY(110%);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  .mcta.show{transform:none}
+  .mcta .btn{width:100%;justify-content:center;padding:13px 18px}
+  body{padding-bottom:74px}
+}
+@media (prefers-reduced-motion:reduce){.mcta{transition:none}}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:.76rem;color:#5d6472;line-height:1.6;max-width:760px}
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-size:.8rem;color:#5d6472}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo" id="logo">IB <b>ACADEMY</b></div>
+    <button class="backbtn" id="backbtn" type="button">← <span class="es">Volver</span><span class="en">Back</span></button>
+    <div class="menu">
+      <a href="#camino"><span class="es">Las 5 etapas</span><span class="en">The 5 stages</span></a>
+      <a href="#roleplay">Role Play</a>
+      <a href="#confianza"><span class="es">Por qué confiar</span><span class="en">Why trust us</span></a>
+      <a href="#paraquien"><span class="es">Para quién es</span><span class="en">Who it's for</span></a>
+      <a href="#acceso"><span class="es">Cómo acceder</span><span class="en">How to access</span></a>
+      <a href="#blog">Blog</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-es" class="on" type="button">ES</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+      <a href="academia.html" class="btn btn-ghost btn-sm nav-enter"><span class="es">Entrar</span><span class="en">Log in</span></a>
+      <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">
+        <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#camino"><span class="mn">1</span><span class="es">Las 5 etapas</span><span class="en">The 5 stages</span></a>
+    <a href="#roleplay"><span class="mn">2</span>Role Play</a>
+    <a href="#confianza"><span class="mn">3</span><span class="es">Por qué confiar</span><span class="en">Why trust us</span></a>
+    <a href="#paraquien"><span class="mn">4</span><span class="es">Para quién es</span><span class="en">Who it's for</span></a>
+    <a href="#acceso"><span class="mn">5</span><span class="es">Cómo acceder</span><span class="en">How to access</span></a>
+    <a href="#blog"><span class="mn">6</span>Blog</a>
+    <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="mm-cta">
+      📅 <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+    </a>
+    <a href="academia.html" class="mm-cta mm-enter"><span class="es">Ya tengo mi clave → Entrar</span><span class="en">I already have my key → Log in</span></a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="founder">
+        <div class="f-mark" style="overflow:hidden"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAFAAUADASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAABAUDBgECBwAI/8QATBAAAgEDAgQEAwUDCAcGBgMAAQIDAAQRBSEGEjFBEyJRYQdxgRQykaGxI0LBFSQzUmJyktEIFjRDU7LwJTVzgqLhF1Rjg5PxJkTC/8QAGwEAAgMBAQEAAAAAAAAAAAAAAwQBAgUABgf/xAAwEQACAgEEAQMCBQQCAwAAAAAAAQIRAwQSITFBBRMiMlEGFCNhcRWBkbFS0UKh4f/aAAwDAQACEQMRAD8A4zBfwXcjCCTnwMkYIqZgCM5pRoKfzuUesX8aaSZUkGtOjbhJyVsmi+7k1I26ZB61ArgR5NbM+I8GooIYxk4ziiI1ymB60IjZb2pHxAJBqPlldVManAJ671zQOc9iuizLGwapYo382xqh4lz/ALRL/iNZzMOlzOPk5qNv7g/zD/4l8ZSRgg5rAXA6VR1ef/5u4/xmp1FwRn7Xcf4662ifevwXIqTjat1ifP3TVPRJyMm8uP8AGak5bjGftlz/APkNRuZPu/sWsRSNsFI3rUxsmfKaot7fXttc+Gl7chcAj9oa0TVtQBAN7cEZGxkNXVgfzSuqL6DgUu1Q+TFMM9z6D9KXaipMeR0zVsb5Dy6Fi9KZ6buJc/8ACf8AhS6MZyKaaWuBJkdYZB+VP6V1qIfygE/oYHOATR/C641RhjZoH/UUHKmc0z4UTOqtn/5eT/8AzX0fFP4ic+iwBKmhTfepBEKljjokpAAu2HSj41zgChLdAKZW6BiKx9fKlZBLCmPnRSJWsaAVOq15nPOyx4JWwQVsBWRWbNknlWpABjpWoFbil5FjwWtgK8o3rcChM41xWkw3xU+BUM/3vpVV2cCEb1rW59a1oqKsXXP9IaH9T7H9KnuM+IaGc+R/7h/Snsa6AyFMf3BUg7Vogworcb1p0ccr0P8A27HTMbU1n7ilOjf7ev8Acamso3rzifJvYV8TWPYY71s48tYWtubK1YPRHGDnalPEKlL9MjcxD9TTeMcr57YpXxL/ALZbk7kw7n61WQLKviKe1YrNeFVsWN4xmiY9hioU6VOgytUkyUTxeYYqbwyBUcAyRRQXciqORaiuaupF6uR1QUKo3z70011QLhf7gP60qB60yvpEpKpM6PKf2SnG/KP0oC+JEP1otnzDGfVF/Sg7s5Sh43yaL6AIzhqb6WuWcH/huPypTnDU20o4LH1Uj8qdwyrNB/ugc18WDyLjrTPhMAaxsP8AcyfoKAmFMeFMjV//ALMg/KvoOGfRnyfBZs+2K3RsVp3rwODT3YAZQb4plabmlNq2ab2ZyTWN6jxA4NSplFRKN6mUV5fI7Lo2ArbFYArYCk5ko8tSAbVrWw6UvMkyoqQCtFG9SUFnHqgn3bb0oih7g+Y1y7JBT6VjpWT1rB70VIoxZP8A0hoWQcsUh/sH9KInOZGzQ0xxDL/cNaGJdAZCxPuj5VvWi/dGfStxtWpRxyrRzjUoR/W5h+VN7kFZDiq7Y38UF5FK4flUncDPamcurW8jcxaU/wD2zXl12buGSUeQpWGeuK8TvS46rAMeWb/DWf5WgJ2Wb/AatTDb4/caIVUjm6Gk/EbB7i3cdCjfrUh1SE48sxx25KA1a/juGhADqYwchhg71DTBZZx2gteHWovGQ96yJ09T+FVoXtBKdDREZ8vzoJLmIA+Y/hUq3sPQlvwqjTLKSGlvuAKKHlO4pZBqVsnUufktTfyxAWyFl/Ch7X9idy+4u4hcG7iA/wCHg/iaWHvRWrXC3E6MoYYU9fnQWaaivjQjOXyZ0MnMMP8AcX9BQ955Y84oGz1xAieJaylQoAw656V6/wBailiKx2kyk/1nU4/ChxxyTND3FREW36030nzSBc9Q36Gq19tf/hH8abaHqbNdRp9nOTzDPN/ZNNYk1ki/3RSU04sYygdc0dwxgazGPWKX/loGQbUdw2P+2ojnpHJt6+WvdYZ/JIz5MsjHBrBeoZpNzUfiZFbe0GNbRyadWJy9Vq1m86g1YrBwZFrL9Sh+mzhtH2qZRUSCplrxc2WRsBWa8KyKWkSZArYDFYFbCgSJMqKkArUVsKEyTOKGuBhjRNDXJwx+VQuzmCt61qTsflWzb1qw8p+VHiijFU/3moW5P83l9eWiZzlj6ULc/wCzS/KtLEuUBl2ALWwHasL0rPyrUaOOMW8Q+0RBtwXAPyp09vEjEBQR2pUm0kbf2h+tOpFyoFeVTN3TxTuyJYYyPuLWxtoSR5Aa2xjpWQPMKncNbERmFFP3QKVavGhWMhFzzkZxvinEg87YpNqZJ2J6SVDbaAZ4pIX8i/1RXuRfQVsa9VBOkeRAWAwKMigiK5Man50NFu1HL90VWTLxRJBbQEj9kn1FFfZoAf6GP/CKgi6dfeiQ24ye2aFbJpCPXkVJ4gqhRynoPel3QUy17zSRN6838KWnvTMX8RGf1M6Dy27WVjiOIOFHNhAM7DrUWoxx/Y3KxqNs7CoC7JHb+hRdvpW00hezYHY8u9AUnfZoQVoT8o9B60z0La+jI9/+U0vx/lTHQBzalEvrn/lNN4pPfH+URkXDGbqKM4dGNXix1KyD/wBBoVxROhnl1eEkbcr/APLXtsEvnH+TMY1mOGNQ+IDXrp+tAePg4NephC0RQyhm5XGPWrLpswYKc9MVS4piHFWXR5uYZpTXYbxs6i4I3epQ1CxtmND7VKrV85yqpNEhKtnats4qFTUg3xS8ixuGrcVGvWtxQWSiQHFbCogcVnmobRJJmhbk+Y0SGoOY+Y9a6K5IZEetaMfKflWT1rST7jfKjpFGLJupx60HdN/NpPcD9aKmPmoK92t3x7Vp4Y3JAZdgobFe5sb1EGrYHbetRxOORd1/vCnRPMMUkzjr2pzH5lU+1ePs3tN5N8YznsKx0Knetsdc1rKOg9s1XcNmpPmpPqnRv/Epu2yg96U6p91/74q6fAvqOhfmvA9axXqgSJYSAxo1Dk47UvT71GREnBzVJF4hsZAFbO5qFD5evet2P6VSiWLNb/8A6/zb+FLjup+VMNaG0PzP8KXHoaYj0JZPqZcgeaKLJ6Kv6Ct5G/m7j2oOCXy8pPTlP/pFTyyAxHfqKA1yaGL6QOjdGbk1W23xl8flQRNE6UR/KlqD/wAUUfG/kv5IydMeyDFTaQf+1oPk/wDy1C9S6QP+1rc+z/8AKa9rp3+pH+TLYbePuaUTT8pxTHUDgmkF27K2x617jBC0WirDEujzg5qzaFeKSFzk1RRKwIOaecPXrePyd+tdqsFwZMo8HVbVw1vHv7VOrClmmy89oN9waLV/evlusx7M0olEw5DmpQRQcUgJ61M0ojUk9azpIlBK1tmlL6wiHl6fwoa64y0mwtpri5uGKQrzEIMk+w96psk1ZYfE71kHfrS3Tdb03XbX7XpV7FdRADmCHzJ7MvUVOJ8GhUcHgUJcEIzE1PDKGXNJNWvwsjKrb5qI9nBXjLnGRW7RSNEzBCQBXN+L+NJ9DZLXTykl/KCcnzeEOxxXPZuI9b+1Q3E2r3pnjzyZkIC/IUZyrwUkdym8uSRS3U5eS3PuRVY4K45vNZu/5M1R0kd1JilwAxwOh9TTjiGcxQxj1fH5Vt+m1mmqBPsyj53zUmdjQFpPkAE5ozPkNaueG1s7yclkbHN7U5gb9mvekkx3am1q2YhvtgH8q8I+jb07+QZnv61G/Xm9BisqQUBNYf8Aom/OhWO2Rsw5RSvUz5X/ALwo7myOo6daA1XcSY9jRYiud8C7mrOa0zWasJm6HzUVC21BqfNRMR2qGSmFo9bCQE0OD6V4t4as56AZNV22Vc2gfV5FbwlBywJJ/KlxOQa80jSuXYkk1kAkHAzy77U1HGqEpTt2Po5ATkdCq9/YVOXHIKT6bcBSY279KZk7CgzjTNLBO4GxNT6d/wB4W3/irj8aHqWzIW9t8/8AEX9aiH1IvJ8MsTnzGp9IYLqcJ74bf/ymhGPmO/c0VpB/7Qj26Bj+Ve007/Uj/KMtmdRkO9ILknnOTmnOoE5OaQzNkk5r6Hp1xZZcIjL4ozTbs29ykinG+9K2fepIZcNvV3NS+LBxyc0di0O7WSzOO4DUYJ96qfB98bi2ZSSSq46+lP1ffrXzX1rB7eqkirfNDWGb3rXUr3C4VhzUqn1m2so2MkgHL61QeJfiJEviwacTNKwK+KD5U9x6mvPZVTLRY7vtWvp7m8h5DFDG4jj2wXGASc/M1WeKbl00uKJsgyz5x0yFB/iaSW0t8mnHUYb648ZmPPluYED1zXtT1DUL2C3GoMnlJKDlx1HWjvPH2fbS5Lv7hXCut3Gga7a3sMjKA6pMM7PGTgg+o3zXeXkAmYA5Gdq+c7eVY2DOAwBBweh+ddl4b4z0/ifnjhD297CgaW3cbAeqnuOlZ9OL5ItMuFvLjmydsUg1Mgs5FNIJSd6Sao5DMPU9qnHH5WWRSpRZ6ZxDePI/K0xQqzb4GOg+tOI30XVY3s7tYJG6kMm6ntv60k4imVdVQywI6IUJON+lH280E+pm6WzChhscVGom1GkPYUmqZVNF0HUbDiWMrFHi1nUgyE8r56Yx7VeOKnysJxjMhz+FQjULG21y0+0PytcErCVHlL+9a8UPvbqTvzmtv8N3Ke5/cR1EIwmoxI7FvKNqYAkrSqyby700jYMAo7kCt3XcNgK5OTO27Cm1q2IF91FJHbzHemtpIDDH/cFeAkuDY075GCtmLOe+K9M+Y2GPnUMTZQCvTuDGMnc0DyO2QkAeu4oLUTmNj7Ci2kwgwMigrw88Ln2osBbM/iL81jNac9aeJRBBzRMG3oiJ/LQQfJphpOnXurTGCygMrDq3RU9yalQcntirZCyIkjcb5raVTLE0aDmLDoPSs3ltecL61FHfQwz+Cyy8h3jnTr9QdxVo4o0G10e+tb/TyTpmsReLbHryNgEp+e3tRfy0o25cV4IWRSdCLXNGjeKKSxiQcnlxHtlcZyfemeh6fbw6YFlt4pCw5mfGc/WhoZPIrKwwu4r09tlriaKYRxoBJyoOp9B67miYsfudvgJsipWK77TYLO+U27nw2BYL/VqTnyKGaWRrhvGDCQbMrDBX2x2rdpcDGKHqXF5Hs6C49qXxCAaltf8AaYT/APUX9RQqvU9v/Txb/wC8X9aDH6kXb4LC/wB9vmaJ0r/vGEe5/SoJFwzbdzUmmHF/Cc969dgl+rCvujNZpqjFSc+lIJ2wKd6orNGZXdY4ycAu2Mn0Hekd0jJjIyDuCNwRX0bHkjtcU+SJP4gjtWqyYNauc9Ki3rPyZ3F8Ctlx4LvjHqAjZiA4Pyzirjc3wghZj1xXNOHLz7LqttITsJAN+mDtTHirWZomeMPkk4Fec/EKU5wyryv9F1yxdxTrkl2z2qtgH7/y9KqvKVU7CiGkaRyZMEnfeomXevG5WmwjGK3Zt440hYiGXDMvbI608uJrfULBUbchwV22z6VUxK6qUVvKSGwR3oyz1iS0gkhMXOG3BBwVNAyW+gsMi6YTq32CK1hjty/2zxCZMggKuOg+tXT4ccS32qayljci0xFaMDMIgsswXHKGbviuamcyzNJMxLMckmmeg6jPpWq219Z4aaEkhW6OMbqfmM1S3XJRu3Z9BQSALnIwBvVb1fV7aKR3mlCKDjJ7mgr7jK2FjHcQMRBcAFAfvZI6fSqTcaqbvUkJQykHYse/yp6OJRjb8k7qJuINdNzq4ktYfEgEQV0YbsQTv+dEQ6zeahbC2trNrVehkOS2KR6g12l80hj8PnxuNsbVZdK1Aix/b8kcyDDenzpTNibC4sj6sXXKtJqFpHJlkQlEIP3CQRn8d/pTa5uGuriC3n1GJkjZRzFRzHOc/likmkWLXupSyXV2qJkkYIzTEWOnjVVBuiUV+xHQfSrYHPFJTxumDlK3Y4e3tLSTkTUIpSw5sdO/SjbMsLmJT/xFH5ilNpotpq19dxQTNIyQiTm7jGTgVYYobOSaxntGw00sSTR9QjqQDg+4wad/rGWUnjy8/uRts4q0gNH2lyvhKM4wMUrAxRdnbq6cxArKasaxTakM0vEVQSw/GtJb6JlwWwRUK2SvsAPwrf8Ak6Nep/Kqe3D/AJDnuSIzeRkYLCoLi6jaJwG3K46VvIFRuUL+VCzsSuMDBq+2K6YvlnKgMknvXs1ivVBnsIsbV768gtYzhpXCA+mT1ru/D+iWulWkVtawhYl9erH+sfU1yDgK0N5xXYRgHAYscegBrv1sq4OBnGNq3PSKhGWWuTjnfxj06FtN0u/QYkWZ7dhjsRzfqDTLhbT5+IvhfZLB5r/T5ZJLTPXxI2JC/wDmBK/hS342akkMelaSF35munb2xyr/ABq1fDC1l07gqw8RSjzO9wM9cM3lP4AGonL3dRJ/dEJA938O7Pi9bXiHSLtdMgv7cSvbRwhl58bgDO2GyDXP9Z4ae44E0riC2jYyRCRLsDPmAkYB8exGDXauGGNhq+paMUKwu66haHtySHEiD+7ICfk1Vzgnw34PhgnjDRGa5jdG6MpkcEH5iqYcO+TxryXbdUcx1aRde4T0/W+uoWUv2G7fbMikZjZvftmq5Jz/ANY/hV0l4dm0bROLNNikSRIpoJ0XPmMSnmDfgcfQ1TCwIznAG5PpS2txShOO5ctc/wCaDY5fE1AkOTzkAdz0FYjuJS48IO5G5bJP4CtXikmAHMFQDOOv4+9FRkrHkNkqMBgMGqww+WgU8jfQTYareSXKq05JOTgk4b1GDTpdRuEvIZoXCDug3wMb9ar8eFukYb5HOPwo6SdklGNjy9vlTKyTg00wdjG4eOdTdMxU8uPvEnA6bn1JoSVi9pjxijr90jJwSPT3xihPtRe1Gc45jge2c1md2+zKi5y3KoHr3qfzWX3Hl3Pd9yLGNtYWk5V1SQgKrOucBiPvb52WiUlsGItV0+3n2LMyq2VA9XyNh64qOF+aNljXyhFAHryjOPkTv9Kz4Spbx20RdY3HPJytylwACCT1xkk49flRcmv1GR7pTd/zX+itIBayha6xZuMgcwDuCNtzhsAEfPB370Br1yZrgu33j/lXQ9F4fFxYxGRX8NgWEUSoCxO65LbABdyfvHIG2Kq3FOiIJCC8aTRYCg7Fs9A2w+h6GnMnqbz4ljyLleSYqirRIZUKog5u5NQPs4UgA5wcVkTSISoYjB6VpksSSaw5dljEi8p39a3t7aS6kEcQJJ6nHSssgI60dol7DaNcCZigdPKcfvCqxSckmTFc8ln0TQ7MW2BEpkGxY7k1XdUlgi1hYYYFhMMhR2Q/fz3x2qZeJ7m3PLBy4HViN2NJPFIuFlbc55jnv61GoxqE2k0/4C5JwpKI5g1EK8CzKDbQMWC+xottQibUUa1hVebGPSlllYTXsBdFxHkjmY4X/wB6z4rWdzAhMLEAHKNkCrY8jqmCkhnfwXt5dKGx5gBgdBUFvYyPqBsZy3MB0JJyO1aG+u3vUKeM7sQFWMYJPYCiru2vYJ47u7s721QERvNMp5eY5wCfpRfqTdHBujaZAlwyyXQAwR29aY6Ro1idcKTXCujc2/iAVUo7uC3uC+S436Cm2jTWt1qkcn2nwRzZwy4xtQM00o8HLsZ3M68OcUMLOVjBPmGYK2V5T03q06NDbcP6gTfSxSQzsrQorZMbA5Bx3qaf4UXuoXlw9zM4tn5GjmhTJ33Ix60i4j06bhrjdLPTI7qRoIYrhS4yyFhjBz2pN43JWFVx7OWBhgUdYtmMjOMGodbtUsdVuYI4zGiP5VznArFi+AaNkg4txfgthl8hpHJykb+1TSPtSyW6ES571B/KchOSAR6UL22xp54x4YXcnegZTmpZrxGjyAeb0oRpS3UVeON+QGbLHpERr1bhC/TatOlc00KFz+GeqaXpGp3FxqBnErx+FE0cfOEB+8T39BtXatIlh1EeNZXEdzFjdojnHzHUfWvnTQ9rh27haslnfXtrOtzZ3D21wu6yxthh8/Uexp/TayWOGyuBiGPdGyycS2sXF3xWSzYxyWenRIJwxwpC+Zl+pOK6XFNHI4SLl2AConYdhXGtC17/AFX/AJTvrlWvNRvmyspxy5ySeYH3Pau4cJXOn6vokOpabICJk8zYBMb43BHbB7U9oobk5vyAl8ewTVbefT73SNWMUii1uPDm8pwYJMK34HlP0qs8HzBuGMnCn7Zcjbf/AHh/zroVtZeBb+LqV0LuRAS00nkUD5ZwK5NxdxTo/D+oD/VvUIZrWR2a7sVQmJX6l0btk7ECmMcHjyLLVpdkRlZvZzWlzcahO5UJcsfFkY7BFBX8MZrlLxIfEjjfmgic8r4+/vsfljFMZNXluYJ4o5JEtmclYQ+AFJyV23xvQTuXXlXw1GNlUHp9atrs8dU4uqos2as5jLPgEHcjHUVHbycxcKBy4yAO29EQ2TzZUA9Pp7UZDpUgXKRgZ2xSftyfXRFMXq3K6eqEr/1+NTBzJO++RymvPbPFcAOuxIzXowUldj0x09aFki+irMISbZBsRjNEOC0Sso3jZTkVi3tyI1GC3L+lNtP0ppFAkXIYcoP12oDVEBmiW/2lWRTg/fxjORjBFNBZosnKuG8JVXLAElCff2o7hfh+eO4ULHlscrBx069DV7tvh7bThZYg0bqQA3YY9u9DlOg0MEp9FBlufs0lvJPM6x+ZREi5ZjkHIB8p2OBn54wKbrqcZs+Sa1tLm3kDIgkjXPLnoQ43Jyeh27VNxfwJe6dBazxxvJFAXZin3iGxj8MUmg4quEuYvEjjs0CYZ0OWRMnu3c+v4DtURyJlJY5RdMo3GXDMWmyjUdMBawmOGTlIMDn90+3ofpVWwQehru/EWn+PHIFmhntZ4iJFhJfylc+Yn94dfUY6Vymz0y6truW2W2eaeJuUgDb1B+RGDXTddHQjYliguJmVI4pCzdPL1qwabwJrN9bySBIFQAAq8mGBNRz6tqlhL4MkCQsnQMuTVh4a4vS6LWF8EtzIQUdfusw2wfTNVwK8qUnSZdqNcPko+rWU+hapLZTlGmhIyVORnAIwaE8dnb7q9cnI60+4ys5puLJ4I1DSyBCAD1PKKStbSQkrJG6EHG4o6xTTaX0pgR9pHF2qaVyyWy22Y9lJhBx+NC61r1xr16Li7NujQqeQRwqmRnODyjc+5paIJHjIUn1wO9RIcJ4jE5JwM1G2TlTLuVlg0KZrniLTVKA4kDYU+gzW/G3EdzqeqSWYZktLV+VYwdiw6sfekp1CWB4p7Z3hmTOHTYjNBgNNLuxLufvHuTUSzNY/bXl2Q2FRyCQbYGK6p8PuGrK10o3ms2ZeG56Bo+Yqv9b1FKzwVo9zp1jeWBaGZEjMoD553GzAg9N966Ff2zahpHhQzSwv4fKvKcYONvpSM/khzBhp2zoXC15BLo0d7HKDbyFVWQ9D2/hXHeMnbX+PdSvoJJBEzJAjIcZVAB+uaHt5r7TQ8AuruP7UjpNBznw1HNkcu+xpPo5uo+IV0uxd2W6kRBzHm5VOebGfTBpbJduXkPtXcihcSpKurTNM8bu+GyjZwMdPnQlowUHcUyuJLOLOLDkY9CZCwH5Uz0PS01GyZxDE685jkbl86t1XHsRn8K3M+mcpubfYhD6uCsSiWVi3KSPlWYbbxA4OxAyM1dbbhsRbTqIVJ8oznP0oOew02O/tkJR/ElVQg/eFAyYlDyWeJ+So9RXulWDiHSnXUEMNuEabKLEg7rtS9ND1B7gQNbvGxOPOMCh3wDljknQHHtnao5dzzdKJu7K4sGKTxsvuBtQrHYfOqOmitV2FaZdraTlmGVYYNGnVV5v2RIJ7UmHWjtIWOS/US7jBx867HHdJRLxyNcEtzcSzEeJze2RVr+HPG8nB+pFpzJJpkx/nEajJX0cD1/Wh9X0zx7Axxp+2jPiJt1GNxVdsJZbmG5tEKjxAG3G5APStvJkWmgo1/BRpt8l64y471njJSqhrLR85SFT98dOZ8bt8ulKIrGwXTWSSGSScty8wGRj09qa8NWNo1hHBdRF3xgyZJ2ovUbJLJoZRMCiMWQFN2OMb46/Ws3Ua7Lljtul+w1DTpKyp6tokeiwQSxzCaG9iE8fhvzBB0KsdsMCDkEelLIEe4mjhTA5ztgU94qle6uVIZynKHAIC8hPUADYA4ofha3RtUViDzKM7djWnocTyqKfkDtW7aWHTdDjt4lPLzbb+uaYSaasoHlAHp3/Gi0OAMVNGCxzXo/y8Y8JDkYIXJw4LrBKgN2I2oSfgmUMxUYbrsuzVd9MVXYA4GKsNvChOCo6bZpPUaeF8o78upHPND4QM00YmGHxjHLviujaT8P7eOJWkCAEDGRk5o6xsoftZbkU8gqz2gCIGzkkbD0rFz6eMeg2HRx8gul8OWtsmCnMx6kjankFhbxKqomMelbWyEoDjemKIsaeYYNY+fh0PRxxiqSFt5p0NzCVeMMOm4rgvxT4LGh6nFe2qFbeT73KmcN64G9fRwAxnGRVK+KumxXPDTSMAGibnVgNwfn2oON1JC+sxKWO/scj0O3hfRwsk0sAROeIYWVGYb5jxggk++etVLi3XbrRCq2sQikdmt5JZBl1dApx7+V13Pp7V0bhuyYWC3EJgUg4Yzx5QH0OOh6Eeuc5rnXxSsBpuoHwo+VZ5o7iIZLKAUZWAycgZUfjTUmYkW0+CiXF7dXczS3Fw80h6sxzmtBKwP6g0+0zhm51yHx4bdVBP9IGwD9KZL8MdVMSlp4EJ3wTnFCeSK7LrHN9IT6fHFcYvIFKXkG5GSecY/WiLvVRc6JdWksLGUsGiZRkfeyfl3/GiJOH7zhW6ga5midLgEK0fYj1pXrYlsLxbi3YrDOObl7K3cfx+tavp+txPG9Lljw3aa7RM8bUbFlpfS2FxFcR4EkDh15hkZByMivXDGdBM6gFskkDAJJzUN5ctcnnfBPTamugRrdxuj8hSP73N3B9qq2o5XCPKoDYokZBEgBywOaJsdJuLtVlQcoDDGfnVq03RNLt5OdEMkgOVMm+PlTKS2TxOUAeYHYCgTwpO5M5B9vpNzZ2S+JnxlYMrL+h9aNt+NJoCtpeRMJCcDkGeb6Uog4jjstNe2uZg11aZU8x3dOqn322+lVpuKZYbc3FvHGL65TDTdTGNxt7+9J7bdDnu7VwOdc4ihg1h2jd5OQeZQpUhu4OaxoHF1rpvEVlqtxauYbdyWCnJwQRn881SRI7MzOzMxOSWOSTU8chbIyBt3qPbiropLPJgomY/0h5gasvBWp29jc31tPcRxQ3FtkO5ACyIcqfn1H1p98L/AIZpxfLLe3pePTYGCHl2ad/6oPYDua7VZfDjhm1i8OLQrFQepaIMx+ZNbstNJOpsVU6dnz3qnFVpNAwiDySlWUN0UE1XbT+dahF4rEs7bt3z2r6k1b4LcI6nCPtGjRQs+4ltSYmB+m35Vxf4kfCe5+HUtvq1jPLfaQ0oUu64kgbsr42IPZh1PpWbnxyi93aDRzb5LcLNMu/tepPc3GXeFTGM/unoTTW9uLi3KSWZScN9+N16H/KkN3cR6fcpfxsrJcDlmUf1uzD5iiv5UgI8/MqdRncfX2pWbsf+m4vsL1S5L2oF5pfmYEFQ4IwBknPpXO7iSOWd3ijESE7IDnAqxcS8QyXyRW8YCIy/tCvRt+1V9YkkZd8AneqqLEtRJOVIhonTGZNRt2XGRIOoyKGbZiB0zWY2ZXDKxVhuCDUxlUkwBddUnvViSxsUd5p0JMYHNyD+z6ZrOhfD3VPES6u7mPTwhDAY8R/Xden41ZuGNKOjx8lzytfSokssvVsEZC59hingJBz1oms1TnM0sOlUkpSFn+ql3zNcw6zE8jsX81uUXftsdqH1FNV0S3a5vbNJ7ePdpoHBC+5zuKsli7gFebKZPXtRTxRzxPDNhopVKSKRsynY5+lZ3vO+RyWFV8TjPEN+l3eOyAjmC752wB+tHcIhUkkbD748x70u1bSX03Up7F2yIJCoZuvKOn5EURochS6WNeg8qj0zXttCtsoS8GOr32y9qwHvREbdDnBoKMt4altjR9qgfY53Nein+w6h3pqdD9aewkuVA7b0m0xMuNsYG+9WHTYg74xmsvVblyMw5GNmxWMkdW3JNOrOdgFAyRSxECEr0zRtukrMADge1Yufc0NQVFgtL4W45yOc/LP4UwS8a5boij+0KW2Fg8j77KF2ydqZrbRRYYspPoDWJnXIT4hAjKkAgbjqOhqscbTxvYNZSElZFIJB3HvViN15jFtyYyPUVW+LtFudStmNuObI3J25fqKXj2L6i9jo55wvCedrC45PsrPh54k5eUjOM+2wBz0zVA+JJl1XXxZSDazQKgHUgjbPfI37966hb2MkshspmlPPHhWTZnXOCv8Ae279a5PxiskfEt8rEItvdNEoVgGAxt+FM2YeOFy5JeGbZtKg8GV8pzcwGM4zVztGt7uPC6hasR+4G8yj3FUvTbGa5uYVGpyRcynlL/1hj8a3XRbv/WK0httRlW5uWIlmiAPhoQRgjpvtSuTlmjCTiqoM4j/kW5gnS4uiyLBMElVcqspUcnv1XGfeqFbwHU9PeC4ITy8ysxwQ46U91bTILHRp4JUmlvUAhMRyfOGwcfOqnbX9tJaX0EqkSEPJGW/dIHSrQuMd0e7F8svlT8im7szG/LzcozjemmiWot0kdyOZiAMelTalasZsosIheVgpwc7LzVtbHESHlwrDIrb3YMqWaCpvv+fIg4tdjOJ+wOGxlT6+1F205kuQxOSE51x2PQ0qVxgoSQD91v6rV60umXUgG2OCpwe5FJ5JWzonuKbJZIBfo4DJhGUj7wJqv28DX10Y0URgnp6Va9Sga/s5baPl52Abc4AAO5PoBSTRbUm5kkEisisQrDo3vS7YSMbZn/VXUyjSRCOYDchTg4qBbGZHMZik58dOU1fNK8WLlOAykb4pub1Yo2dIAXK4zyjY0NSY3+Wj4Z0H4WRQWfAujpEP6WDxnP8AaYkmrFJxdYWPEEWizW9y9y8QlDIAQQQxwBnJPkO1Ur4Z3ksnBeinkYcsDR9P6sjDP4YroVjGssiTG3UyAYD8g5semeteqzwq3Iy3YcNdjuofJpeqFQAcmHBz6bmluvabHxPwxf6bcQSQLfW8kRSbGUbHlbb0YA1Y4oJmh2jc/SgbuGWMBnjcAE9qzEk00Us+JY7qS6tFswnNJjlznqAc4/WjpbOFdLmmHjnOAg5/Kh26+v8A70pTxbW5JGVlik/Ag1YbWePw5YGUNaXUTNGp25WG+KzXHwauB+5e77FduVcTskpDGMBAfYVqU8vOCMdxUt00p5HlILEdQOu1aJDNLDJIsZZIwGc+mdhV0KS7BpQA21WPgLSxq2uW0BRWQSB5SVzhBvVclOWq7/DC7jtdXDMAitiPmz61GKN5EjkXbVJv/wCTXjEBVPKAvoOUYFEDzLuPY0mvrlL7WdTmimEyx3GMjsAo2+mKY2jEczMSVYDFL6yt7NvA/igyFm8TyYG2fwosyM8fiYzjYjNLlcZU8wPUDFExTFThc/51ntNjFlF46jRdZSZPKZYlZsgb9Rn8qh4e08RxLdPu0hyo9BU/G8kdzcRvCMCOMgk9znYfmaMsAY7G3yCCEB+VfTPSMH6UPcXKRkSjWR2TTahDbJzSsPYDfNJX4vu47gNCoWNX2z3qfkNxdDmwR0AGwApnBxHoelR+HJbrcLjfYb+4HUj32ovqEprlT2r/AGRNsk0TjqRXzNBlCN2Ddq6bwzr2mX9v4sdyoOwwwxiuVvqfDuowvLb6fd2iRScjN4f7MOQTynrvgE9O1L4uKILWTltCxyOXnXA2rEx5s2WWxSs7HmlFn0jEkVzIhR0KbDI71NrGr2PDduk1wGYZx5Rua5xwJxNPdNBFO3iEYJycV1rW7DSdS0yN9QhDog8oDcuTilfU5S0rSl5NVNyjcSiXfxeZbr7Ja6cVOceI7+Ue9D2vxI1u8mcRW7OAcKI4g+R69j9aU67xFwtpt0y2nDsl80W2WLcp+VWvg/4sWUekQ3V5ww+k2UgJSWILICAxHmUHnXcHqtYk8spK6E3v3U5Fi4e4kurmCMarptxEpblF0U5BntlTg496tjIvIChDqfzFDafrOk8UWYltZre4iddnUhlI/wCuoOCKKSD7LGED8yAYWl0xyF1Uiktp8VtxXMC55ceMgbdYzynG3vv9a+e+NNQe74j1iFreMSWt6zSSg5Lh98/nX0PrwB4qt1TBe4txHjffzYz8xnNcO+MXAmocA6inFMV62o2Wpy/Z7pZUClZOXYHG2MA4PXI3pnclFWZk4SjklJLhA+h3kL26eIFJjIznvRT3tjNfrKkUkTIw/aIxXcdDt3qi6drlsWDIXU7AoetNm4osUVo5LhhkZyE6fWgtcl1mTRnizima1silq7QzyuU5iMkg9TvuD03G+a59NcS3M8lxPIZJZWLO56sT1Jo3XNQ/lTUHlBbw0ASPm64H8aX9qPjjSEcs90rGX8ovParG28kchce/lxRdrdKkEccytzAdVFIUkKtkbU0s7hHU87MCOmBmmMc9qpFG7GazpuAc+nahVE9xdsLVSZmblQAZ3+VEafZzaxci0sY3eQ7sxGAg9T7V0jROGbDQrUGFRJehctO/X5AdqU1OrhhXPZfFhlkf7HOeJopNCsrfTjIz3V2ni3UhO+M7IPQd8VLoltHfQCI8qFtlYbDI9aH49Ev8tB5OY5Urk96j4b1BYcxtgEHmXepg92NMJDjI0OIrW/tpo0gSS2IblYmTKtv2FEXt9qsN6YUeQQtsCicxJrW31lX1NLiZJZ4lGAE6riiU1WNpnZGbzD7rDcH1q1Ia48MT6dxtxBptpDBZarcwQRrhIwRhR6DIow/ErjHoOIr9R/Yfl/QUKNJS+h5YiscijyZ6EelS23AuszAySRRQwgZLmQHb5Cvcab1HSTxbs1JruzPyYJJ0kS//ABA4qm8snEmrEen2pv8AOsji7iDGDreoHPX+cN/nRNjwgk1hIxkc3HjeGrqdguM9KX8VafHwzp1tGLlp72eXmyygBUA6Y9zS0vW9Bv2whf8AYpPSzS3UVnUYmW/YgE+Mece5PX86bWFg62gW8JRVOUC/eX1pRcaq1w1uzRorQnPMv72/enUuqxyMcO3KBksozy1gZvaeWTh0MaZ0uT13Y6dNF4aRnKjPMkmXX3weo9qQSMbVJrVpAVLjLIcg4z/nRN5qDu2PFEoH3ZFHKy0C8cczlvEKk74IpST54OyNN2jXEBB3kz22BqxaFFJp0bIyt9qmI5YyPu49fegtLSCV8zvH4MHmDFf3sdz6VNret20iqlh4hnBxJck7sB2FMYNsF7kgE0Nba+ttO1xV+0BmlHLOvYZ9PcVeIonEackmV5dj1BriZdi4bJLZzk9zV64Z4muIYfAlkWWAeaPm2KD0z7UhqovI9yH9Hnr4SLhIrIwYBRg1uJmUMGKnIIGDS7T9TGsXTW1pFMZBkczjCkgZwDQms65daNZNczac8TghF8UjHN/GlIRcZJ10PvNGK3MrMrN9nvC5bmaVVGfc7/pVp5eSOOJD91QMAZquPcfbtJhumA555YzJgYBILAmrPAOaTmr6joppq100v+xSVOTf3B5NOml5sSRrzDBAXqKit9AtbTzPah89Tsc/50+t0Xm33+lOrPTo5FBkUE/lU6mFu2jljUinO4hBW3sEXP7xQZP4Uo/kmea4aSUcxY7ALiug6xbQ2Vo07Jyqo32qsQ6hLckSW0SrD6tuWoOLDH6iHjSY94MgMF8i+gArvRid9LjYoWMaggfSuN8FaeZL1Zz15hkHpXcdNk5LdZJR+yC77dq81+IeZL9jT06+Bz66sTb3ZlW2WZSdg43/ABqw6VxHa28K27cPY7BkAb86c6w1k0SSeAFUn79CWFrHJvGgbbsKyMaWSHIX2ovlk1jHDIWntbRbNnPM/IgXJ9Tt196eR58DDMWPbJoe3sWB2BHzo9YyiEYG1Jziovgo2k+Cs6jEI+JNDuygYiWSD/EuQfyrkfxruG1fgeOEyCD7brjeAp+7lI2AHtk/rXYOIpFivdFkDMv8+QnHpg5r50/0gNWAuND4fhdgLaGS/mUHH7SZvLn3CKP8RqseZopqJRjp8j8ujkDq8UrKwKSIcEdwRW8l1PMgSSZ3UdAxzRdyLnV1mvnKySwKvi4ADMvTmx36bmgKdo83yESRAWdvOu5LNG/zG4/I1ASCOlSwo0ltcYc4iCycvrvjP5ioa4g0IK71JbuwkUICWJwAOpNa/Om/Cdup1P7VImUt0LrkdW6CqTltVkxjbo6HwbpH8l2BWUYurjBk36f2RVmYtysFC59GqtafJkKGbLkcysex9KbQ3ZkYxseSYbj0cV5vUycpts2cMUo0UH4g2cjP9qCtyq4Ei9eQ+tVCESFiYsllHNt+dde1OOG9IWRMpOphmU/kfxqn3PDZ0u/jkswGWQMvI24Ld1+orV0eqW1QkJ58L3boiiyvUZQQHSTGDgbV66uJ4sNBlWOQD3oW6WS2kd442jUHdWG6+1bW9xNezwIg5pJD4aL/ABNbKwwTUt3Au5uq8lh0bVoYolW45xIhIwBmrNbcRvqtrLZaXpmpXrMpQ/Z42Yj/AAg02+FHwnttctI9e4hjd7Z2za2WSolUHHPIevLnYDviu32dnDpVqtrYwxW0CDCxQqEVfoP45rWzaPSwe2nJrzdI56ya4RwSx1B7C1lW+0fULMrKoYvCwEZwfvDG1V3jKPQNb0qO+GpyQ6rBKUZHjZo54idvDI25h1IzuPlX1RZrLLK0krFgy8hB6H0+dVHjT4PaLxIXurKKHTbxh5ysWYJ//EQf8y4I96Tlp9Pb2rb/AHsDPVZJKpco+Vhp2mLEzvqFwwQjm5bfsfmat9rwnZXvD9zBo6X0Wsw2v2x4Lhxi9tyMiSNR0Ze69xSrjThDUuCNak0rVLcxpKviQOW5kkT1Vu4B+vrRUfGdw2t6Zq/KkN1Yp4TFDhZI8YxjttkUqoxV7iIzRSpI+VOYBsnvUIZidqvPEuhXEV7e6hBEkensTOjeIB5Tg9PUk9KpTsrOWUYB7VScHF0y12YBIUrk49PWsGvV6qkGKZ6PNLCS0fMeU5ON8Utq6fCW107UuLBpuppI0N1byBRGcEOo5h+Qao74RaMqdsZaRqdxbSC8DxpyjmLl8b+rA0g461Wa91JLSRyfBHM+2AXYZ2HyIrvum8C8KadOJ0097iU4KG4bnX2OOlfP/wASrj7Tx9rsgI/2pl27YwP4VbLpZ4qc/IWeo3raj1hceLw/aqTgxXbJgehHN+uatVtdF4wwY71TdMuUbRja7CWG58YA/vKy4P4Y/OnNneFEjUdOua9b6RqEoRTfhBsc7SLfpjtPNy7YFXayiSKAySkKoGc57Vz/AEq+WJQwBIXct2rXjHime6t47G1lZIiPOF25vbNO+pajZC0Hjk2qwnjHiJdTb7HbYNuDgn+saSafrVvYwi1lVioOQ6kHHzHWksRlikZZcpgAkYz1qW3tnmYs8ewbyjH3u5/hvWO/VPbgo41/dgfcbdncPhj4GoWrSxyq2+MKdj8q7Bf3+laDpitqNzHbhlwS3U+wA3NfLmn3Wq8Nxx3WlyNYmZwORD5ttySN/wAOu46ZorUOIdeubrxL+4kuLhSU8SQ5PXoR6Vh+paiepal0Owz/ABSPoX7VpHEdjJBZ3SqcAqXIBz60v0q6l0y5FpdsokB8r52ce1cN0y91SNSbV5UXrk747bGttU1vVrmdPHupVKYKgt5lx+8CKzsblHgYWp45Pqm2lSeESDGT6V5nXzA7YGT8qovwt4iutU0FF1Fw9wjFS/cgdz9Kd6nraRkhWHOSUxmhy+5C55Qh4xmaTWtMsYWIcXKMSv7oO2R9DXyl8TdbTiDj/XNQiz4LXTRRZ7Rx+RfyWvpLWNcteH9ag1nVHL2lnicnGWflBIAHbJAAr5fvYFvru5vZY0Q3EzzEE7AsxOB64zV8K5sS12RuKgLrC+fTrtLhAGUbOh6Oh2ZT8xWl9CkVwzwxskEhLRBjnA9M98UW2n2zrhX8Nj37UUsLT6JcWM7Lz2x+0WznuP30+vUfI00ZbQptGcGZETn54mUjHQbHP5UPnajdLlWOeRnIANvKBkdypwKCX7oqCD2asPDMy/ZJoigDK4PN3II6VXWppoMvLPInYjI3oWZXEvjdSL1ZSAKFkOEO4buvvTZ5OdE8Y4cHKTr0+opHp7q9ukUh5SR5G/re1GRSyw5QoCrbFXGxrByRtmrB0gi9kkhgaZugIJYHIO9e1K3F5ZSAHlkH7RPZh0oaVJxE4twyKwIaMnKnPcelJ21v7Hp4ndyzhyFBOScVfHicn8SJTS7GjRWupQRzMiGSRPMMbH1qvRW1tpOt27B+RFJdWJHKFIIxn1zSuXiG8mBRSsSFi3KnYmm/DHEOh6Os8uq6DJql0SPCJnCoo9CCD37itTDpppNSfDE55Iydn1JpCJZ2dvbR8ojijWNMdlUYFNUjMm+Djp0pDpE5kVebfYUvhseKY+OZbmN5m0mdl5T9qHh26omw8Pqedtj6da9dlx8vmqM6TOk6Rbx8jcwH1ol4EOwpFY3XEUCRh9O06Y5HO6TFcjPYdqMt9S1S4vOS60iO1t+VszLcBiGB229CKxpW5NlGUL/SD4btdX+HN7emMG60lluoXAGVHMFcfIg/lXygH2B+tfXPxqv/ALH8LuIWMio88K26hurFnXIHvgGvkJMhQD1AxVGuaZZBV/q95NpEenmVmt0kL4zv02B9h1+tJ80a3m8p6Gg3Xkdl9KpILFmK9Xq9UFj1MuG9bm4c12x1eDeSzmWXHZgDup+YJH1pbWUI5uU9GGPlVWzj6qW7+yXrW0JWW250kgcn/dvgr+Rr5r4tl8bizW5OvNfzkf8A5Gru+hXcd7o3DN0rbz2sKuM/8MYb/lr58u5vteqXM53Ek7yHP94mntVPdCBSPZHG7RXgBOMYU+21WG3l/muMebOOtVdnMkhdupOTTW2uCYVGe9W0OZwbQxjlRYbC/wCSLDEnAwQT0NFWka3Woqkmyo3Ublifaq7bTHnEY3JOcU70zVYrW5DEAuwK8w7e4p/NOWdRhYZSvgI1TS5IL12gmID5GcA4z12+lGabY3gORdhckfvhSN85yelMEh+0RBgQ7Dc83WhXt3imLCJ5ABkqq9B861/6dp8OLdJW0ESo6HoenziAO2q2cDc3Oc8rZJ9dvnV20rhG31IGe61q2kkCkv4SqCVPXcCuNw3kllFzywvFDImOZ5Q5J9FVSN/mMD1qx8Pahf6lOifbWhP3eYv5EB7MB615TWuMrUVQziyrpI6TcfDbS4bQzidrsKMIqnC5/jXENW0q40biC7jYuVJx5hkDmI6fLevozRkvoLNLe5e3uGdAVeBjge5Bqi/EvTrGyhRmgczOQSx/e3rJxxasYzK4pgHB93daZamRk5YQviNhfuqB6enSjYdTWSbxpWAWUAHmOxPUfKqfDqxS2eKJyZGiZirDqPb2xUsF+ViSImNFkID52Y+/4712xgVkSFPxL1CHULWO3V3ZvEExiU/fG4H/AF865tcW4CGSXlLAbBRso9quWqA3jszZ8OI4Deoyeh/Oq5cQ/aJRzDZvOQP3VHQUaEaM/LLdKyv+CV5mYY7/ACrCS+G/TmTqwpxcWZa1nuCvkUgD3Y9B+H61Fa2UcdiJZQC8rkKPlV7oFQnlsRGXmiJZCjbd1NLiMHbH0rolvwDxBcadNqcGnubWKMyNk7lR1I9dqpd+lucmJNuuahTT6Kyg12LTU1lMIZwTnDDFQHrWVJBBHUb1MlaKp0y76XqEbRiK6Xyk7sP3T605QEKTHOssQ6EnoKqejXwl8nh5fGck7CnCRPMwMxBHXB8q/wDvWRmx1I0cM7Q1jvLRcBpRkdeXJx+FULVrxbm8mMW0POSg9vX61ZdXu47OxkSN1EjryqEHTPWqa+7Ae1N6HDScwOpnfB6PBbmbt0qUczHqTUajapocFtyc1o0KH1xob290gNjdW90mMhoZA+30q02duxILI4+lfFtvdTWkgkt5pYXByGjcqQfpVn0r4l8Z6cqpa8Taoig5AM3OP/UDXtdR6NlnzCSASPsi3jBTGDWs2Btj8q+Z9O+PfxAswA2sx3A9J7OJv4CpLr4/8eXIwL+xg/tRWSA/ic1kf0HWbul/n/4Bc0dE/wBICyluPhzOV5FVbmNsMcFjhht69a+U5VKEAjfO9XjXuKdY4mZ7jWdRub10Q8vivlV7bAbDrVU1CFZDzxnzDqp7+4pDX6WelnGE3y1YXH8lYvUnmHpUdyoKhgNxUgrDDmyvqKSZZdgYOa9WcYJFeoYU9WBuw+dezWO9Qcde4Q1sRcIaf5vPZW963yOTj/mFclGV5snfpVr4V1BYtIv4ZCC3huqL7HBP6VU2ByfmaYyL9OLIXZiibVsnlz8qGyBRtnZSuEuW/ZW4b+kbod+gHc0PG2pcFl2ExAjp1Y8pPpUviCN15BnlxgjsaK1bTW07UJVQnwy5KnGCKC5VwdsDcY71ozUoOn2X6LBouryRY5mXfoSu/wA6epqMdyHDtIqrvlRux/SqbpQcyuUHNIcgZO3pvnYdT+FWPmP2v7HAxIXMbT+rdNh+nyzTi9QlsUZBY5BvA0JWOWQcwIGx35t9xT/QLkx30EcUZYzEoCP3wDjH02/WqrNcKkEKRIrl0xDDGebYt3P9Yncn3p9pE8trOEthJJ9nUJ4ijZiWAAGN8eUkn0rJ1E1JtoLDLTOjWXGU2lQvbqVdFO2dyoyAcfjmuecd8UzaveoRJI8aY5tjue4J6j5UBPqM8ssiI3lblcvnBdcE7du1BSym45gsQE8znmC9hy8uMe5GaUjCjsmdy4MwSpcupWTll5cKVOSB6CppLxY5Y5mZikWBHIT98qc4Pz3rXR7WW7vjb20AnOTgdOVdvOR2xWk86yXUEBYG3t2ecjlAzjYZx16VPAO+Au9EZDqq8saL5jjoSMkfSkqQ5jeZl5RJn/DRdzcMlioJPjXBLuMb9dh9TWt8nhwvAvWBBGx9Wxk/mallGa6TpbX+k3N6zERW6NcEHoM7L9TgVa/gzwnHrnFLXl3bJJaaXac4V9wZWOF+v3jQERTT+BEt1wH1G6jjYjr4caDI/HNde+DGj/Z+GLq8VFD3d0wY+yDlA/HNKZpfEb02NPIrLNJYQxxCDw18MDBQDAI77fKvj/jHh46Bqur6U2x0+4kiU+qA5Q/gRX2ncxwRI8k0qRKi5Z2bCgepNfNvxkOm3fEWo+FEbQzxRyGeRcc6sgAJHXflyPY1TAqbGfUknFM4cdyc9a9T+PQ9G+zyyza0x8FQSI4s5ycYqS10/heXxh9p1GZo4mkAVAAcDPWmXIxdon024eC5QKQAxxvVuMctuyCZlYugkDA5BU+lKDJwo3JHaWeoiVthJNKAqnHXaidQu2QWedz9mCj2GTQMuNT5DYpuIHrMzSyAE+VRgUnzl6KvZ/GcnOc0KRhxnI70xjW2KRSbt2Z6HvU0Iy3MOgrvPwp+EPCmv8GWOqau8l898k7yKJjDHZhH5OUkb82fXbeqZxT8PLLhzUbO50mW4u9IvedopHUNJbFSQySY2ZdjhhjaphmjJ0FlppqKn4ZQ6khcg5AJ+VdV0HSOHtXt1nuNMtmmIyzFcb/jUK8OQ22v72Ra0eTmTwYwVRMdCOv1r2UvxXhiuMbO/ITfk59FNvjDCpTIDsDvXarzhjTftlxewIq2zKCsToMP747VSPiMmiaHoXj21lEt7LIqRsBgDuSR32oWL8X4ZyqeNr/2AzemThFyTKVcErZXTjqqfxFYbRDcaeNRN14aZ5ACmctjoKDn1SW4tPB8GGNZBmQx5y/oNzsKdaPeXA042kMjBJlCyYHUfwPvWN616hj1OdTx9VQXQaOeROPkR63pcenG3mt7n7TbXMYZXKcpVsZZT8vWlh61bNc0K4mjtoYbi3MKKXZlB+8fb+FVG/SSzn8ItnbrWdGaoHmwuMnwQXCcj56Bt6jzXmZm+8xNY9up9qhsoerHepobaaU5SMkDrnpTu3hju7OJZlSJZJnRiqeYYAP8ar2So2BacH5VMCM0rMVI7MpppLoWlWjJ9su5g7jLLsoB9jiiYxbWSiKCMqq9O5P1o15TqNvGl1bxSwsd3dt/w60dOWRLHFWMLEkueyoWyRvMYoY+fmflQv1I7E/Sm11biRrW1UYiEir6bdSaP+y2VqzG0t0hLbE5JbHz7fSh5oGDI6AgoefbfOK1cWgePE5T7YJLnksF/Yx34KODnqDmq/NpU1qjs8atzOYwCx2Hc7fT86tVs6SojDcMMg01GiLqMHKWww6EjP0rX1+ljlgskOxmePdyilaRaSTSyhleGN4mjVymVA6lt9sbcuf7VNYQVimm8PlkgkU8h2AwuMsep+5+dG3XCN9ZWjtKymHm85yxHbC/LP4VAgnlLo9xIZZWaJYkjHLGGxl85xnGRjHzNebnceGLtNdgNnctK3O7g+CAV2xnbtjp8vTFNNHuDbOUDSO0oMKKuygfvMe22fxNBjTJgkMxjihgZ1VFX7zgZOR6+59TTq30eaGe1mdxLDzK7hBnIyCw2O46Gl5MlWL4+eJFmjjHkkHOinYrjBIPocn2G9FRWksdy0mJ28JnVHIB5cdAT2xkGrFpnCV9p9/FBdwrLBLGzrGNuZASRuf3gMfjXVeF/hjYpaTyXkeRc8xEJZiEDYPzOOmc9s7ZoGTNGKDY8MpsVcJ8C2tjpP8ALkqRR3dvbtMZCCSpCltiT904BH/QrjGsaNPpJS9WQz6ff4ZJiMFNsmNvf0Pevq3U9Ljk0K60xSyxzW72/NncBlKj8M1wHg2NbzS5tI1SIyKrNa3MLjAypwSD6gjNBwzcrbD6vFsjGik2Li4vvFkBMcHnI+XQUTNCRFGr5Dys0j/NiT/l+FOb7hG54ZS4TL3UDOOSZRkiP1YevypVEftl1CFOA8yKM9hzCjNiZli82qabprN+zt3JYe+QM12fhK9vrDhqxS2v7pFmdneGNEIiBb724PXrXGYJlfiqZ87Rs+D8ycfrXbdPvdO4c4N0hzbF73UwSqIMNLjPmJ9MYpTI7dD2jjch3xNDqVxLp7adZ2+p2zLmRJpQh5s7MQRg49K4h8RtCeXjXinTZJ2nmubIXaMzZIcqrAb+hUgexFd10We5uLQzSReGsbg8rdQCK+evjZrOo6D8RNRvLC5eGYpBDzrjPKYwcb/IUTBUZqw3qEf07OT2/wD3ZqI6bJt/5q9op/bzg781tIP/AE1JEC9nqH7pKIf/AFVppMZS8YYG8Ug2/umitUYwDD95MbU71xmjNojKykQDYjH1pNFGcocj8ab62CRZknOYF3JrvJyBI4jKniE4AqO6T9uQn3RsKkE6qApHlHXHerTfcFXk/C0PENpYEJCyxXYHNleb7snpy9j6URQlJNrwcdO/0ZeJoZ4r/gyZuSa5Y3Nq7biRdvEj377cw+tWniXgOKyVbK5kNxOJ5JOdgd4SQYwQfQZ6VyHg7RJdN1ewkGUlinQhlOCD7Ht1rtCS3UmtzrdXE1wrMCvisWKrjoM0v7e2Vo2dO24KMji3DGpZtJLNgVuAQVGcHHfHrT7RNQ1AXJb7ZOkiAqF+ymQOp6jIIxRk/AsF24eMBGI5kI/T50VZaZfaMxH2p99yHGa6UrLQTXZ64ur1YpHubmZYFGVeVBGAB6iuPcZ8TPxNq8fJgWlt5IgOjerfWrl8SNZmmsmtfGLu/lY9gK5m3KHRFUArsd+tThxf+TEtXkt7V0FcnkQL1x/GrTpNty2SNjG3KfequJCh26gbVaYJ4zbWwiYlDGCeXsfQ+hzVdRFtKjT9CcFKTk+QPWZbvSJYbq3l/ZynkkXqrEdMg/8AW1KNTa0u2W4uFkRgNwnQ021u8SazktzIrnIIHMCVI9/xqv3rGSzI7gg/nTGGL9u5Lkz/AFaUFqH7b4Z4PpqxtJFatIExnxH9T7UfbMsbQOkNqgkIHL4fMQCPU0kg2tbgHO4X9aLsJGkmgRFZ35lwijJP0rrvoz415GxvZjGq/aWUYH9Gip+goSC6nuIOU808rXTOB1ZyVAP6Cj7Thu5dQ19L9nXryJhpG/gKZCKPToDDZIIyT1G7OT6tTmHQ5J8vhFnJeAGHTpFJlueXK/7hTk5/tHt8qndmb95sdAAMAe1TG3MaBQVYqAOYH7x71GVPPg4yTtt61v6bTwwxqKIcrIcNnGTvsM+lSWmFuEOAQTjlA3P8K8wAbDffxkA+nvUqosZGGY4IBJq+Wdxoo2ONOhZAY+XlAY8oO+B2q8aHafsgD1pHwxajUYfDABdQCMDt71fNP0/wYlXoe9dj1K9lQfaNHBzEb6bp0VzCnMmQN8Ed6il4C01mVhbgDJ2UDGT1yO9OtHjCYzstPnhWWLKnO1Yeon8+RtQi+0UdPhlZSSwvFK4Ktzcrnm6EHHpg43qyaX8N7SDllUqA6/tIxkjJ649B2+lNLVTzAEDbvT2CZY4huNqzdRfgj2kukDRaDYpEomgjk5FVcOM4xnffvv1pguMZHahJLvxWIQ/T0qWAtybjGKQlFrsNGNEd5/RPk7Yr531hDpPxC1iGMtGs0yXaBc4867j/ABA19BajMArIDjIr5/8AiFNHH8QIWOTz2oHKDucMcUbSJuTRTWJezZaNPvlv4FjlIEi/0Z6c3rSLUeGrV7pbi2QQ3SMzYOyO3YnHQ+/4ipbGVntlOynGfKMEf/qj5rxGUpc4LJ++u4P0pxw8GFdM5RMLvS9buze28kMgclQ645xy7EHoRn0r6OuL3hvR9D0q11eWHxrW1i8IP/SKwQA4xvnrXP8AWY7NdFlNzCs/T7OCA2DkZyPTFONF4307VIVs9atEicf76EAgntlT0PypPLgknaNLRZ8al8ywaXrWjyG41C2gaysoEzPcT5TJ7AA9TivnP4tXkuq8R3V/OpVbwxzIOnIMFeX5jlFdK+JOp20ctrp+mSZtbZfE5gTyyTv3yepVRj25qZcM2/C76p9l4p4a0u+tpreGZJpo+ZrYnyucH93mwSO2SanFCV2kW9QzRyNxx9I+a0QJa3iK/MXjXH0atdHBhv1L43R1/FTX1jxT/o78Fa1Z3VzoFvNoOqx8xWO3YzW8xA5v6Nj0I3HKRXzfxFaazwnqA0/U4bVGKCaGaFAY5oyNnViNx+Yxg0dfLmjKKfGCrIWBG/cVY20y+165tbTTLOe7mWIArGucZPc9B9au/AnBGp8UmK51R0htnXmWERqrNH/XY42HsNzXeODuELPQlhGmwpHHHgeaMH6gevucmjR0sq3SdIhujg8XwF410fQ5+I7mC0YWqiU2Ct4kskY3cjG2y5OPauofAHWdG1Kw1LgsTQ3k0UZurMuf9qtXUc8Tf2kJI+R9q7XYuqSAleVjv5ujV82cXcAXXAHxZTUdAuv5Niumk1DSCEyn2kbtak52DZPzVsUO5cxicnRYNR4U/wBVeII7JwzQs4ltZW/fjPT/AMw6H5VYNbtZIBDqCAjm8jbdxV1t5NJ+KXCdjdyRG1llHiIxHnsrlTyyIf7rAqy9xQb6ZK2mz6bfwqtxD5HXqGHYj296QzZHB8mxpMynGvKKWbaO057YDmEZyM9cEbH8Kr+qTRKHZuY+gqwa7eW8fEl7YpJ/OIoY5GHYg5H+VVq+khUSXFwwCICzfIU7DE45HF+AmLJugpHNuIdLgutUjt2DtI6meUc5wq9FH5MfwqmajHFDeNDEiIqeZsVaZtXH2fVuIZmCyXLmK2Rjg+gGPYD86pEkryks5yXPMxPUk1oyUViqvk3/AIS/7MvNNNm/ieJIWzhRsD7Vst9IymCMlYly2Ce9aRgY6bdK0QLHJJk48u1LpeBfc10boNyxproItG1qwjv4lmtHuYlmjYkB0LAMCRuNjWlhoN/eoH8MW8XaSbI5vkOpqxaZo9rYAPERLNvzSP1+g7U1i08snHghKxlx3wFw3pvED2/D945sOQ+Oqy+IFcPsqsexHzoC2jt7CPwrKNIB0JGzN8z1NSzOZMkDyg465NeUbKFySRtmn8Wnx4naXJfoyihkAydu47fWtL+CNofCdW5XHrg/jU0vNbQhiPuttQlgn8peI0soQJuE6Zz1Of8AKpnK2VbFUD3tgjEutxCB9xyQ4Hse5pjETcx+LhkVjkcwwR67dqcDTLeI85Eeem+5I7delC3a/tmPLhB3XpirwyPorYFhQSSM9vQ1vLuMFQWOxCjfrW2yNhwQTtkb/wDXSs8nN5QCAcAkHoferWdZZPh7qMema3ELh8RF+V1J7HufbpXY7S1Mk0odCjqTlWGCvtiuBWJaK7BTBJOx9vn9K+mNC1KLirhrTtSnCyXPheDK6nDiRNjv74B39fes/UfDIn4Y1g1Htr5C9FNvtnHyp1YXAaEAmhLjSpDkxTqfRZVwfxH+VZhjubcb2zt7xsGH/X0oORKaNHHqcc+mHmVYmOTvUou/JylsA0puLiTGBa3nN/4DbfXFD273Lyri0vsD/wCg4z+IoPs32Me5FeS02RU+bbeiZblYkIzk0ojnuI4+SK0lJPeRlUD8/wCFaNb3dyf213HCn9WFeYn/AMx2H4UpLTuTKS1WKPbItVvgPKCWlkOERQSzfIVxz4l6ENH1K01KfmN5O3KQDlYY855c92J3J7bAV2+ztLSyYtBF+0b78znmdvmx/QYrnnxmtQ2kw3LKcCQe3pT2i08Yyaf2f+jO1Ou934xXBXtMHPaqGIGcMGz5sDt9aI8dGkDO2Uzgcq7j5UJorlrFGLsT4eCOQDA9jRNzsOYmTIAIYHJ3Pf8AzoLXIiwC8k5ZvFjO6AgH37nFBXcMc0njQAKCBz423NT6pDLMDG/KoKsrE7bHrj5dKJJtr3SBJNdtbXYX9okdsWSZ+zLhvLkdc9813C7D48e+LafKI4bt44Ut72Iun3PEyMD8etFvJIk0F0R44jRlV487q2Mg/gOtBGE3Wlxq5KupDA52zg5P5Vtp081nKYZm5Qzbx9cnpnNWVxdoEpNFz0v4ixW1hDbSNPDc2kqS20hXnBCNuhYdsZA226VHxD8O9N+Jlrd21u0UzWl3Nc6ZPCQY3HMrmI/2WV8exAqsXVispDbrJg4K7Y+fpUelXt/w9fC+sriS1uU8weF8cx9xjBHqDXNunRbcqpls4FsuaK5DqQ4kjjfOxUAHK4+eBXTtP00FCY2xy4GB16d65bb8dxaReNqt/phmS7mBuprJgoiZsDm8Nuxb0OxNdd0e5tdSt4r2yuDJC5yGAwVI6qw7EelTq9Ru6KMKgh8wilVc/usO9Vj4p6bwrqfDNxp3FOt2OkFgJra4lmVZYJl3SVF+8cEDYDcZqP4rfFnRfh7pkkfjR3HEciFrKwUE+YjZ5MfdQdTnrivnq20t9elW9126n1DWrl2muyw5fBU7mSZ+o2xyxjAAxms+ClP5XR1F5+D/AMSLO34hXR7mG8nGvS4uXTDxJf55BNGNiElUAtkZBA967nqujtdWjxySCLwgeS4I3Re6t6ivnni34U32jcO6TxWbhtJH2uFbiMRjnsbfIEU7BcecNgsOwYehJ7voesnjrg4mdzBevG1vdogxyTLs2P7JOGH9lhVdRHcty5TL4pOMk06PkKx+Ic9/qulazM0kk0MK2d+nUuCOXxPfop+YNCcccUy3K/ZbaQlXOWbqOUH+JqlaJMsGtWUhyUEyhwvUqTuPwzVnl0e8udLu4rWFg08ycvO2B4QB/iRt861Iwlke5LlErUOENtlWuL2W7WJXwViXlRR0XufqTuTUSKc+Y1ZLTgHUXI8S4t4x35QWxW1xwPcQyyql7DLHbxeNPzqUKrzAYHXLHPSrPDk4tdgIzUnSYFpGh/ygoknleGAnC8i5Z/l6CrJbcMWujXQwDPI68ySydcew6Dp86GtrkfaYlVuVUYKq7KAP4VZb2NZLGCZWVjD0C/1Sd8/rWpPSRwVfYSSoWzcqDBMniE5361AW5gWBydu42qSRieUspwckEnr71iMZU8y9F25cKB6VfpcHWeZW8vKCcE45V2qS2hZnV1VjynOe1egTLJkcw7BjsKNLLygAPjIJDH7x7bDoKHKRSyC58zA+GzDHmB3+gNIbkSaTfxXqZ5P94qtnK9zmrAEUEMyqFA6YOT6ior+2Etu0TR55lGSQcKPT5/XtQ7o4Mx4qCTOeZc5z1BGfrQMyF1MiKQAd2I+7v2qHhu6D20trIXE1p5OYncx/u+/tRksfN95OXGcAdz866PDOAnjOMlwC3tnP1r3L5Wbbc4JI7VOIGyrcpjHcnvWrRtggIQQc4PUj/LbNMIgjjyJSRsVyQMbV2z4I6qLq3vtFl5B5PtUSBt+YYDj8Cp+lcXy/MykkknOTuMfrVu4A1ttB1yxuo3ZhHKAy9mUjDrj3BpbWQcsfBx357KVW3Vl2+lRlWTmwO5B27/8A7o2W4eJswS80bgMpO4ZSMg/hUYvZCAJIYpMe2Kz05NWUBgDkZOOY7YrBYYBLHffrRX2u3OC9lncDZ6yLy3Gwsl2/tVNv7EgomYPiNG3wMgdalt7K4nYqqN+HQVOb8jHh20Sn1betxd3LjeXkHogxUNyXSOCEsYbVXe4lXmO/KBk1yD47a34lvZWUKfs2l3z3FdRmPIjHcnHUmuEfF25M2r28fUA5HzrS9J0+/I5S5pP/AEcuzPDsrNaqrMpjA3TAyPnTWYOckM6kE9cZORsKUcNSH7EmTjzZc4zy+38fwpzOq8pd/TIVj935/wAay8iqTCC+SJyMKgkztg+U0NMOYCOPbJ3fmPl9v4fSmDlnDhPCLkZCDb8PcUvuHEjKArc52Q5zy9unaqo4NVYo9NiTxWbxDy8vLgbDfO+4oaa1Z25kBGBzKWO30oq+AjFt5fEKxlj5c5OduvsKys/jcp5EYyL05Mb/AE2rjjSxabzR8oJODzMcnNTPF5HcSIQPMRkeX6Heh5oirjfY9OYfd+XvRqy+L5WgKg46YGT8/wA6k4HksXudMv4TG/LLA68xxkHlJGPrinvBvG+ocN8I3Wp2sK3craeZ2WQ8w8RQCHx3PXbvQFqytcKX5XB8r7HfFB/De4xYtYcvkt5XgJ7HDkfXbFVyQUouzkznVsL3iDU31/Wr0m+vZDMZZlMnIMEquB6nlq0cC8KX2vavZRPbSXGnfafEuTk819NnKhj/AFBjJ7HFe4Y4OvdX4uuNJubW+i0m2u3jnulXBMYJxyZ652Ge29fR3D8el6Tcx2thEqwRwhIM4HJjZgO+cEb0jkyX8IjWPG4r3ZeBpqWk2+p6PLpd8iXEMsBgmjbcOpGCP8q5F8N9YfgbjKfhbVL5vEkkjsoVmIxMoU/Z5QfUoPCb+0iZ612uUjr2Nco+N/w2n4t06LW9CymuaZ+0jRDg3KDcqD2cYBX1xipx/TsfkVbt2f/Z" alt="Umut Simsek" width="34" height="34" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div>
+          <div class="f-role"><span class="es">Fundador de la primera academia para IBs de Latinoamérica</span><span class="en">Founder of the first IB academy in Latin America</span></div>
+          <div class="f-name"><b>Umut Simsek</b></div>
+        </div>
+      </div>
+      <h1><span class="es">De Trader a <span class="grad">Empresario</span></span><span class="en">From Trader to <span class="grad">Entrepreneur</span></span></h1>
+      <p class="lead hero-sub">
+        <span class="es"><b style="color:var(--text)">Formación gratuita para IBs —y para quienes quieren serlo:</b> el sistema completo para conseguir, cuidar y multiplicar tu cartera —y convertir tu trabajo de IB en una empresa que crece cada mes.</span>
+        <span class="en"><b style="color:var(--text)">Free training for IBs —and for those who want to become one:</b> the complete system to win, keep and multiply your portfolio —and turn your IB work into a business that grows every month.</span>
+      </p>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+        </a>
+        <a href="#camino" class="btn btn-ghost"><span class="es">Ver de qué trata</span><span class="en">See what it covers</span> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section id="quees">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">En resumen</span><span class="en">In short</span></div>
+      <h2><span class="es">¿Qué es IB ACADEMY?</span><span class="en">What is IB ACADEMY?</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">Una academia creada con un objetivo claro: que aprendas a <b style="color:var(--text)">gestionar y hacer crecer tu comunidad como un negocio</b>. Aquí no se enseña a operar ni se prometen ingresos — se enseña el trabajo del IB: cómo atraer clientes, cómo atenderlos para que se queden, y cómo organizarlo todo en un sistema que no dependa de tu memoria.</span>
+        <span class="en">An academy built with one clear goal: that you learn to <b style="color:var(--text)">manage and grow your community like a business</b>. It doesn't teach you to trade and it promises no income — it teaches the IB's job: how to attract clients, how to support them so they stay, and how to organize all of it into a system that doesn't depend on your memory.</span>
+      </p>
+    </div>
+    <div class="grid c2 qa" style="margin-top:30px">
+      <div class="card reveal">
+        <h3><span class="es">¿Qué es?</span><span class="en">What is it?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">Una academia en <b style="color:var(--text)">5 etapas</b>: de tu primer cliente a tu propia empresa.</span><span class="en">An academy in <b style="color:var(--text)">5 stages</b>: from your first client to your own company.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Formación + práctica:</b> contenido para estudiar y role play 1 a 1 para aplicarlo.</span><span class="en"><b style="color:var(--text)">Training + practice:</b> content to study and 1-on-1 role play to apply it.</span></li>
+          <li><span class="es">Sobre <b style="color:var(--text)">el trabajo del IB</b>, no sobre operar: captar, atender, retener y sistematizar.</span><span class="en">About <b style="color:var(--text)">the IB's job</b>, not about trading: attract, support, retain and systemize.</span></li>
+          <li><span class="es">Avanzas a tu ritmo, y cada etapa se aplica el mismo día que la lees.</span><span class="en">You go at your own pace, and every stage applies the same day you read it.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Para quién?</span><span class="en">Who is it for?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">IBs con una comunidad activa que quieren <b style="color:var(--text)">dejar de improvisar</b>.</span><span class="en">IBs with an active community who want to <b style="color:var(--text)">stop improvising</b>.</span></li>
+          <li><span class="es">IBs que traen clientes pero <b style="color:var(--text)">los pierden en el primer mes</b>.</span><span class="en">IBs who bring clients in but <b style="color:var(--text)">lose them in the first month</b>.</span></li>
+          <li><span class="es">Traders y creadores de contenido que quieren monetizar su audiencia como IB.</span><span class="en">Traders and content creators who want to monetize their audience as an IB.</span></li>
+          <li><span class="es">Y si <b style="color:var(--text)">todavía no eres IB</b>: para empezar con un sistema desde el día uno.</span><span class="en">And if <b style="color:var(--text)">you're not an IB yet</b>: to start with a system from day one.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Qué te llevas?</span><span class="en">What do you get?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es"><b style="color:var(--text)">De dónde salen tus clientes</b> — las cuatro fuentes y cuántas conversaciones necesitas cada día.</span><span class="en"><b style="color:var(--text)">Where your clients come from</b> — the four sources and how many conversations you need daily.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Guiones para cada conversación</b> — primer mensaje, las seis objeciones, el cliente que perdió, y cuándo decir «todavía no».</span><span class="en"><b style="color:var(--text)">Scripts for every conversation</b> — first message, the six objections, the client who lost, and when to say "not yet".</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tus números y qué hacer con ellos</b> — qué medir cada noche y la tabla que te dice qué arreglar cuando algo falla.</span><span class="en"><b style="color:var(--text)">Your numbers and what to do with them</b> — what to track each night and the table that tells you what to fix when something's off.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tu cartera, ordenada</b> — cómo repartir a tus clientes en grupos, detectar al que se enfría y pedir referidos sin incomodar.</span><span class="en"><b style="color:var(--text)">Your portfolio, organised</b> — how to split clients into groups, spot the one going cold and ask for referrals without being awkward.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Sistemas que trabajan por ti</b> — CRM, bots, calendario de contenido y qué delegar primero.</span><span class="en"><b style="color:var(--text)">Systems that work for you</b> — CRM, bots, content calendar and what to delegate first.</span></li>
+          <li><span class="es"><b style="color:var(--text)">Tu propia red</b> — cómo eliges, formas y sigues a un sub-IB que replica tu método.</span><span class="en"><b style="color:var(--text)">Your own network</b> — how you choose, train and follow up a sub-IB who replicates your method.</span></li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3><span class="es">¿Por qué es gratis?</span><span class="en">Why is it free?</span></h3>
+        <ul class="clean" style="margin:0">
+          <li><span class="es">Soy IB Manager en Weltrade. Mi trabajo es que los IBs de la red crezcan — y crecen más cuando trabajan con método.</span><span class="en">I'm an IB Manager at Weltrade. My job is to help the IBs in our network grow — and they grow more when they work with a method.</span></li>
+          <li><span class="es">No hay un curso de pago detrás, ni un «nivel premium»: lo que ves es todo lo que hay.</span><span class="en">There's no paid course behind this, no "premium tier": what you see is all there is.</span></li>
+          <li><span class="es">Cuando tu comunidad crece con un sistema, gana tu negocio, gana el bróker y gano yo. Por eso invierto mi tiempo en esto.</span><span class="en">When your community grows with a system, your business wins, the broker wins and I win. That's why I invest my time in this.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El problema</span><span class="en">The problem</span></div>
+      <h2><span class="es">Si algo de esto te suena, esta academia es para ti.</span><span class="en">If any of this sounds familiar, this academy is for you.</span></h2>
+    </div>
+
+    <div class="glabel reveal"><span class="es">Si empiezas desde cero</span><span class="en">If you're starting from zero</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por dónde empiezo si todavía no tengo un solo cliente?</span><span class="en">Where do I start if I don't have a single client yet?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Cómo hablo con alguien sin sonar a vendedor?</span><span class="en">How do I talk to someone without sounding like a salesperson?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Y si escribo y nadie me responde?</span><span class="en">What if I write and nobody replies?</span></h3></div>
+    </div>
+
+    <div class="glabel reveal"><span class="es">Si ya tienes clientes</span><span class="en">If you already have clients</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tus clientes desaparecen en el primer mes?</span><span class="en">Why do your clients disappear in the first month?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué ganas dos clientes y pierdes dos?</span><span class="en">Why do you win two clients and lose two?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tu negocio se detiene cuando tú te detienes?</span><span class="en">Why does your business stop when you stop?</span></h3></div>
+    </div>
+
+    <p class="lead reveal" style="margin-top:26px;color:var(--text)">
+      <span class="es">Ninguna de estas es mala suerte. Cada una tiene un proceso que la resuelve — y eso es exactamente lo que se enseña dentro.</span>
+      <span class="en">None of these is bad luck. Each one has a process that solves it — and that's exactly what's taught inside.</span>
+    </p>
+  </div>
+</section>
+
+<!-- CAMINO / 5 ETAPAS -->
+<section id="camino">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El camino</span><span class="en">The path</span></div>
+      <h2><span class="es">5 etapas, de tu primer cliente a tu propia empresa.</span><span class="en">5 stages, from your first client to your own company.</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">Esto es lo que consigues en cada etapa. El método completo —guiones, plantillas y números— se comparte dentro de la academia.</span>
+        <span class="en">This is what you get in each stage. The full method —scripts, templates and numbers— is shared inside the academy.</span>
+      </p>
+    </div>
+
+    <div style="margin-top:38px">
+      <!-- 01 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">01</div>
+          <h3><span class="es">El Primer Cliente</span><span class="en">The First Client</span></h3>
+          <p class="out"><span class="es">Sabrás exactamente qué decir desde el primer mensaje hasta el primer depósito — sin improvisar y sin prometer nada.</span><span class="en">You'll know exactly what to say from the first message to the first deposit — no improvising, no promises.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Un momento real</span><span class="en">A real moment</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Hola, vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">Hi, I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+            <div class="b me blur"><span class="es">Respuesta completa disponible dentro de la academia, junto con el guión de la conversación entera y las seis objeciones más frecuentes.</span><span class="en">Full answer available inside the academy, along with the complete conversation script and the six most frequent objections.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Guión completo en la academia</span><span class="en">Full script inside the academy</span></span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">02</div>
+          <h3><span class="es">La Disciplina Diaria</span><span class="en">The Daily Discipline</span></h3>
+          <p class="out"><span class="es">Tendrás un número diario que depende solo de ti — y un sistema para cumplirlo incluso en tus peores días.</span><span class="en">You'll have a daily number that depends only on you — and a system to hit it even on your worst days.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu embudo diario</span><span class="en">Your daily funnel</span></span>
+          <div class="mfunnel">
+            <span><span class="n">?</span> <span class="es">conversaciones</span><span class="en">conversations</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">?</span> <span class="es">registros</span><span class="en">sign-ups</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">?</span> FTD</span>
+          </div>
+          <p class="blur" style="text-align:center"><span class="es">Las proporciones exactas y cómo subirlas sin romper tu constancia.</span><span class="en">The exact ratios and how to raise them without breaking your consistency.</span></p>
+          <span class="lock">🔒 <span class="es">Los números, dentro</span><span class="en">The numbers, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">03</div>
+          <h3><span class="es">Retener y Multiplicar</span><span class="en">Retain &amp; Multiply</span></h3>
+          <p class="out"><span class="es">Dejarás de perder dos clientes por cada dos que ganas: tu cartera deja de ser un balde y se vuelve un motor.</span><span class="en">You'll stop losing two clients for every two you win: your portfolio stops being a bucket and becomes an engine.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Señales de fuga</span><span class="en">Churn signals</span></span>
+          <p class="open"><span class="es">7+ días sin operar · salió del grupo · responde en monosílabos…</span><span class="en">7+ days without trading · left the group · one-word replies…</span></p>
+          <p class="blur"><span class="es">Qué hacer en las primeras 24 horas, con los mensajes exactos para cada caso y el punto de control semanal.</span><span class="en">What to do in the first 24 hours, with the exact messages for each case and the weekly control point.</span></p>
+          <span class="lock">🔒 <span class="es">El plan de 24h, dentro</span><span class="en">The 24h plan, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">04</div>
+          <h3><span class="es">La Sistematización</span><span class="en">Systemization</span></h3>
+          <p class="out"><span class="es">Tu negocio dejará de vivir en tu cabeza: WhatsApp Business, bots y un CRM trabajando por ti, incluso cuando duermes.</span><span class="en">Your business will stop living in your head: WhatsApp Business, bots and a CRM working for you, even while you sleep.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu CRM: nadie se pierde</span><span class="en">Your CRM: nobody slips away</span></span>
+          <div class="mboard">
+            <div class="mcol"><b><span class="es">Nuevo</span><span class="en">New</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b>FTD</b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b><span class="es">Inactivo</span><span class="en">Inactive</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+          </div>
+          <span class="lock">🔒 <span class="es">El sistema completo, dentro</span><span class="en">The full system, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">05</div>
+          <h3><span class="es">La Empresa Profesional</span><span class="en">The Professional Company</span></h3>
+          <p class="out"><span class="es">Pasarás de ser «un IB con clientes» a dueño de una empresa con mentalidad, equipo y números.</span><span class="en">You'll go from being "an IB with clients" to the owner of a business with mindset, a team and numbers.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Lo que puedes hacer como empresa</span><span class="en">What you can do as a company</span></span>
+          <p class="open"><span class="es">1 · Contratar un equipo real</span><span class="en">1 · Hire a real team</span></p>
+          <p class="blur"><span class="es">2 · Construir una marca propia · 3 · Llegar a clientes corporativos · 4 · Reinvertir capital · 5 · Diversificar ingresos · 6 · Escalar y replicar tu método</span><span class="en">2 · Build your own brand · 3 · Reach corporate clients · 4 · Reinvest capital · 5 · Diversify income · 6 · Scale and replicate your method</span></p>
+          <span class="lock">🔒 <span class="es">Las 6 puertas, dentro</span><span class="en">The 6 doors, inside</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE PLAY -->
+<section id="roleplay">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Práctica 1 a 1</span><span class="en">1-on-1 practice</span></div>
+      <h2><span class="es">Role Play: practica conmigo, no con tus clientes.</span><span class="en">Role Play: practice with me, not with your clients.</span></h2>
+    </div>
+
+    <div class="grid c2" style="margin-top:28px">
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Qué es un role play?</span><span class="en">What is a role play?</span></h3>
+        <p><span class="es">Es una simulación: <b style="color:var(--text)">yo hago de cliente y tú de IB</b>. No es una clase ni una charla — es la conversación real, con sus silencios, sus objeciones y sus momentos incómodos. La única diferencia es que aquí equivocarte no te cuesta un cliente.</span><span class="en">It's a simulation: <b style="color:var(--text)">I play the client and you play the IB</b>. It's not a class or a chat — it's the real conversation, with its silences, its objections and its uncomfortable moments. The only difference is that here, getting it wrong doesn't cost you a client.</span></p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Por qué funciona?</span><span class="en">Why does it work?</span></h3>
+        <p><span class="es">Ningún piloto aprende a aterrizar estrellando aviones: entrena en un simulador. Con las conversaciones pasa igual. Puedes leer diez veces el guión perfecto, pero cuando un lead real dice algo que no esperabas, se te olvida todo. <b style="color:var(--text)">Lo que se practica bajo presión sale solo; lo que solo se lee, se improvisa</b> — y cada conversación improvisada es un lead que se enfría.</span><span class="en">No pilot learns to land by crashing planes: they train in a simulator. Conversations work the same way. You can read the perfect script ten times, but when a real lead says something you didn't expect, it all disappears. <b style="color:var(--text)">What you practice under pressure comes out on its own; what you only read, you improvise</b> — and every improvised conversation is a lead going cold.</span></p>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin:38px 0 6px;color:var(--gold)"><span class="es">Cómo es una sesión</span><span class="en">What a session looks like</span></h3>
+    <div class="card reveal" style="margin-top:12px">
+      <ul class="rp-how" style="margin:0">
+        <li><span class="es"><b>Elegimos el escenario</b> según la etapa en la que estás.</span><span class="en"><b>We pick the scenario</b> based on the stage you're in.</span></li>
+        <li><span class="es"><b>Primero lo hago yo:</b> ves cómo se maneja.</span><span class="en"><b>First I do it:</b> you see how it's handled.</span></li>
+        <li><span class="es"><b>Ahora tú:</b> yo soy el cliente, y no te lo pongo fácil.</span><span class="en"><b>Now you:</b> I'm the client, and I don't make it easy.</span></li>
+        <li><span class="es"><b>Paramos, corrijo dos cosas concretas</b> y repetimos la misma escena.</span><span class="en"><b>We stop, I correct two specific things</b> and we run the same scene again.</span></li>
+      </ul>
+    </div>
+
+    <h3 class="reveal" style="margin:44px 0 6px;color:var(--gold)"><span class="es">Los escenarios, uno por uno</span><span class="en">The scenarios, one by one</span></h3>
+    <p class="muted reveal" style="font-size:.92rem;max-width:680px">
+      <span class="es">Cada escenario practica una etapa de la academia. Aquí ves la situación; la técnica se trabaja en la sesión.</span>
+      <span class="en">Each scenario practices one stage of the academy. Here you see the situation; the technique is worked in the session.</span>
+    </p>
+
+    <div style="margin-top:28px">
+      <!-- RP 1 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 1</span><span class="en">Practices Stage 1</span></div>
+          <h3><span class="es">El primer contacto</span><span class="en">The first contact</span></h3>
+          <p class="out"><span class="es">Abrir una conversación con alguien que no te conoce, diagnosticar en dos preguntas y responder a la desconfianza sin sonar a vendedor.</span><span class="en">Open a conversation with someone who doesn't know you, diagnose in two questions and answer distrust without sounding like a salesperson.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 2 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que perdió</span><span class="en">The client who lost</span></h3>
+          <p class="out"><span class="es">La conversación que más IBs evitan: estar presente cuando tu cliente pierde, sin prometer nada y sin desaparecer.</span><span class="en">The conversation most IBs avoid: being there when your client loses, promising nothing and not disappearing.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Perdí casi todo lo que puse. Esto no funciona.</span><span class="en">I lost almost everything I put in. This doesn't work.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 3 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que se va</span><span class="en">The client who's leaving</span></h3>
+          <p class="out"><span class="es">Reconocer las señales de fuga y saber qué decir en las primeras 24 horas, antes de que sea tarde.</span><span class="en">Recognize the churn signals and know what to say in the first 24 hours, before it's too late.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">ok</span><span class="en">ok</span></div>
+          </div>
+          <p class="open" style="margin-top:8px"><span class="es">Lleva 10 días sin operar. Responde en una palabra.</span><span class="en">10 days without trading. One-word replies.</span></p>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 4 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">Subir de paquete</span><span class="en">Moving up a package</span></h3>
+          <p class="out"><span class="es">Hacer evidente el valor del siguiente nivel sin presionar — y reconocer cuándo el cliente todavía no está listo.</span><span class="en">Make the value of the next level obvious without pressuring — and recognize when the client isn't ready yet.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Estoy bien así. No necesito más.</span><span class="en">I'm fine like this. I don't need more.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+
+      <!-- RP 5 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 5</span><span class="en">Practices Stage 5</span></div>
+          <h3><span class="es">Reclutar un sub-IB</span><span class="en">Recruiting a sub-IB</span></h3>
+          <p class="out"><span class="es">Detectar al cliente que puede convertirse en tu socio y proponérselo sin que suene a venta.</span><span class="en">Spot the client who can become your partner and propose it without sounding like a pitch.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">¿Y yo también podría hacer lo que haces tú?</span><span class="en">Could I do what you do, too?</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note reveal">
+      <span class="es"><b>Sesiones 1 a 1, en vivo y sin grabación.</b> Cada sesión dura <b>30 minutos</b> y trabaja <b>un solo escenario</b>; se agendan en fechas separadas, a medida que avanzas por las etapas. Nadie más escucha: es tu espacio para equivocarte sin que te cueste un cliente.</span>
+      <span class="en"><b>1-on-1 sessions, live and never recorded.</b> Each session lasts <b>30 minutes</b> and works on <b>a single scenario</b>; they're scheduled on separate dates as you move through the stages. Nobody else listens: it's your space to get it wrong without it costing you a client.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section id="confianza">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Respaldo</span><span class="en">Backing</span></div>
+      <h2><span class="es">¿Por qué confiar en esta academia?</span><span class="en">Why trust this academy?</span></h2>
+    </div>
+    <div class="card reveal" style="margin-top:28px;border-color:rgba(231,200,138,.24)">
+      <ul class="clean" style="margin:0">
+        <li><span class="es"><b style="color:var(--text)">Respaldada por Weltrade</b> — un bróker regulado, en el mercado desde 2006, presente en +40 países y con +1M de usuarios.</span><span class="en"><b style="color:var(--text)">Backed by Weltrade</b> — a regulated broker, in the market since 2006, present in +40 countries and with +1M users.</span></li>
+        <li><span class="es"><b style="color:var(--text)">La primera academia para IBs de Latinoamérica</b> — no existe otra así en la región.</span><span class="en"><b style="color:var(--text)">The first IB academy in Latin America</b> — there's no other like it in the region.</span></li>
+        <li><span class="es"><b style="color:var(--text)">Método práctico, no teoría</b> — cada etapa se aplica desde el primer día.</span><span class="en"><b style="color:var(--text)">Practical method, not theory</b> — every stage applies from day one.</span></li>
+        <li><span class="es"><b style="color:var(--text)">Gratuita</b> — tu única inversión es tu tiempo y tu constancia.</span><span class="en"><b style="color:var(--text)">Free</b> — your only investment is your time and consistency.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="paraquien">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Filtro</span><span class="en">Filter</span></div>
+      <h2><span class="es">No es para todos.</span><span class="en">It's not for everyone.</span></h2>
+    </div>
+    <div class="grid c2 reveal" style="margin-top:28px">
+      <div class="card" style="border-color:rgba(62,207,142,.24)">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">Es para ti si…</span><span class="en">It's for you if…</span></h3>
+        <ul class="clean">
+          <li><span class="es">Tienes una comunidad o la estás construyendo en serio.</span><span class="en">You have a community or you're building one seriously.</span></li>
+          <li><span class="es">Trabajas —o quieres trabajar— como IB con Weltrade.</span><span class="en">You work —or want to work— as an IB with Weltrade.</span></li>
+          <li><span class="es">Estás dispuesto a aplicar, no solo a leer.</span><span class="en">You're willing to apply, not just read.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(248,113,113,.2)">
+        <h3 style="color:#f87171;margin-bottom:8px"><span class="es">No es para ti si…</span><span class="en">It's not for you if…</span></h3>
+        <ul class="clean no">
+          <li><span class="es">Ofreces garantías o promesas de ganancia a tu comunidad.</span><span class="en">You offer guarantees or profit promises to your community.</span></li>
+          <li><span class="es">Ves a tus clientes como depósitos, no como una cartera a largo plazo.</span><span class="en">You see your clients as deposits, not as a long-term portfolio.</span></li>
+          <li><span class="es">Desapareces cuando tu cliente pierde.</span><span class="en">You disappear when your client loses.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESO -->
+<section id="acceso">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Acceso</span><span class="en">Access</span></div>
+      <h2><span class="es">Cómo se accede</span><span class="en">How to get access</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">El contenido completo no es público: se comparte solo con los IBs de nuestra red.</span>
+        <span class="en">The full content isn't public: it's shared only with the IBs in our network.</span>
+      </p>
+    </div>
+    <div class="steps reveal" style="margin-top:22px">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3><span class="es">Agenda una reunión de 30 minutos</span><span class="en">Book a 30-minute meeting</span></h3>
+          <p><span class="es">Conmigo, sin compromiso y sin costo.</span><span class="en">With me, no commitment and no cost.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3><span class="es">Hablamos de tu comunidad y tus objetivos</span><span class="en">We talk about your community and your goals</span></h3>
+          <p><span class="es">Dónde estás hoy, a dónde quieres llegar y qué te está frenando.</span><span class="en">Where you are today, where you want to go and what's holding you back.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3><span class="es">Si encajas, te doy acceso completo a la academia</span><span class="en">If it's a fit, I give you full access to the academy</span></h3>
+          <p><span class="es">Las 5 etapas completas —guiones, plantillas y números— y las sesiones de <b style="color:var(--text)">role play</b>, que agendamos aparte a medida que avanzas.</span><span class="en">The 5 full stages —scripts, templates and numbers— plus the <b style="color:var(--text)">role play</b> sessions, scheduled separately as you progress.</span></p>
+          <a href="academia.html" class="btn btn-ghost btn-sm" style="margin-top:12px"><span class="es">Ya tengo mi clave → Entrar</span><span class="en">I already have my key → Log in</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="note reveal">
+      <span class="es"><b>¿Por qué no está abierto?</b> Porque el sistema es el resultado de años de trabajo con IBs reales — y porque acompañarte de verdad solo es posible con un grupo cuidado, no con una lista abierta.</span>
+      <span class="en"><b>Why isn't it open?</b> Because the system is the result of years of work with real IBs — and because truly supporting you is only possible with a curated group, not an open list.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Antes de agendar</span><span class="en">Before you book</span></div>
+      <h2><span class="es">Preguntas frecuentes</span><span class="en">Frequently asked questions</span></h2>
+    </div>
+    <div class="faq reveal" style="margin-top:28px;max-width:760px">
+      <details>
+        <summary><span class="es">¿Tengo que ser IB de Weltrade?</span><span class="en">Do I have to be a Weltrade IB?</span></summary>
+        <p><span class="es">Sí. La academia está construida sobre el programa de IB de Weltrade: sus paquetes, su club de socios y sus herramientas. Si todavía no eres IB, en la reunión vemos cómo empezar.</span><span class="en">Yes. The academy is built on Weltrade's IB program: its packages, its partner club and its tools. If you're not an IB yet, we'll look at how to start during the meeting.</span></p>
+      </details>
+      <details>
+        <summary><span class="es">¿Cuánto tiempo necesito?</span><span class="en">How much time do I need?</span></summary>
+        <p><span class="es">Cada etapa se aplica el mismo día que la lees. La rutina diaria está pensada para unas 3 horas; si tienes menos, ajustamos el número diario, no el método.</span><span class="en">Every stage applies the same day you read it. The daily routine is designed for about 3 hours; if you have less, we adjust the daily number, not the method.</span></p>
+      </details>
+      <details>
+        <summary><span class="es">¿Me enseñan a operar o me dan señales?</span><span class="en">Will you teach me to trade or give me signals?</span></summary>
+        <p><span class="es">No. Aquí no se enseña a operar ni se dan señales: se enseña el trabajo del IB — captar, atender, retener y sistematizar.</span><span class="en">No. This doesn't teach trading and doesn't give signals: it teaches the IB's job — attract, support, retain and systemize.</span></p>
+      </details>
+      <details>
+        <summary><span class="es">¿Qué pasa en la reunión de 30 minutos?</span><span class="en">What happens in the 30-minute meeting?</span></summary>
+        <p><span class="es">Hablamos de tu comunidad, tus números y qué te frena. No es una venta: no hay nada que comprar. Si encajas, sales con el acceso; si no, sales con dos o tres cosas concretas para aplicar igual.</span><span class="en">We talk about your community, your numbers and what's holding you back. It's not a sales call: there's nothing to buy. If it's a fit, you leave with access; if not, you leave with two or three concrete things to apply anyway.</span></p>
+      </details>
+      <details>
+        <summary><span class="es">¿Y si todavía no tengo comunidad?</span><span class="en">What if I don't have a community yet?</span></summary>
+        <p><span class="es">Puedes entrar. La Etapa 1 empieza exactamente ahí: de dónde salen tus primeros clientes y qué decirles. Lo que sí necesitas es estar dispuesto a hacer el trabajo diario.</span><span class="en">You can join. Stage 1 starts exactly there: where your first clients come from and what to say to them. What you do need is to be willing to do the daily work.</span></p>
+      </details>
+      <details>
+        <summary><span class="es">¿Puedo compartir el contenido?</span><span class="en">Can I share the content?</span></summary>
+        <p><span class="es">El acceso es personal. Puedes usar todo con tu comunidad; lo que no puedes es publicarlo ni revenderlo.</span><span class="en">Access is personal. You can use all of it with your community; what you can't do is publish it or resell it.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="reveal bhead">
+      <div class="kicker"><span class="es">Blog</span><span class="en">Blog</span></div>
+      <h2><span class="es">El trabajo real de un IB</span><span class="en">The real work of an IB</span></h2>
+      <p class="lead" style="margin-top:14px"><span class="es">Cómo se consiguen clientes, por qué se van, qué medir y cómo organizar tu cartera. Sin teoría de trading y sin promesas de ingresos.</span><span class="en">How clients are won, why they leave, what to measure and how to organise your portfolio. No trading theory, no income promises.</span></p>
+      <p class="muted" style="font-size:.86rem;margin-top:8px"><span class="es">Los artículos están en español.</span><span class="en">Articles are in Spanish.</span></p>
+    </div>
+    <div class="blog-list reveal" style="margin-top:28px">
+      <a class="card" href="#blog/fundador" data-post="fundador">
+        <h3>El fundador de la primera academia para IBs en LATAM</h3>
+        <p>Durante años vi la misma escena: un IB con talento, con comunidad, con ganas… y completamente solo. Por qué construí IB ACADEMY, qué es y qué no es.</p>
+        <div class="bmeta"><span>4 de septiembre de 2026</span><span>·</span><span>6 min</span><span>·</span><span class="tag">Origen</span></div>
+      </a>
+      <a class="card" href="#blog/por-que-retiran" data-post="por-que-retiran">
+        <h3>Por qué tus clientes depositan y retiran a los pocos días</h3>
+        <p>Casi ningún IB pierde clientes por mala suerte. Las tres razones reales por las que un cliente se va en los primeros días —y la pregunta que reordena todo el problema.</p>
+        <div class="bmeta"><span>3 de septiembre de 2026</span><span>·</span><span>5 min</span><span>·</span><span class="tag">Retención</span></div>
+      </a>
+    </div>
+    <article class="post" id="post-fundador">
+      <button type="button" class="back" data-back>← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
+      <div class="kicker">Origen</div>
+      <h2 class="ptitle">El fundador de la primera academia para IBs en LATAM</h2>
+      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>4 de septiembre de 2026</span><span>·</span><span>6 min de lectura</span></div>
+      <p class="plead">Me llamo Umut Simsek. Soy IB Manager en Weltrade para Latinoamérica, y construí IB ACADEMY porque durante años vi la misma escena repetirse: un IB con talento, con comunidad, con ganas… y completamente solo.</p>
+      <h3>Lo que vi durante años</h3>
+      <p>Un IB nuevo recibe tres cosas de cualquier bróker: un enlace de referido, una tabla de comisiones y una carpeta con banners. Y a partir de ahí, que se las arregle.</p>
+      <p>Nadie le enseña qué decirle a la primera persona que le escribe «¿esto es una estafa?». Nadie le explica por qué un cliente que depositó ayer retira hoy. Nadie le dice cuántas conversaciones necesita tener cada día para que el negocio se sostenga.</p>
+      <p>Los que crecen, crecen a fuerza de errores caros. Los demás se van a los tres meses convencidos de que «esto no era para ellos», cuando lo único que les faltó fue <b>un método</b>.</p>
+      <h3>La pregunta que no me dejaba tranquilo</h3>
+      <p>Como manager, mi trabajo es que los IBs de la red crezcan. Y durante mucho tiempo lo hice de la única forma posible: uno por uno, por WhatsApp, repitiendo las mismas explicaciones a personas distintas.</p>
+      <p>Funcionaba, pero no escalaba. Y me dejaba con una pregunta: si el trabajo del IB tiene reglas —y las tiene—, <b>¿por qué nadie las ha puesto en orden?</b></p>
+      <p>Busqué. Hay cursos de trading por todas partes, y hay programas de afiliados que te explican cómo cobrar. Pero una formación sobre el <b>trabajo del IB</b> —captar, atender, retener, organizar una cartera, construir un equipo— en español y para nuestra región, no la encontré. Así que la construí.</p>
+      <h3>Por qué «academia» y no «curso»</h3>
+      <p>Un curso se termina. Una academia te acompaña mientras trabajas.</p>
+      <p>IB ACADEMY son cinco etapas, desde tu primer cliente hasta tu propia empresa, y cada una se aplica el mismo día que la lees. Pero la parte que más me importa no es el contenido: son las sesiones de <b>role play</b>, uno a uno, donde yo hago de cliente y tú practicas lo que acabas de aprender antes de arriesgarlo con un cliente real.</p>
+      <p>Leer un guión no es saber usarlo. Eso lo aprendí viendo a IBs con el material perfecto quedarse en blanco en la primera objeción.</p>
+      <h3>Lo que no es</h3>
+      <p>No es un curso de trading: aquí no se enseña a operar ni se dan señales. No es una promesa de ingresos: lo que ganes depende de tu trabajo, tu constancia y el mercado. Y no es un producto: no hay nada que comprar, ni un nivel «premium» escondido.</p>
+      <p>Es gratis porque mi interés está alineado con el tuyo. <b>Cuando tu comunidad crece con un sistema, gana tu negocio, gana el bróker y gano yo.</b> No necesito cobrarte para que esto tenga sentido.</p>
+      <h3>Por qué no está abierto a cualquiera</h3>
+      <p>El contenido completo no se publica. Se comparte con los IBs de nuestra red después de una reunión de treinta minutos, donde hablamos de tu comunidad, tus números y qué te está frenando.</p>
+      <p>No es un filtro de venta; es un <b>filtro de compromiso</b>. Este método solo funciona si haces el trabajo diario, y prefiero dedicar mi tiempo a quien va a hacerlo.</p>
+      <h3>A dónde quiero llegar</h3>
+      <p>Quiero que en Latinoamérica ser IB deje de ser algo que se improvisa y pase a ser algo que se aprende. Que un IB nuevo tenga, desde el primer día, lo que a muchos les costó años y clientes perdidos.</p>
+      <p>Si eso te suena, la puerta está en la reunión.</p>
+      <div class="card" style="margin-top:36px;border-color:rgba(62,207,142,.24);background:rgba(62,207,142,.06)">
+        <h3 style="color:var(--accent);margin:0 0 8px">¿Hablamos?</h3>
+        <p>Treinta minutos, sin costo y sin compromiso. Si encajas, sales con el acceso; si no, sales con dos o tres cosas concretas para aplicar igual.</p>
+        <a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener">Agenda una reunión</a>
+      </div>
+    </article>
+    <article class="post" id="post-por-que-retiran">
+      <button type="button" class="back" data-back>← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
+      <div class="kicker">Retención</div>
+      <h2 class="ptitle">Por qué tus clientes depositan y retiran a los pocos días</h2>
+      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>3 de septiembre de 2026</span><span>·</span><span>5 min de lectura</span></div>
+      <p class="plead">Es una de las cosas que más desanima a un IB: conseguiste el cliente, hiciste el trabajo difícil, depositó… y a los pocos días el dinero ya no está. No hubo pelea, no hubo reclamo. Simplemente se fue.</p>
+
+  <p>Cuando esto pasa dos o tres veces seguidas, casi todos llegan a la misma conclusión: <b>«me tocaron clientes malos»</b>. Y esa conclusión es cómoda, porque no exige cambiar nada.</p>
+
+  <p>Pero después de ver este patrón repetirse en decenas de carteras, te puedo decir algo con bastante seguridad: <b>no es mala suerte, y casi nunca es el cliente.</b> Es algo que ocurrió antes —y en la enorme mayoría de los casos, ocurrió en un punto que el IB ni siquiera estaba mirando.</p>
+
+  <h3>Las tres razones reales</h3>
+
+  <h4>1. El depósito fue una curiosidad, no una decisión</h4>
+  <p>Hay una diferencia enorme entre alguien que deposita porque <b>decidió empezar algo</b> y alguien que deposita porque <b>tenía curiosidad</b>. Desde afuera se ven idénticos: los dos transfieren dinero, los dos te dan las gracias.</p>
+  <p>La diferencia aparece a los tres días, cuando algo no sale como esperaban.</p>
+  <p>El que decidió tiene un motivo, un monto pensado y una idea de cuánto tiempo va a darle. El que tenía curiosidad no tiene nada de eso: entró a ver qué pasaba. Y cuando alguien entra a ver qué pasa, cualquier incomodidad es razón suficiente para salir.</p>
+  <p>Esto no se arregla después del depósito. <b>Se arregla en la conversación anterior</b> —y esa conversación es una habilidad, no un formulario.</p>
+
+  <h4>2. El dinero se quedó quieto</h4>
+  <p>Este es el más silencioso de los tres, y probablemente el más común.</p>
+  <p>El cliente deposita, abre la plataforma, no entiende bien algo, lo deja «para mañana»… y ese mañana no llega. El dinero se queda ahí, sin hacer nada, durante días.</p>
+  <p><b>El dinero quieto no se queda quieto para siempre: se retira.</b> Porque en la cabeza del cliente deja de ser «lo que puse para empezar» y se convierte en «esa plata que tengo parada ahí».</p>
+  <p>Cuando revisas una cartera con este problema, el patrón salta a la vista: los clientes que se fueron casi nunca habían empezado de verdad. No es que probaron y no les gustó. <b>Es que nunca llegaron a probar.</b></p>
+
+  <h4>3. Nadie estuvo ahí en el primer mal día</h4>
+  <p>Todo cliente tiene un primer mal día. Es inevitable, y no es tu culpa.</p>
+  <p>Lo que sí depende de ti es quién está del otro lado cuando ocurre.</p>
+  <p>Si en ese momento el cliente está solo, va a tomar la decisión solo —y la decisión que toma alguien solo, incómodo y sin contexto casi siempre es la misma: <b>sacar el dinero.</b></p>
+  <p>Muchos IBs desaparecen exactamente en ese momento, y no por desinterés: es que no saben qué decir. No quieren prometer nada que no puedan cumplir, y como no tienen otra cosa preparada, eligen el silencio. El silencio es lo peor que puedes elegir ahí.</p>
+
+  <h3>Lo que casi nadie mira</h3>
+  <p>Si estás pasando por esto, hay una pregunta que reordena todo el problema:</p>
+  <p><b>De los clientes que se fueron, ¿cuántos habían operado de verdad antes de irse?</b></p>
+  <p>Hazte esa cuenta con nombre y apellido, no de memoria. En la mayoría de las carteras que he revisado, la respuesta incomoda: <b>casi ninguno.</b></p>
+  <p>Y eso cambia por completo el diagnóstico. Si el cliente nunca empezó, el problema no está en el mercado ni en el cliente ni en el broker. Está en los <b>primeros días</b>, que es justo donde casi nadie tiene un proceso.</p>
+
+  <h3>Una aclaración importante</h3>
+  <p>Nada de esto se trata de convencer a alguien de que no retire su dinero. El dinero es del cliente y retirarlo es su derecho, siempre, sin justificación.</p>
+  <p>De lo que se trata es de algo distinto: <b>elegir mejor con quién empiezas y prepararlo mejor antes de que empiece.</b> Cuando esas dos cosas se hacen bien, la retención deja de ser un problema que persigues y pasa a ser una consecuencia.</p>
+      <div class="card" style="margin-top:36px;border-color:rgba(62,207,142,.24);background:rgba(62,207,142,.06)">
+        <h3 style="color:var(--accent);margin:0 0 8px">El proceso completo está dentro de la academia</h3>
+        <p>En IB ACADEMY trabajamos exactamente esto: la conversación previa al depósito, el acompañamiento de los primeros días y qué decir —con palabras concretas— cuando un cliente tiene su primer mal día. Es formación gratuita para IBs, y practicamos cada escenario en sesiones uno a uno.</p>
+        <a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener">Agenda una reunión de 30 minutos</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <div class="wrap final">
+    <div class="reveal">
+      <h2><span class="es">Tu comunidad ya existe.<br><span class="grad">Ahora conviértela en un negocio.</span></span><span class="en">Your community already exists.<br><span class="grad">Now turn it into a business.</span></span></h2>
+      <p class="lead" style="margin:20px auto 0"><span class="es">Media hora de conversación puede cambiar cómo trabajas los próximos doce meses.</span><span class="en">Half an hour of conversation can change how you work for the next twelve months.</span></p>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          📅 <span class="es">Agenda una reunión conmigo</span><span class="en">Book a meeting with me</span>
+        </a>
+      </div>
+    </div>
+    <div class="legal reveal" style="margin-left:auto;margin-right:auto">
+      <span class="es">Aviso: este contenido es formativo y está dirigido a IBs. No constituye asesoría financiera ni una promesa de ingresos: los resultados de cada IB dependen de su propio trabajo, su constancia y las condiciones del mercado. La operativa en los mercados financieros conlleva riesgo de pérdida.</span>
+      <span class="en">Notice: this content is educational and intended for IBs. It is not financial advice or an income promise: each IB's results depend on their own work, their consistency and market conditions. Trading in financial markets carries risk of loss.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="mcta">
+  <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+    <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+  </a>
+</div>
+
+<footer>
+  IB ACADEMY — <span class="es">De trader a empresario.</span><span class="en">From trader to entrepreneur.</span>
+  · <span class="es">Diseñado por Umut Simsek</span><span class="en">Designed by Umut Simsek</span>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+function setLang(l){
+  document.body.classList.toggle('lang-en',l==='en');
+  document.documentElement.lang=l;
+  btnEs.classList.toggle('on',l==='es');
+  btnEn.classList.toggle('on',l==='en');
+  try{localStorage.setItem('ibinv-lang',l)}catch(e){}
+}
+btnEs.addEventListener('click',function(){setLang('es')});
+btnEn.addEventListener('click',function(){setLang('en')});
+try{var s=localStorage.getItem('ibinv-lang');if(s==='en')setLang('en')}catch(e){}
+
+/* burger menu */
+var burger=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+function closeMenu(){burger.classList.remove('open');mm.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+burger.addEventListener('click',function(){
+  var open=mm.classList.toggle('open');
+  burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open?'true':'false');
+});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+window.addEventListener('resize',function(){if(window.innerWidth>=900)closeMenu()});
+
+/* ===== sayfa-modu navigasyon: menü = bölümü tek başına aç ===== */
+var navLinks=document.querySelectorAll('.menu a');
+var allViews=['hero','quees','problema','camino','roleplay','confianza','paraquien','acceso','faq','blog'];
+var finalSec=document.getElementById('final');
+var backbtn=document.getElementById('backbtn'),logo=document.getElementById('logo');
+
+function setActive(id){
+  navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)});
+}
+function openView(id){
+  var target=document.getElementById(id);
+  if(!target)return false;
+  if(id!=='blog')closePost(true);
+  allViews.forEach(function(v){
+    var el=document.getElementById(v);
+    if(el)el.style.display=(v===id)?'':'none';
+  });
+  if(finalSec)finalSec.style.display='';           // kapanış CTA'sı her zaman görünür
+  document.body.classList.add('view-mode');
+  target.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+  if(finalSec)finalSec.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+  setActive(id);
+  window.scrollTo(0,0);
+  return true;
+}
+function closeViews(){
+  closePost(true); try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+  allViews.forEach(function(v){var el=document.getElementById(v);if(el)el.style.display=''});
+  if(finalSec)finalSec.style.display='';
+  document.body.classList.remove('view-mode');
+  setActive('');
+  window.scrollTo(0,0);
+}
+function hookViewLinks(list){
+  list.forEach(function(a){
+    var href=a.getAttribute('href')||'';
+    if(href.charAt(0)!=='#')return;
+    var id=href.slice(1);
+    if(allViews.indexOf(id)===-1)return;
+    a.addEventListener('click',function(ev){ev.preventDefault();openView(id)});
+  });
+}
+hookViewLinks([].slice.call(navLinks));
+hookViewLinks([].slice.call(mm.querySelectorAll('a')));
+hookViewLinks([].slice.call(document.querySelectorAll('#hero a[href^="#"]')));
+if(backbtn)backbtn.addEventListener('click',closeViews);
+if(logo)logo.addEventListener('click',closeViews);
+
+/* mobil yapışık CTA: hero butonu görünür değilken göster */
+var mcta=document.querySelector('.mcta'),heroCta=document.querySelector('#hero .cta-row');
+if(mcta&&heroCta&&'IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){mcta.classList.toggle('show',!e.isIntersecting)});
+  },{threshold:0}).observe(heroCta);
+}else if(mcta){mcta.classList.add('show')}
+/* blog: liste ↔ yazı · paylaşılabilir link (#blog/slug) · geri tuşu yazıyı kapatır */
+var blogSec=document.getElementById('blog'),blogList=document.querySelector('#blog .blog-list');
+function openPost(slug,push){
+  var post=document.getElementById('post-'+slug); if(!post)return false;
+  document.querySelectorAll('#blog .post.open').forEach(function(p){p.classList.remove('open')});
+  post.classList.add('open'); if(blogList)blogList.classList.add('hidden');
+  if(blogSec)blogSec.classList.add('reading');
+  if(push!==false&&location.hash!=='#blog/'+slug){try{history.pushState(null,'','#blog/'+slug)}catch(e){}}
+  window.scrollTo(0,0); return true;
+}
+function closePost(silent){
+  document.querySelectorAll('#blog .post.open').forEach(function(p){p.classList.remove('open')});
+  if(blogList)blogList.classList.remove('hidden');
+  if(blogSec)blogSec.classList.remove('reading');
+  if(!silent){try{history.replaceState(null,'','#blog')}catch(e){} window.scrollTo(0,0);}
+}
+document.querySelectorAll('#blog [data-post]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();openPost(a.getAttribute('data-post'))})});
+document.querySelectorAll('#blog [data-back]').forEach(function(b){b.addEventListener('click',function(){closePost()})});
+window.addEventListener('popstate',function(){
+  var hh=location.hash||'';
+  if(hh.indexOf('#blog/')===0){openPost(hh.split('/')[1],false);}
+  else closePost(true);
+});
+(function(){var hh=location.hash||'';if(hh.indexOf('#blog')===0){openView('blog');var s=hh.split('/')[1];if(s)openPost(s,false);}})();
+var rev=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  rev.forEach(function(el){io.observe(el)});
+}else{rev.forEach(function(el){el.classList.add('visible')})}
+})();
+</script>
+</body>
+</html>
