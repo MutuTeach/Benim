@@ -227,6 +227,19 @@ ul.clean.no li::before{content:"✕";color:#f87171}
 .blog-list .card .bmeta{margin-top:12px;font-size:.84rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
 .blog-list .card .bmeta .tag{color:var(--gold)}
 .blog-list.hidden{display:none}
+/* blog listesi: altın başlık · numara · numaralar arasında gezinen ışık */
+.blog-list{position:relative}
+.blog-list::before{content:"";position:absolute;left:41px;top:44px;bottom:44px;width:2px;background:var(--line);border-radius:2px}
+.blog-list .card{position:relative;padding-left:78px}
+.blog-list .card h3{color:var(--gold)}
+.bnum{position:absolute;left:24px;top:24px;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--gold);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;animation:bnumGlow 4.8s ease-in-out infinite}
+.blog-list .card:nth-child(1) .bnum{animation-delay:0s}
+.blog-list .card:nth-child(2) .bnum{animation-delay:1.2s}
+.blog-list .card:nth-child(3) .bnum{animation-delay:2.4s}
+.blog-list .card:nth-child(4) .bnum{animation-delay:3.6s}
+@keyframes bnumGlow{0%,100%{border-color:var(--line);box-shadow:none;color:var(--gold)}12%{border-color:var(--gold);box-shadow:0 0 0 4px rgba(231,200,138,.14),0 0 22px rgba(231,200,138,.55);color:#fff}30%{border-color:var(--line);box-shadow:none;color:var(--gold)}}
+@media(max-width:560px){.blog-list::before{left:33px}.blog-list .card{padding-left:64px}.bnum{left:16px;top:20px;width:32px;height:32px;font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.bnum{animation:none}}
 .post{display:none;max-width:760px}
 .post.open{display:block}
 #blog.reading .bhead{display:none}
@@ -838,21 +851,25 @@ main,footer{position:relative;z-index:1}
     </div>
     <div class="blog-list reveal" style="margin-top:28px">
       <a class="card" href="#blog/memoria" data-post="memoria">
+        <span class="bnum">1</span>
         <h3>Tu negocio no puede depender de tu memoria</h3>
         <p>Si tu negocio de IB se detiene cuando tú te detienes, no tienes un negocio: tienes un trabajo. Por qué WhatsApp no es un sistema, qué es sistematizar de verdad y la pregunta que revela si ya te quedaste chico.</p>
         <div class="bmeta"><span>7 de septiembre de 2026</span><span>·</span><span>4 min</span><span>·</span><span class="tag">Sistemas</span></div>
       </a>
       <a class="card" href="#blog/seguimiento" data-post="seguimiento">
+        <span class="bnum">2</span>
         <h3>Tus mejores comisiones están en una conversación que no estás teniendo</h3>
         <p>La mayoría de los IBs no pierde clientes: pierde leads que ya tenía. Por qué un lead no responde, qué cuesta abandonarlo y cómo hacer seguimiento sin presionar.</p>
         <div class="bmeta"><span>5 de septiembre de 2026</span><span>·</span><span>3 min</span><span>·</span><span class="tag">Seguimiento</span></div>
       </a>
       <a class="card" href="#blog/fundador" data-post="fundador">
+        <span class="bnum">3</span>
         <h3>Por qué fundé la primera academia para IBs de Latinoamérica</h3>
         <p>Durante años vi la misma escena: un IB con talento, con comunidad, con ganas… y completamente solo. Por qué construí IB ACADEMY, qué es y qué no es.</p>
         <div class="bmeta"><span>4 de septiembre de 2026</span><span>·</span><span>3 min</span><span>·</span><span class="tag">Origen</span></div>
       </a>
       <a class="card" href="#blog/por-que-retiran" data-post="por-que-retiran">
+        <span class="bnum">4</span>
         <h3>Por qué tus clientes depositan y retiran a los pocos días</h3>
         <p>Casi ningún IB pierde clientes por mala suerte. Las tres razones reales por las que un cliente se va en los primeros días —y la pregunta que reordena todo el problema.</p>
         <div class="bmeta"><span>3 de septiembre de 2026</span><span>·</span><span>4 min</span><span>·</span><span class="tag">Retención</span></div>
