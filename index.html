@@ -233,9 +233,11 @@ ul.clean.no li::before{content:"✕";color:#f87171}
 .post .back{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:.92rem;margin-bottom:22px;cursor:pointer;background:none;border:0;font-family:inherit;padding:0}
 .post .ptitle{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.14;margin:8px 0 10px}
 .post .pmeta{color:var(--muted);font-size:.9rem;margin-bottom:22px;display:flex;gap:10px;flex-wrap:wrap}
-.post h3{font-size:clamp(1.12rem,3vw,1.38rem);font-weight:700;letter-spacing:-.022em;margin:38px 0 10px}
+.post h3{font-size:clamp(1.12rem,3vw,1.38rem);font-weight:700;letter-spacing:-.022em;margin:38px 0 10px;color:var(--gold)}
 .post h4{color:var(--gold);font-size:1.04rem;font-weight:650;margin:26px 0 8px}
 .post p{color:var(--muted);margin:0 0 16px;line-height:1.72}
+.post ul.clean{margin:0 0 18px}
+.post ul.clean li{font-size:1rem;line-height:1.72;padding:5px 0 5px 24px}
 .post .plead{font-size:1.08rem;color:#aab2be}
 /* faq */
 .faq details{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022);margin-bottom:10px;overflow:hidden}
@@ -835,26 +837,83 @@ main,footer{position:relative;z-index:1}
       <p class="muted" style="font-size:.86rem;margin-top:8px"><span class="es">Los artículos están en español.</span><span class="en">Articles are in Spanish.</span></p>
     </div>
     <div class="blog-list reveal" style="margin-top:28px">
+      <a class="card" href="#blog/seguimiento" data-post="seguimiento">
+        <h3>Tus mejores comisiones están en una conversación que no estás teniendo</h3>
+        <p>La mayoría de los IBs no pierde clientes: pierde leads que ya tenía. Por qué un lead no responde, qué cuesta abandonarlo y cómo hacer seguimiento sin presionar.</p>
+        <div class="bmeta"><span>5 de septiembre de 2026</span><span>·</span><span>3 min</span><span>·</span><span class="tag">Seguimiento</span></div>
+      </a>
       <a class="card" href="#blog/fundador" data-post="fundador">
-        <h3>El fundador de la primera academia para IBs de Latinoamérica</h3>
+        <h3>Por qué fundé la primera academia para IBs de Latinoamérica</h3>
         <p>Durante años vi la misma escena: un IB con talento, con comunidad, con ganas… y completamente solo. Por qué construí IB ACADEMY, qué es y qué no es.</p>
-        <div class="bmeta"><span>4 de septiembre de 2026</span><span>·</span><span>6 min</span><span>·</span><span class="tag">Origen</span></div>
+        <div class="bmeta"><span>4 de septiembre de 2026</span><span>·</span><span>3 min</span><span>·</span><span class="tag">Origen</span></div>
       </a>
       <a class="card" href="#blog/por-que-retiran" data-post="por-que-retiran">
         <h3>Por qué tus clientes depositan y retiran a los pocos días</h3>
         <p>Casi ningún IB pierde clientes por mala suerte. Las tres razones reales por las que un cliente se va en los primeros días —y la pregunta que reordena todo el problema.</p>
-        <div class="bmeta"><span>3 de septiembre de 2026</span><span>·</span><span>5 min</span><span>·</span><span class="tag">Retención</span></div>
+        <div class="bmeta"><span>3 de septiembre de 2026</span><span>·</span><span>4 min</span><span>·</span><span class="tag">Retención</span></div>
       </a>
     </div>
+    <article class="post" id="post-seguimiento">
+      <button type="button" class="back" data-back>← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
+      <div class="kicker">Seguimiento</div>
+      <h2 class="ptitle">Tus mejores comisiones están en una conversación que no estás teniendo</h2>
+      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>5 de septiembre de 2026</span><span>·</span><span>3 min de lectura</span></div>
+      <p class="plead">La mayoría de los IBs no pierde clientes. Pierde <b>leads que ya tenía</b>: personas que escribieron, preguntaron, mostraron interés… y a las que se les escribió una vez, quizá dos, y nunca más. El seguimiento es la parte del trabajo del IB que más comisiones deja sobre la mesa.</p>
+      <p>Si revisas tus conversaciones de WhatsApp ahora mismo, probablemente encuentres decenas de leads que no responden. No dijeron que no. Simplemente no respondieron, y tú pasaste al siguiente.</p>
+      <h3>Lo que casi ningún IB mide</h3>
+      <p>Cuenta cuántos mensajes le escribes a un lead antes de darlo por perdido: casi siempre salen uno o dos. Ahora cuenta en qué momento suelen decidirse los que sí entran: en mi experiencia con los IBs de la red, casi nunca es el primer mensaje. Es el que llega después de varias conversaciones, cuando ya te vieron trabajar.</p>
+      <p>Pon las dos cosas juntas y el diagnóstico aparece solo: <b>casi todos se rinden un paso antes del punto donde ocurre la decisión.</b></p>
+      <h3>Por qué un lead no responde (y por qué eso no es un «no»)</h3>
+      <p>El IB que deja de escribir no es perezoso. Lo hace porque leyó el silencio como un «no». Pero un lead que no responde casi nunca está diciendo que no. Lo más común:</p>
+      <ul class="clean">
+        <li>está ocupado;</li>
+        <li>está dudando;</li>
+        <li>se le olvidó;</li>
+        <li>está esperando ver si tú vas en serio.</li>
+      </ul>
+      <p>El silencio es <b>información incompleta</b>, no una respuesta.</p>
+      <p>Y hay una segunda razón, más incómoda: <b>miedo a molestar</b>. Muchos IBs sienten que insistir los convierte en vendedores pesados. Así que eligen la opción que parece más elegante —desaparecer— y la confunden con respeto.</p>
+      <h3>Cómo hacer seguimiento sin presionar</h3>
+      <p>Aquí está la distinción que cambia todo. Presión es escribir «¿lo pensaste?» cinco veces. Seguimiento es que cada mensaje traiga algo nuevo:</p>
+      <ul class="clean">
+        <li>una muestra de cómo trabajas (un análisis, un en vivo);</li>
+        <li>una lección corta;</li>
+        <li>una invitación concreta;</li>
+        <li>una pregunta fácil de contestar.</li>
+      </ul>
+      <p>El que presiona repite. El que hace seguimiento <b>aporta</b>. Por eso uno cansa a los doce mensajes y el otro construye confianza con los mismos doce. Cuando se hace así, deja de sentirse como insistir y empieza a sentirse como acompañar. Y el lead lo nota.</p>
+      <h3>Lo que te cuesta abandonar un lead</h3>
+      <p>Haz una cuenta sencilla. Cada lead que llegó a tu WhatsApp costó algo: contenido, tiempo, una conversación, quizá publicidad. Si lo abandonas al segundo mensaje, no perdiste un lead: <b>perdiste todo lo que invertiste para conseguirlo</b>, y además le regalaste la conversación al siguiente IB que sí le escriba.</p>
+      <p>Por eso la solución no suele ser «más leads». Casi siempre es <b>llegar más lejos con los que ya tienes</b>: ahí están las comisiones que hoy no estás cobrando.</p>
+      <h3>Empieza hoy, sin buscar a nadie nuevo</h3>
+      <p><b>¿Cuántos mensajes le escribes a un lead antes de darlo por perdido?</b> Cuéntalos de verdad, en tus últimas diez conversaciones sin respuesta. Si la respuesta es uno o dos, ya sabes dónde está tu mayor oportunidad de este mes —y no necesitas conseguir a nadie nuevo para aprovecharla.</p>
+      <p>Una aclaración: nada de esto es insistirle a alguien que ya dijo que no. Un «no» se respeta siempre. De lo que hablamos es de los que <b>nunca respondieron</b>, que son otra cosa completamente distinta.</p>
+      <div class="card" style="margin-top:36px;border-color:rgba(62,207,142,.24);background:rgba(62,207,142,.06)">
+        <h3 style="color:var(--accent);margin:0 0 8px">El sistema completo está dentro de la academia</h3>
+        <p>En IB ACADEMY este tema tiene nombre propio: <b>la escalera del seguimiento</b> — cuántos contactos, con qué ritmo, qué aporta cada uno y qué decir en cada peldaño. Y lo practicamos en sesiones uno a uno antes de que lo uses con un lead real.</p>
+        <a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener">Agenda una reunión de 30 minutos</a>
+      </div>
+    </article>
     <article class="post" id="post-fundador">
       <button type="button" class="back" data-back>← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
       <div class="kicker">Origen</div>
-      <h2 class="ptitle">El fundador de la primera academia para IBs de Latinoamérica</h2>
-      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>4 de septiembre de 2026</span><span>·</span><span>6 min de lectura</span></div>
+      <h2 class="ptitle">Por qué fundé la primera academia para IBs de Latinoamérica</h2>
+      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>4 de septiembre de 2026</span><span>·</span><span>3 min de lectura</span></div>
       <p class="plead">Me llamo Umut Simsek. Soy IB Manager en Weltrade para Latinoamérica, y construí IB ACADEMY porque durante años vi la misma escena repetirse: un IB con talento, con comunidad, con ganas… y completamente solo.</p>
       <h3>Lo que vi durante años</h3>
-      <p>Un IB nuevo recibe tres cosas de cualquier bróker: un enlace de referido, una tabla de comisiones y una carpeta con banners. Y a partir de ahí, que se las arregle.</p>
-      <p>Nadie le enseña qué decirle a la primera persona que le escribe «¿esto es una estafa?». Nadie le explica por qué un cliente que depositó ayer retira hoy. Nadie le dice cuántas conversaciones necesita tener cada día para que el negocio se sostenga.</p>
+      <p>Un IB nuevo recibe tres cosas de casi cualquier bróker:</p>
+      <ul class="clean">
+        <li>un enlace de referido,</li>
+        <li>una tabla de comisiones,</li>
+        <li>y una carpeta con banners.</li>
+      </ul>
+      <p>Y a partir de ahí, que se las arregle.</p>
+      <p>Nadie le enseña lo que de verdad decide su negocio:</p>
+      <ul class="clean">
+        <li>qué decirle a la primera persona que le escribe «¿esto es una estafa?»;</li>
+        <li>por qué un cliente que depositó ayer retira hoy;</li>
+        <li>cuántas conversaciones necesita tener cada día para que el negocio se sostenga.</li>
+      </ul>
       <p>Los que crecen, crecen a fuerza de errores caros. Los demás se van a los tres meses convencidos de que «esto no era para ellos», cuando lo único que les faltó fue <b>un método</b>.</p>
       <h3>La pregunta que no me dejaba tranquilo</h3>
       <p>Como manager, mi trabajo es que los IBs de la red crezcan. Y durante mucho tiempo lo hice de la única forma posible: uno por uno, por WhatsApp, repitiendo las mismas explicaciones a personas distintas.</p>
@@ -865,7 +924,11 @@ main,footer{position:relative;z-index:1}
       <p>IB ACADEMY son cinco etapas, desde tu primer cliente hasta tu propia empresa, y cada una se aplica el mismo día que la lees. Pero la parte que más me importa no es el contenido: son las sesiones de <b>role play</b>, uno a uno, donde yo hago de cliente y tú practicas lo que acabas de aprender antes de arriesgarlo con un cliente real.</p>
       <p>Leer un guion no es saber usarlo. Eso lo aprendí viendo a IBs con el material perfecto quedarse en blanco en la primera objeción.</p>
       <h3>Lo que no es</h3>
-      <p>No es un curso de trading: aquí no se enseña a operar ni se dan señales. No es una promesa de ingresos: lo que ganes depende de tu trabajo, tu constancia y el mercado. Y no es un producto: no hay nada que comprar, ni un nivel «premium» escondido.</p>
+      <ul class="clean">
+        <li><b>No es un curso de trading:</b> aquí no se enseña a operar ni se dan señales.</li>
+        <li><b>No es una promesa de ingresos:</b> lo que ganes depende de tu trabajo, tu constancia y el mercado.</li>
+        <li><b>No es un producto:</b> no hay nada que comprar, ni un nivel «premium» escondido.</li>
+      </ul>
       <p>Es gratis porque mi interés está alineado con el tuyo. <b>Cuando tu comunidad crece con un sistema, gana tu negocio, gana el bróker y gano yo.</b> No necesito cobrarte para que esto tenga sentido.</p>
       <h3>Por qué no está abierto a cualquiera</h3>
       <p>El contenido completo no se publica. Se comparte con los IBs de nuestra red después de una reunión de treinta minutos, donde hablamos de tu comunidad, tus números y qué te está frenando.</p>
@@ -883,7 +946,7 @@ main,footer{position:relative;z-index:1}
       <button type="button" class="back" data-back>← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
       <div class="kicker">Retención</div>
       <h2 class="ptitle">Por qué tus clientes depositan y retiran a los pocos días</h2>
-      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>3 de septiembre de 2026</span><span>·</span><span>5 min de lectura</span></div>
+      <div class="pmeta"><span>Umut Simsek</span><span>·</span><span>3 de septiembre de 2026</span><span>·</span><span>4 min de lectura</span></div>
       <p class="plead">Es una de las cosas que más desanima a un IB: conseguiste el cliente, hiciste el trabajo difícil, depositó… y a los pocos días el dinero ya no está. No hubo pelea, no hubo reclamo. Simplemente se fue.</p>
 
   <p>Cuando esto pasa dos o tres veces seguidas, casi todos llegan a la misma conclusión: <b>«me tocaron clientes malos»</b>. Y esa conclusión es cómoda, porque no exige cambiar nada.</p>
