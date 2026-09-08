@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/acceso", "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/academia" },
+    { "source": "/acceso/:path*", "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/:path*" }
+  ]
+}
