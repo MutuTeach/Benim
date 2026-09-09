@@ -927,7 +927,7 @@ function setLang(l){
 }
 btnEs.addEventListener('click',function(){setLang('es')});
 btnEn.addEventListener('click',function(){setLang('en')});
-try{var s=localStorage.getItem('ibinv-lang');if(s==='en')setLang('en')}catch(e){}
+var _q=(location.search.match(/[?&]lang=(es|en)/)||[])[1];if(_q){setLang(_q)}else{try{var s=localStorage.getItem('ibinv-lang');if(s==='en')setLang('en')}catch(e){}}
 
 /* burger menu */
 var burger=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
