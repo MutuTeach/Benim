@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.umutsimsek.co/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.umutsimsek.co/</loc><lastmod>2026-09-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/</loc><lastmod>2026-09-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/primer-mensaje/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/de-trader-a-empresario/</loc><lastmod>2026-09-20</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/cinco-errores/</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/que-es-un-ib/</loc><lastmod>2026-09-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/que-es-un-ib/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/apoyo-del-broker/</loc><lastmod>2026-09-14</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/constancia/</loc><lastmod>2026-09-12</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/buen-mes-no-es-negocio/</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/comunidad-no-crece/</loc><lastmod>2026-09-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/constancia/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/buen-mes-no-es-negocio/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/comunidad-no-crece/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/memoria/</loc><lastmod>2026-09-07</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/seguimiento/</loc><lastmod>2026-09-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/seguimiento/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/fundador/</loc><lastmod>2026-09-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/por-que-retiran/</loc><lastmod>2026-09-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/por-que-retiran/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
 </urlset>
