@@ -207,6 +207,7 @@ ul.clean.no li::before{content:"✕";color:#f87171}
 .mfunnel{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-weight:700;color:var(--text);font-size:.95rem}
 .mfunnel .n{display:inline-block;min-width:34px;text-align:center;border-bottom:2px dashed rgba(255,255,255,.25);color:var(--muted)}
 .mfunnel .arr{color:var(--accent)}
+.mfunnel .n.nb{filter:blur(4px);user-select:none;color:var(--text)}
 /* mini board */
 .mboard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .mcol{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);padding:8px}
@@ -446,10 +447,7 @@ main,footer{position:relative;z-index:1}
         <h3><span class="es">¿Cómo acceder?</span><span class="en">How to get access</span></h3>
         <ul class="clean" style="margin:0">
           <li><span class="es">El contenido completo está bajo clave. Se abre con el botón <b>Entrar</b> del menú.</span><span class="en">The full content is behind a key. It opens with the <b>Log in</b> button in the menu.</span></li>
-          <li><span class="es">La clave es personal: no hay registro, formulario ni descarga. Te la doy yo, en la reunión.</span><span class="en">The key is personal: no sign-up, no form, no download. I give it to you myself, in the meeting.</span></li>
-          <li><span class="es">Agendas 30 minutos conmigo. Si encajas, sales de la reunión con tu clave y entras ese mismo día.</span><span class="en">You book 30 minutes with me. If it's a fit, you leave the meeting with your key and get in that same day.</span></li>
-          <li><span class="es">Con tu clave abres la academia desde cualquier dispositivo, las veces que quieras, mientras esté activa.</span><span class="en">With your key you open the academy from any device, as many times as you want, while it's active.</span></li>
-          <li><span class="es">¿Ya tienes clave? Pulsa <b>Entrar</b> y escríbela tal como la recibiste.</span><span class="en">Already have a key? Press <b>Log in</b> and type it exactly as you received it.</span></li>
+          <li><span class="es">La clave es personal y te la doy yo, en la reunión de 30 minutos. Sin registro, sin formulario, sin descarga.</span><span class="en">The key is personal and I give it to you myself, in the 30-minute meeting. No sign-up, no form, no download.</span></li>
         </ul>
       </div>
     </div>
@@ -528,13 +526,13 @@ main,footer{position:relative;z-index:1}
         <div class="peek">
           <span class="plabel"><span class="es">Tu embudo diario</span><span class="en">Your daily funnel</span></span>
           <div class="mfunnel">
-            <span><span class="n">?</span> <span class="es">conversaciones</span><span class="en">conversations</span></span>
+            <span><span class="n">20</span> <span class="es">conversaciones</span><span class="en">conversations</span></span>
             <span class="arr">→</span>
-            <span><span class="n">?</span> <span class="es">registros</span><span class="en">sign-ups</span></span>
+            <span><span class="n nb">3</span> <span class="es">registros</span><span class="en">sign-ups</span></span>
             <span class="arr">→</span>
-            <span><span class="n">?</span> FTD <span class="es">(primer depósito)</span><span class="en">(first deposit)</span></span>
+            <span><span class="n nb">1</span> FTD <span class="es">(primer depósito)</span><span class="en">(first deposit)</span></span>
           </div>
-          <p class="blur" style="text-align:center"><span class="es">Las proporciones exactas y cómo subirlas sin romper tu constancia.</span><span class="en">The exact ratios and how to raise them without breaking your consistency.</span></p>
+          <p class="blur" style="text-align:center"><span class="es">Un día mínimo empieza con 20 conversaciones. Cuántos registros y depósitos salen de ahí, y cómo subir la proporción sin romper tu constancia.</span><span class="en">A minimum day starts with 20 conversations. How many sign-ups and deposits come out of that, and how to raise the ratio without breaking your consistency.</span></p>
           <span class="lock">🔒 <span class="es">Los números, dentro</span><span class="en">The numbers, inside</span></span>
         </div>
       </div>
@@ -608,7 +606,7 @@ main,footer{position:relative;z-index:1}
       </div>
       <div class="card reveal">
         <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Por qué funciona?</span><span class="en">Why does it work?</span></h3>
-        <p><span class="es">Ningún piloto aprende a aterrizar estrellando aviones: entrena en un simulador. Con las conversaciones pasa igual. Puedes leer diez veces el guion perfecto, pero cuando un lead real dice algo que no esperabas, se te olvida todo. <b>Lo que se practica bajo presión sale solo; lo que solo se lee, se improvisa</b> — y cada conversación improvisada es un lead que se enfría.</span><span class="en">No pilot learns to land by crashing planes: they train in a simulator. Conversations work the same way. You can read the perfect script ten times, but when a real lead says something you didn't expect, it all disappears. <b>What you practice under pressure comes out on its own; what you only read, you improvise</b> — and every improvised conversation is a lead going cold.</span></p>
+        <p><span class="es">Puedes leer diez veces el guion perfecto, pero cuando un lead real dice algo que no esperabas, se te olvida todo. <b>Lo que se practica bajo presión sale solo; lo que solo se lee, se improvisa</b> — y cada conversación improvisada es un lead que se enfría.</span><span class="en">You can read the perfect script ten times, but when a real lead says something you didn't expect, it all disappears. <b>What you practice under pressure comes out on its own; what you only read, you improvise</b> — and every improvised conversation is a lead going cold.</span></p>
       </div>
     </div>
 
@@ -907,9 +905,14 @@ main,footer{position:relative;z-index:1}
       <p class="lead" style="margin-top:14px"><span class="es">Cómo se consiguen clientes, por qué se van, qué medir y cómo organizar tu cartera. Sin teoría de trading y sin promesas de ingresos.</span><span class="en">How clients are won, why they leave, what to measure and how to organise your portfolio. No trading theory, no income promises.</span></p>
     </div>
     <div class="blog-list reveal" style="margin-top:28px">
+      <a class="card" href="/blog/atender-clientes/">
+        <h3><span class="es">Lo que tu cliente siente y no te dice</span><span class="en">What your client feels and doesn&#39;t tell you</span></h3>
+        <p><span class="es">Si un servicio que pagas te dejara tres días sin respuesta, dejarías de escribir. Tu cliente hace lo mismo y no te avisa. Cómo atender a tus clientes como IB con la prueba del mismo estándar, y qué decir el día en que pierde.</span><span class="en">If a service you pay for left you three days without a reply, you&#39;d stop writing. Your client does the same and never tells you. How to take care of your clients as an IB with the same-standard test, and what to say on the day he loses.</span></p>
+        <div class="bmeta"><span><span class="es">29 de septiembre de 2026</span><span class="en">September 29, 2026</span></span><span>&#183;</span><span><span class="es">3 min</span><span class="en">3 min</span></span><span>&#183;</span><span class="tag"><span class="es">Empatía</span><span class="en">Empathy</span></span></div>
+      </a>
       <a class="card" href="/blog/empezar-sin-dejar-trabajo/">
         <h3><span class="es">Cómo empezar como IB sin dejar tu trabajo</span><span class="en">How to start as an IB without quitting your job</span></h3>
-        <p><span class="es">Nadie empieza tarde por falta de ganas: mira su semana, no encuentra un hueco y espera. Cómo empezar como IB con una hora al día, qué cabe en esa hora y qué señal mirar antes de dar el salto.</span><span class="en">Nobody starts late for lack of desire: they look at their week, find no gap and wait. How to start as an IB on one hour a day, what fits into that hour and which signal to watch before making the leap.</span></p>
+        <p><span class="es">Casi nadie empieza tarde por falta de ganas: mira su semana, no encuentra un hueco y espera. Cómo empezar como IB —el socio de un bróker— con una hora al día, qué cabe en esa hora y qué señal mirar antes de dar el salto.</span><span class="en">Almost nobody starts late for lack of desire: they look at their week, find no gap and wait. How to start as an IB —a broker&#39;s partner— on one hour a day, what fits into that hour and which signal to watch before making the leap.</span></p>
         <div class="bmeta"><span><span class="es">24 de septiembre de 2026</span><span class="en">September 24, 2026</span></span><span>&#183;</span><span><span class="es">3 min</span><span class="en">3 min</span></span><span>&#183;</span><span class="tag"><span class="es">Empezar</span><span class="en">Getting started</span></span></div>
       </a>
       <a class="card" href="/blog/role-play/">
