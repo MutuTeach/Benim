@@ -1,6 +1,23 @@
 {
   "rewrites": [
-    { "source": "/acceso", "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/academia" },
-    { "source": "/acceso/:path*", "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/:path*" }
+    {
+      "source": "/acceso",
+      "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/academia"
+    },
+    {
+      "source": "/acceso/:path*",
+      "destination": "https://ib-academy-acceso.nomadmutu.workers.dev/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|svg|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
   ]
 }
