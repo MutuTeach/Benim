@@ -11,11 +11,11 @@
   ],
   "headers": [
     {
-      "source": "/(.*)\\.(png|jpg|jpeg|svg|ico)",
+      "source": "/(.*)\\.(png|jpg|jpeg|svg|ico|webp)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "value": "public, max-age=2592000, stale-while-revalidate=604800"
         }
       ]
     }

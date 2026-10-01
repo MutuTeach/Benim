@@ -23,8 +23,10 @@
 <link rel="canonical" href="https://www.umutsimsek.co/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
-<link rel="preload" as="image" href="/hero.jpg" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"></noscript>
+<link rel="preload" as="image" href="/hero.jpg" imagesrcset="/hero-600.jpg 600w, /hero.jpg 900w" imagesizes="(max-width:899px) 100vw, 46vw" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090b'/%3E%3Ctext x='32' y='43' font-family='Inter,Helvetica,Arial,sans-serif' font-size='30' font-weight='800' fill='%233ecf8e' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Tengo que ser IB de Weltrade?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La academia está construida sobre el programa de IB de Weltrade: sus paquetes, su club de socios y sus herramientas. Si todavía no eres IB, en la reunión vemos cómo empezar. Antes de agendar, abre tu cuenta en weltrade.com y trae tu Client ID: es lo único que necesito para preparar la reunión."}}, {"@type": "Question", "name": "¿Cuánto tiempo necesito?", "acceptedAnswer": {"@type": "Answer", "text": "Cada etapa se aplica el mismo día que la lees. Los mínimos diarios —prospección, seguimiento y cierre— suman cerca de una hora; el resto lo sumas cuando tengas más tiempo. Si tienes menos, ajustamos el número diario, no el método."}}, {"@type": "Question", "name": "¿Me enseñan a operar o me dan señales?", "acceptedAnswer": {"@type": "Answer", "text": "No. Aquí no se enseña a operar ni se dan señales: se enseña el trabajo del IB — captar, atender, retener y sistematizar."}}, {"@type": "Question", "name": "¿Qué pasa en la reunión de 30 minutos?", "acceptedAnswer": {"@type": "Answer", "text": "Hablamos de tu comunidad, tus números y qué te frena. No es una venta: no hay nada que comprar. Si encajas, sales con el acceso; si no, sales con dos o tres cosas concretas para aplicar igual."}}, {"@type": "Question", "name": "¿Y si todavía no tengo comunidad?", "acceptedAnswer": {"@type": "Answer", "text": "Puedes entrar. La Etapa 1 empieza exactamente ahí: de dónde salen tus primeros clientes y qué decirles. Lo que sí necesitas es estar dispuesto a hacer el trabajo diario."}}, {"@type": "Question", "name": "¿Puedo compartir el contenido?", "acceptedAnswer": {"@type": "Answer", "text": "El acceso es personal. Puedes usar todo con tu comunidad; lo que no puedes es publicarlo ni revenderlo."}}]}</script>
 <style>
@@ -74,7 +76,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.88);b
 main{padding-top:72px}
 /* hero */
 #hero{padding:72px 0 56px}
-.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
 .hero-copy{display:flex;flex-direction:column;gap:28px}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;border:1px solid var(--gold-line);background:var(--gold-bg);color:var(--gold);font-size:14px;font-weight:600}
 h1{font-size:clamp(2.6rem,7vw,4.75rem);font-weight:800;line-height:.98;letter-spacing:-.04em}
@@ -115,8 +118,9 @@ h1{font-size:clamp(2.6rem,7vw,4.75rem);font-weight:800;line-height:.98;letter-sp
 .device .lockov{position:absolute;left:0;right:0;bottom:0;height:280px;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);background:linear-gradient(180deg,rgba(11,13,16,0) 0%,rgba(11,13,16,.82) 38%,rgba(11,13,16,.97) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 20px 40px;gap:14px;text-align:center}
 .lockov .ic{width:52px;height:52px;border-radius:16px;background:var(--gold-bg);border:1px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center}
 .lockov .t{font-family:var(--head);font-size:22px;font-weight:700}
-.device .base{height:18px;background:linear-gradient(180deg,#23272d,#15181c);border-radius:0 0 22px 22px;margin:0 -40px;border:1px solid #2a2f36;border-top:0}
-@media(max-width:700px){.device .screen{height:360px}.device .lockov{height:220px}.device .base{margin:0 -10px}}
+.device .base{height:18px;background:linear-gradient(180deg,#23272d,#15181c);border-radius:0 0 22px 22px;margin:0 -16px;border:1px solid #2a2f36;border-top:0}
+@media(min-width:1140px){.device .base{margin:0 -40px}}
+@media(max-width:700px){.device .screen{height:360px}.device .lockov{height:220px}.device .base{margin:0 -8px}}
 .takeaways{max-width:1040px;margin:36px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .takeaways li{list-style:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--muted)}
 .takeaways li b{color:var(--text);display:block;margin-bottom:4px}
@@ -154,7 +158,8 @@ figure.q figcaption{display:flex;align-items:center;gap:12px;padding-top:18px;bo
 .chat .m.me{align-self:flex-end;background:#005c4b;border-radius:10px 0 10px 10px;margin-top:6px}
 .chat .m small{font-size:11px;color:#8696a0;margin-left:6px}.chat .m.me small{color:#9fd8c9}
 /* etapas */
-.etapas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.etapas{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+@media(min-width:1000px){.etapas{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .etapa{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:18px;padding:24px 20px;display:flex;flex-direction:column;gap:10px}
 .etapa.last{background:var(--gold-bg);border-color:var(--gold-line);border-top-color:var(--gold)}
 .etapa .n{font-family:var(--head);font-size:36px;font-weight:800;color:var(--line2)}.etapa.last .n{color:var(--gold-line)}
@@ -321,7 +326,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     </div>
     <div class="hero-visual reveal">
       <div class="hero-img">
-        <img src="/hero.jpg" alt="Umut Simsek presentando ante una sala llena de IBs" width="900" height="1125" fetchpriority="high" decoding="async">
+        <img src="/hero.jpg" srcset="/hero-600.jpg 600w, /hero.jpg 900w" sizes="(max-width:899px) 100vw, 46vw" alt="Umut Simsek presentando ante una sala llena de IBs" width="900" height="1125" fetchpriority="high" decoding="async">
         <div class="shade"></div>
         <div class="cap"><div class="live"><span class="es">En vivo</span><span class="en">Live</span></div><div class="t"><span><span class="es">Encuentro IB ACADEMY</span><span class="en">IB ACADEMY meetup</span></span></div><div class="s"><span class="es">Con la red de IBs de Weltrade en Latinoamérica</span><span class="en">With the Weltrade IB network in Latin America</span></div></div>
       </div>
@@ -346,7 +351,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     </div>
     <div class="device reveal">
       <div class="frame"><div class="screen">
-        <img src="/img/panel.jpg" alt="Vista real del panel de IB ACADEMY" width="1400" height="678" loading="lazy">
+        <img src="/img/panel.jpg" srcset="/img/panel-800.jpg 800w, /img/panel.jpg 1400w" sizes="(max-width:1100px) 100vw, 1040px" alt="Vista real del panel de IB ACADEMY" width="1400" height="678" loading="lazy">
         <div class="lockov">
           <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
           <div class="t"><span><span class="es">Esto es tu panel. Se abre con tu clave.</span><span class="en">This is your panel. It opens with your key.</span></span></div>
@@ -380,8 +385,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <p><span class="es">IBs de toda Latinoamérica que trabajan con Weltrade ya están pasando por la academia. No solo entendieron la estructura del negocio: <b>lo empezaron a ver reflejado en su trabajo diario.</b></span><span class="en">IBs from all over Latin America who work with Weltrade are already going through the academy. They didn't just understand the structure of the business: <b>they started to see it reflected in their daily work.</b></span></p>
     </div>
     <div class="photos reveal">
-      <div class="photo"><img src="/img/evento.jpg" alt="IBs de la red Weltrade en un evento presencial" width="1200" height="800" loading="lazy" style="object-position:50% 45%"><span class="lbl"><span><span class="es">Eventos presenciales con la red</span><span class="en">In-person events with the network</span></span></span></div>
-      <div class="photo"><img src="/img/sesion.jpg" alt="Umut Simsek en una sesión en vivo con IBs de la red" width="900" height="1200" loading="lazy" style="object-position:50% 18%"><span class="lbl"><span class="es">Sesión en vivo con la red</span><span class="en">Live session with the network</span></span></div>
+      <div class="photo"><img src="/img/evento.jpg" srcset="/img/evento-600.jpg 600w, /img/evento.jpg 1000w" sizes="(max-width:800px) 100vw, 25vw" alt="IBs de la red Weltrade en un evento presencial" width="1000" height="667" loading="lazy" style="object-position:50% 45%"><span class="lbl"><span><span class="es">Eventos presenciales con la red</span><span class="en">In-person events with the network</span></span></span></div>
+      <div class="photo"><img src="/img/sesion.jpg" srcset="/img/sesion-600.jpg 600w, /img/sesion.jpg 900w" sizes="(max-width:800px) 50vw, 25vw" alt="Umut Simsek en una sesión en vivo con IBs de la red" width="900" height="1200" loading="lazy" style="object-position:50% 18%"><span class="lbl"><span class="es">Sesión en vivo con la red</span><span class="en">Live session with the network</span></span></div>
       <div class="photo"><img src="/img/uno-a-uno.jpg" alt="Umut trabajando 1 a 1 con un IB" width="375" height="548" loading="lazy" style="object-position:50% 25%"><span class="lbl"><span><span class="es">Acompañamiento 1 a 1</span><span class="en">1-on-1 support</span></span></span></div>
       <div class="photo"><img src="/img/material.jpg" alt="IB leyendo material de la academia" width="376" height="529" loading="lazy" style="object-position:50% 40%"><span class="lbl"><span><span class="es">Material de la academia</span><span class="en">Academy material</span></span></span></div>
     </div>
