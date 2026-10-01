@@ -224,6 +224,8 @@ footer{border-top:1px solid #16191d;background:var(--bg2);color:var(--muted2);fo
 /* mobile sticky cta */
 .mcta{display:none}
 @media(max-width:1024px){.mcta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:49;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(8,9,11,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}.mcta.show{transform:none}.mcta .btn{width:100%}body{padding-bottom:74px}}
+/* sayfa modu: menü = bölüm tek başına */
+body.view-mode .trust{display:none}body.view-mode section{padding-top:56px}.menu a.active{color:var(--accent)}
 /* reveal */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}

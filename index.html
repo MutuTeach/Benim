@@ -243,6 +243,8 @@ footer{border-top:1px solid #16191d;background:var(--bg2);color:var(--muted2);fo
 /* mobile sticky cta */
 .mcta{display:none}
 @media(max-width:1024px){.mcta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:49;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(8,9,11,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}.mcta.show{transform:none}.mcta .btn{width:100%}body{padding-bottom:74px}}
+/* sayfa modu: menü = bölüm tek başına */
+body.view-mode .trust{display:none}body.view-mode section{padding-top:56px}.menu a.active{color:var(--accent)}
 /* reveal */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -641,6 +643,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   if(mcta&&heroCta&&'IntersectionObserver' in window){var hs=true,fs=false;function upd(){mcta.classList.toggle('show',!hs&&!fs)}
     new IntersectionObserver(function(es){es.forEach(function(e){hs=e.isIntersecting});upd()},{threshold:0}).observe(heroCta);
     if(finalCta)new IntersectionObserver(function(es){es.forEach(function(e){fs=e.isIntersecting});upd()},{threshold:0}).observe(finalCta);}
+  /* sayfa modu: menü = bölümü tek başına aç · logo = todo */
+  var allViews=['hero','adentro','respaldo','testimonios','camino','roleplay','paraquien','acceso','faq','blog'];
+  var finalSec=document.getElementById('final'),navLinks=document.querySelectorAll('.menu a');
+  function setActive(id){navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)})}
+  function openView(id){var t=document.getElementById(id);if(!t)return false;
+    allViews.forEach(function(v){var el=document.getElementById(v);if(el)el.style.display=(v===id)?'':'none'});
+    if(finalSec)finalSec.style.display=(id==='blog')?'none':'';
+    document.body.classList.add('view-mode');
+    t.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+    if(finalSec)finalSec.querySelectorAll('.reveal').forEach(function(e){e.classList.add('visible')});
+    setActive(id);try{history.replaceState(null,'','#'+id)}catch(x){}window.scrollTo(0,0);return true}
+  function closeViews(){allViews.forEach(function(v){var el=document.getElementById(v);if(el)el.style.display=''});
+    if(finalSec)finalSec.style.display='';document.body.classList.remove('view-mode');setActive('');
+    try{history.replaceState(null,'',location.pathname+location.search)}catch(x){}window.scrollTo(0,0)}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){var id=a.getAttribute('href').slice(1);
+    if(id==='hero'){a.addEventListener('click',function(ev){ev.preventDefault();closeViews()});return}
+    if(allViews.indexOf(id)===-1)return;
+    a.addEventListener('click',function(ev){ev.preventDefault();openView(id)})});
+  var h0=(location.hash||'').slice(1);if(allViews.indexOf(h0)!==-1&&h0!=='hero')openView(h0);
   /* role play */
   var RP=[{"st": ["Etapa 1", "Stage 1"], "t": ["El primer contacto", "The first contact"], "m": ["Vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?", "I saw your ad… but I've seen a lot of scams. Is this a scam?"], "c": ["", ""]}, {"st": ["Etapa 2", "Stage 2"], "t": ["El lead que te dejó en visto", "The lead who left you on read"], "m": ["Ah, ok. Déjame ver y te aviso.", "Ah, ok. Let me look at it and I'll let you know."], "c": ["Fue hace seis días. Desde entonces, nada.", "That was six days ago. Nothing since."]}, {"st": ["Etapa 3", "Stage 3"], "t": ["El cliente que perdió", "The client who lost"], "m": ["Perdí casi todo lo que puse. Esto no funciona.", "I lost almost everything I put in. This doesn't work."], "c": ["", ""]}, {"st": ["Etapa 3", "Stage 3"], "t": ["El cliente que se va", "The client who's leaving"], "m": ["ok", "ok"], "c": ["Lleva 10 días sin operar. Responde en una palabra.", "10 days without trading. One-word replies."]}, {"st": ["Etapa 3", "Stage 3"], "t": ["Subir de paquete", "Moving up a package"], "m": ["Estoy bien así. No necesito más.", "I'm fine like this. I don't need more."], "c": ["", ""]}, {"st": ["Etapa 4", "Stage 4"], "t": ["Lo que prometiste hace tres semanas", "What you promised three weeks ago"], "m": ["Oye, ¿me ibas a mandar algo, no?", "Hey, you were going to send me something, right?"], "c": ["Tú no te acuerdas de qué. El cliente sí.", "You don't remember what. The client does."]}, {"st": ["Etapa 5", "Stage 5"], "t": ["Reclutar un sub-IB", "Recruiting a sub-IB"], "m": ["¿Y yo también podría hacer lo que haces tú?", "Could I do what you do, too?"], "c": ["", ""]}];
   var list=document.getElementById('rp-list');
