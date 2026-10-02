@@ -267,7 +267,7 @@ footer{border-top:1px solid #16191d;background:var(--bg2);color:var(--muted2);fo
 .lm select{background-image:linear-gradient(45deg,transparent 50%,var(--muted2) 50%),linear-gradient(135deg,var(--muted2) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
 .lm .fine{font-size:12px;color:var(--dim);line-height:1.5}
 .lm .ok{display:none;background:var(--green-bg);border:1px solid var(--green-line);border-radius:14px;padding:18px}
-.lm .ok.show{display:block}.lm form.done{display:none}
+.lm .ok.show{display:block}.lm form.done{display:none}.lm .codef{display:grid;gap:10px}.lm .codef[hidden]{display:none}
 .lm .err{color:#f87171;font-size:14px;min-height:1.2em}
 @media(max-width:900px){.lm{grid-template-columns:1fr;padding:28px 20px;border-radius:20px}}
 /* sayfa modu: menü = bölüm tek başına */
@@ -466,15 +466,24 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <form id="lm-form" novalidate>
           <input id="lm-n" name="nombre" autocomplete="name" placeholder="Tu nombre" required>
           <select id="lm-p" name="pais" aria-label="País"><option>Colombia</option><option>México</option><option>Perú</option><option>Ecuador</option><option>Chile</option><option>Argentina</option><option>Venezuela</option><option>Bolivia</option><option>Paraguay</option><option>Uruguay</option><option>Guatemala</option><option>Honduras</option><option>El Salvador</option><option>Nicaragua</option><option>Costa Rica</option><option>Panamá</option><option>República Dominicana</option><option>Puerto Rico</option><option>España</option><option>Estados Unidos</option><option>Otro</option></select>
-          <input id="lm-c" name="contacto" autocomplete="tel" inputmode="text" placeholder="WhatsApp (con código de país) o e-mail" required>
-          <button type="submit" class="btn btn-primary" id="lm-b"><span class="es">Enviarme la checklist</span><span class="en">Send me the checklist</span></button>
+          <input id="lm-c" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Tu e-mail (ahí te llega el código)" required>
+          <input id="lm-w" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="WhatsApp con código de país (opcional)">
+          <button type="submit" class="btn btn-primary" id="lm-b"><span class="es">Enviarme el código</span><span class="en">Send me the code</span></button>
           <div class="err" id="lm-e"></div>
-          <div class="fine"><span class="es">Solo lo uso para enviarte la checklist y, si quieres, escribirte sobre la academia. Sin listas de terceros.</span><span class="en">I only use it to send you the checklist and, if you want, to write to you about the academy. No third-party lists.</span></div>
+          <div class="fine"><span class="es">Te envío un código de 6 dígitos al e-mail; al escribirlo aquí se abre la checklist. Solo lo uso para esto y, si quieres, para escribirte sobre la academia. Sin listas de terceros.</span><span class="en">I send a 6-digit code to your e-mail; type it here and the checklist opens. I only use it for this and, if you want, to write to you about the academy. No third-party lists.</span></div>
+        </form>
+        <form id="lm-code" class="codef" novalidate hidden>
+          <div style="font-family:var(--head);font-weight:700;font-size:18px"><span class="es">Revisa tu correo</span><span class="en">Check your e-mail</span></div>
+          <p class="lead" style="font-size:15px;margin:6px 0 10px" id="lm-sent"></p>
+          <input id="lm-k" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" placeholder="000000" style="letter-spacing:.3em;font-size:22px;font-weight:800;text-align:center">
+          <button type="submit" class="btn btn-primary" id="lm-kb"><span class="es">Verificar y abrir la checklist</span><span class="en">Verify and open the checklist</span></button>
+          <div class="err" id="lm-ke"></div>
+          <div class="fine"><a href="#" id="lm-again" style="color:var(--gold)"><span class="es">No me llegó · pedir otro código</span><span class="en">It didn't arrive · request another code</span></a> · <span class="es">Mira también la carpeta de spam.</span><span class="en">Check your spam folder too.</span></div>
         </form>
         <div class="ok" id="lm-ok">
           <div style="font-family:var(--head);font-weight:700;font-size:18px"><span class="es">Listo. Aquí tienes tu checklist.</span><span class="en">Done. Here is your checklist.</span></div>
           <p class="lead" style="font-size:15px;margin:8px 0 14px"><span class="es">Guárdala y rellénala esta noche. Si tienes dudas, escríbeme.</span><span class="en">Save it and fill it in tonight. If you have questions, write to me.</span></p>
-          <a class="btn btn-primary btn-sm" id="lm-dl" href="/recursos/los-5-numeros.pdf" target="_blank" rel="noopener"><span class="es">Descargar PDF</span><span class="en">Download PDF</span></a>
+          <a class="btn btn-primary btn-sm" id="lm-dl" href="#" target="_blank" rel="noopener"><span class="es">Descargar PDF</span><span class="en">Download PDF</span></a>
         </div>
       </div>
     </div>
@@ -723,14 +732,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   var h0=(location.hash||'').slice(1);if(allViews.indexOf(h0)!==-1&&h0!=='hero')openView(h0);
   /* API: /acceso/* → Worker (yerelde doğrudan) */
   var API=/^localhost$|^127\./.test(location.hostname)?'https://ib-academy-acceso.nomadmutu.workers.dev':'/acceso';
-  /* lead magnet */
-  var lf=document.getElementById('lm-form');
+  /* lead magnet: e-mail → código → PDF */
+  var lf=document.getElementById('lm-form'),lk=document.getElementById('lm-code'),leadId=null;
+  function enT(){return document.body.classList.contains('lang-en')}
   if(lf){lf.addEventListener('submit',async function(ev){ev.preventDefault();var e=document.getElementById('lm-e'),b=document.getElementById('lm-b');e.textContent='';
-    var n=document.getElementById('lm-n').value.trim(),c=document.getElementById('lm-c').value.trim(),p=document.getElementById('lm-p').value;
-    if(n.length<2||c.length<5){e.textContent=document.body.classList.contains('lang-en')?'Write your name and a WhatsApp or e-mail.':'Escribe tu nombre y un WhatsApp o e-mail.';return}
-    b.disabled=true;try{var r=await fetch(API+'/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({nombre:n,contacto:c,pais:p})});var j=await r.json();
-      if(j.ok){if(j.url)document.getElementById('lm-dl').href=j.url;lf.classList.add('done');document.getElementById('lm-ok').classList.add('show')}else{e.textContent=j.error||'Error';b.disabled=false}}
-    catch(x){e.textContent=document.body.classList.contains('lang-en')?'No connection. Try again.':'Sin conexión. Inténtalo de nuevo.';b.disabled=false}});}
+    var n=document.getElementById('lm-n').value.trim(),m=document.getElementById('lm-c').value.trim(),w=document.getElementById('lm-w').value.trim(),p=document.getElementById('lm-p').value;
+    if(n.length<2){e.textContent=enT()?'Write your name.':'Escribe tu nombre.';return}
+    if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(m)){e.textContent=enT()?'Write a valid e-mail: the code goes there.':'Escribe un e-mail válido: ahí te llega el código.';return}
+    b.disabled=true;try{var r=await fetch(API+'/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({nombre:n,email:m,whatsapp:w,pais:p})});var j=await r.json();
+      if(j.ok){leadId=j.id;lf.hidden=true;lk.hidden=false;document.getElementById('lm-sent').textContent=(enT()?'I sent a 6-digit code to ':'Te envié un código de 6 dígitos a ')+m+(enT()?'. It is valid for 20 minutes.':'. Es válido 20 minutos.');document.getElementById('lm-k').focus()}
+      else{e.textContent=j.error||'Error';b.disabled=false}}
+    catch(x){e.textContent=enT()?'No connection. Try again.':'Sin conexión. Inténtalo de nuevo.';b.disabled=false}});
+   lk.addEventListener('submit',async function(ev){ev.preventDefault();var e=document.getElementById('lm-ke'),b=document.getElementById('lm-kb');e.textContent='';var k=document.getElementById('lm-k').value.replace(/\D/g,'');
+    if(k.length!==6){e.textContent=enT()?'Type the 6 digits.':'Escribe los 6 dígitos.';return}
+    b.disabled=true;try{var r=await fetch(API+'/lead/verificar',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:leadId,codigo:k})});var j=await r.json();
+      if(j.ok){document.getElementById('lm-dl').href=j.url;lk.hidden=true;document.getElementById('lm-ok').classList.add('show')}else{e.textContent=j.error||'Error';b.disabled=false}}
+    catch(x){e.textContent=enT()?'No connection. Try again.':'Sin conexión. Inténtalo de nuevo.';b.disabled=false}});
+   document.getElementById('lm-again').addEventListener('click',function(ev){ev.preventDefault();lk.hidden=true;lf.hidden=false;document.getElementById('lm-b').disabled=false;document.getElementById('lm-k').value=''});}
   /* bildirim şeridi: yalnız onaylı gerçek olaylar */
   var T=document.getElementById('toast');
   if(T&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
