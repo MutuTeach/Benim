@@ -167,25 +167,27 @@ figure.q figcaption{display:flex;align-items:center;gap:12px;padding-top:18px;bo
 .etapa .s{font-size:15px;color:var(--muted)}
 .lockline{margin-top:20px;display:flex;align-items:center;gap:10px;color:var(--gold);font-size:15px;font-weight:600}
 /* role play */
-.rp{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start}
-.rp-list{display:flex;flex-direction:column;gap:8px}
-.rp-btn{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font:inherit;font-weight:600;font-size:16px;cursor:pointer;min-height:44px}
-.rp-btn .st{font-size:12px;color:#7d858f;font-weight:700;white-space:nowrap}
-.rp-btn[aria-pressed="true"]{border-color:var(--accent);background:var(--green-bg);color:var(--text);font-weight:700}
-.rp-btn[aria-pressed="true"] .st{color:var(--accent)}
-.phone{background:#0d1013;border:1px solid #22262c;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.phone .hd{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#12161a;border-bottom:1px solid var(--line)}
-.phone .hd .av{background:#2a2f36;color:#c3c9d1;width:42px;height:42px}
-.phone .hd .n{font-weight:700}.phone .hd .st{font-size:13px;color:var(--accent)}
-.phone .body{padding:28px 22px;display:flex;flex-direction:column;gap:14px;min-height:340px}
-.bub{align-self:flex-start;max-width:85%;background:#1a1f24;border-radius:4px 18px 18px 18px;padding:14px 16px;font-size:17px}
-.ctx{align-self:center;font-size:13px;color:var(--muted2);background:#12161a;border:1px solid var(--line);padding:6px 12px;border-radius:99px;text-align:center}
-.ctx:empty{display:none}
-.ans{align-self:flex-end;max-width:85%;background:var(--green-bg);border:1px solid var(--green-line);border-radius:18px 4px 18px 18px;padding:14px 16px;font-size:16px;filter:blur(5px);user-select:none}
-.lockpill{align-self:flex-end;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;border:1px solid var(--gold-line);background:var(--gold-bg);color:var(--gold);font-size:14px;font-weight:700}
-.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);font-size:13px;color:var(--muted2)}
-.steps4>div{padding:14px 12px;border-right:1px solid var(--line)}.steps4>div:last-child{border-right:0}.steps4 b{color:var(--accent)}
-@media(max-width:560px){.steps4{grid-template-columns:1fr 1fr}.steps4>div:nth-child(2){border-right:0}.steps4>div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+#roleplay h2{margin-top:12px}
+.rp-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.rp-2 .card p{color:var(--muted);font-size:16px}.rp-2 .card p b{color:var(--text)}
+.rp-how{list-style:none;counter-reset:rp}
+.rp-how li{counter-increment:rp;position:relative;padding:12px 0 12px 46px;border-bottom:1px solid var(--line);color:var(--muted);font-size:16px}
+.rp-how li:last-child{border-bottom:0}
+.rp-how li::before{content:counter(rp);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:10px;background:var(--green-bg);border:1px solid var(--green-line);color:var(--accent);font-family:var(--head);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.rp-how li b{color:var(--text)}
+.rp-muted{color:var(--muted2);font-size:15px;max-width:680px}
+.rp-scs{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.rp-sc{display:grid;grid-template-columns:1fr;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+@media(min-width:820px){.rp-sc{grid-template-columns:1fr 1fr;align-items:center;padding:30px}}
+.rp-tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--green-bg);border:1px solid var(--green-line);border-radius:99px;padding:4px 11px;margin-bottom:12px}
+.rp-sc h3{font-family:var(--head);color:var(--gold);font-size:clamp(1.15rem,3.4vw,1.4rem);margin-bottom:8px}
+.rp-sc .out{color:var(--muted);font-size:16px;line-height:1.6}
+.peek{border:1px solid var(--line);border-radius:16px;background:#0d1013;padding:18px}
+.peek .plabel{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-bottom:10px}
+.mchat .b{max-width:90%;padding:11px 14px;border-radius:4px 16px 16px 16px;font-size:16px;line-height:1.5;background:#1a1f24;color:var(--text)}
+.rp-ctx2{margin-top:10px;font-size:14px;color:var(--muted2)}
+.rp-foot{margin-top:28px;padding:20px 22px;border-radius:18px;background:var(--gold-bg);border:1px solid var(--gold-line);color:var(--text);font-size:15px}
+.rp-foot b{color:var(--gold)}
 /* filtro */
 .filtro{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
 .filtro .card h3{margin-bottom:12px}.filtro .card.no h3{color:#f87171}
@@ -483,25 +485,150 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="roleplay">
   <div class="wrap">
     <div class="reveal">
-      <div class="kicker"><span><span class="es">Práctica 1 a 1</span><span class="en">1-on-1 practice</span></span></div>
-      <h2 style="margin:12px 0"><span><span class="es">Practica conmigo, no con tus clientes.</span><span class="en">Practice with me, not with your clients.</span></span></h2>
-      <p class="lead"><span class="es">Es una simulación: yo hago de cliente y tú de IB. Elige un escenario y mira cómo empieza la conversación. Aquí equivocarte no te cuesta un cliente.</span><span class="en">It's a simulation: I play the client and you play the IB. Pick a scenario and see how the conversation starts. Here, getting it wrong doesn't cost you a client.</span></p>
+      <div class="kicker"><span class="es">Práctica 1 a 1</span><span class="en">1-on-1 practice</span></div>
+      <h2><span class="es">Role Play: practica conmigo, no con tus clientes.</span><span class="en">Role Play: practice with me, not with your clients.</span></h2>
     </div>
-    <div class="rp reveal" style="margin-top:40px">
-      <div class="rp-list" id="rp-list"><button type="button" class="rp-btn" data-i="0" aria-pressed="true"><span><span class="es">El primer contacto</span><span class="en">The first contact</span></span><span class="st"><span><span class="es">Etapa 1</span><span class="en">Stage 1</span></span></span></button><button type="button" class="rp-btn" data-i="1" aria-pressed="false"><span><span class="es">El lead que te dejó en visto</span><span class="en">The lead who left you on read</span></span><span class="st"><span><span class="es">Etapa 2</span><span class="en">Stage 2</span></span></span></button><button type="button" class="rp-btn" data-i="2" aria-pressed="false"><span><span class="es">El cliente que perdió</span><span class="en">The client who lost</span></span><span class="st"><span><span class="es">Etapa 3</span><span class="en">Stage 3</span></span></span></button><button type="button" class="rp-btn" data-i="3" aria-pressed="false"><span><span class="es">El cliente que se va</span><span class="en">The client who's leaving</span></span><span class="st"><span><span class="es">Etapa 3</span><span class="en">Stage 3</span></span></span></button><button type="button" class="rp-btn" data-i="4" aria-pressed="false"><span><span class="es">Subir de paquete</span><span class="en">Moving up a package</span></span><span class="st"><span><span class="es">Etapa 3</span><span class="en">Stage 3</span></span></span></button><button type="button" class="rp-btn" data-i="5" aria-pressed="false"><span><span class="es">Lo que prometiste hace tres semanas</span><span class="en">What you promised three weeks ago</span></span><span class="st"><span><span class="es">Etapa 4</span><span class="en">Stage 4</span></span></span></button><button type="button" class="rp-btn" data-i="6" aria-pressed="false"><span><span class="es">Reclutar un sub-IB</span><span class="en">Recruiting a sub-IB</span></span><span class="st"><span><span class="es">Etapa 5</span><span class="en">Stage 5</span></span></span></button></div>
-      <div class="phone">
-        <div class="hd"><div class="av"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <div><div class="n"><span><span class="es">Cliente (interpretado por Umut)</span><span class="en">Client (played by Umut)</span></span></div><div class="st" id="rp-st"></div></div></div>
-        <div class="body">
-          <div class="bub" id="rp-msg"></div>
-          <div class="ctx" id="rp-ctx"></div>
-          <div class="ans" aria-hidden="true"><span><span class="es">Entiendo perfectamente lo que me dices, y quiero que lo veamos juntos con calma antes de cualquier paso.</span><span class="en">I completely understand what you're telling me, and I want us to look at it calmly together before any next step.</span></span></div>
-          <div class="lockpill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><span class="es">Tu respuesta, corregida en vivo</span><span class="en">Your answer, corrected live</span></span></div>
+
+    <div class="rp-2" style="margin-top:28px">
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Qué es un role play?</span><span class="en">What is a role play?</span></h3>
+        <p><span class="es">Es una simulación: <b>yo hago de cliente y tú de IB</b>. No es una clase ni una charla — es la conversación real, con sus silencios, sus objeciones y sus momentos incómodos. La única diferencia es que aquí equivocarte no te cuesta un cliente.</span><span class="en">It's a simulation: <b>I play the client and you play the IB</b>. It's not a class or a chat — it's the real conversation, with its silences, its objections and its uncomfortable moments. The only difference is that here, getting it wrong doesn't cost you a client.</span></p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">¿Por qué funciona?</span><span class="en">Why does it work?</span></h3>
+        <p><span class="es">Puedes leer diez veces el guion perfecto, pero cuando un lead real dice algo que no esperabas, se te olvida todo. <b>Lo que se practica bajo presión sale solo; lo que solo se lee, se improvisa</b> — y cada conversación improvisada es un lead que se enfría.</span><span class="en">You can read the perfect script ten times, but when a real lead says something you didn't expect, it all disappears. <b>What you practice under pressure comes out on its own; what you only read, you improvise</b> — and every improvised conversation is a lead going cold.</span></p>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin:38px 0 6px;color:var(--gold)"><span class="es">Cómo es una sesión</span><span class="en">What a session looks like</span></h3>
+    <div class="card reveal" style="margin-top:12px">
+      <ul class="rp-how" style="margin:0">
+        <li><span class="es"><b>Elegimos el escenario</b> según la etapa en la que estás.</span><span class="en"><b>We pick the scenario</b> based on the stage you're in.</span></li>
+        <li><span class="es"><b>Primero lo hago yo:</b> ves cómo se maneja.</span><span class="en"><b>First I do it:</b> you see how it's handled.</span></li>
+        <li><span class="es"><b>Ahora tú:</b> yo soy el cliente, y no te lo pongo fácil.</span><span class="en"><b>Now you:</b> I'm the client, and I don't make it easy.</span></li>
+        <li><span class="es"><b>Paramos, corrijo dos cosas concretas</b> y repetimos la misma escena.</span><span class="en"><b>We stop, I correct two specific things</b> and we run the same scene again.</span></li>
+      </ul>
+    </div>
+
+    <h3 class="reveal" style="margin:44px 0 6px;color:var(--gold)"><span class="es">Los escenarios, uno por uno</span><span class="en">The scenarios, one by one</span></h3>
+    <p class="rp-muted reveal" style="font-size:.92rem;max-width:680px">
+      <span class="es">Cada escenario practica una etapa de la academia. Aquí ves la situación; la técnica se trabaja en la sesión.</span>
+      <span class="en">Each scenario practices one stage of the academy. Here you see the situation; the technique is worked in the session.</span>
+    </p>
+
+    <div class="rp-scs">
+      <!-- RP 1 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 1</span><span class="en">Practices Stage 1</span></div>
+          <h3><span class="es">El primer contacto</span><span class="en">The first contact</span></h3>
+          <p class="out"><span class="es">Abrir una conversación con alguien que no te conoce, diagnosticar en dos preguntas y responder a la desconfianza sin sonar a vendedor.</span><span class="en">Open a conversation with someone who doesn't know you, diagnose in two questions and answer distrust without sounding like a salesperson.</span></p>
         </div>
-        <div class="steps4">
-          <div><b>1</b> <span><span class="es">Elegimos escenario</span><span class="en">We pick a scenario</span></span></div><div><b>2</b> <span><span class="es">Lo hago yo</span><span class="en">I do it first</span></span></div><div><b>3</b> <span><span class="es">Ahora tú</span><span class="en">Now you</span></span></div><div><b>4</b> <span><span class="es">Corrijo y repetimos</span><span class="en">I correct, we repeat</span></span></div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+          </div>
         </div>
       </div>
+
+      <!-- RP 2 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 2</span><span class="en">Practices Stage 2</span></div>
+          <h3><span class="es">El lead que te dejó en visto</span><span class="en">The lead who left you on read</span></h3>
+          <p class="out"><span class="es">Retomar una conversación que se apagó, sin presionar y sin pedir perdón por escribir. Cuándo insistir, cuándo cambiar el ángulo y cuándo soltar.</span><span class="en">Pick up a conversation that went quiet, without pressuring and without apologising for writing. When to insist, when to change the angle and when to let go.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Ah, ok. Déjame ver y te aviso.</span><span class="en">Ah, ok. Let me look at it and I'll let you know.</span></div>
+          </div>
+          <p class="rp-ctx2" style="margin-top:8px"><span class="es">Fue hace seis días. Desde entonces, nada.</span><span class="en">That was six days ago. Nothing since.</span></p>
+        </div>
+      </div>
+
+      <!-- RP 3 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que perdió</span><span class="en">The client who lost</span></h3>
+          <p class="out"><span class="es">La conversación que más IBs evitan: estar presente cuando tu cliente pierde, sin prometer nada y sin desaparecer.</span><span class="en">The conversation most IBs avoid: being there when your client loses, promising nothing and not disappearing.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Perdí casi todo lo que puse. Esto no funciona.</span><span class="en">I lost almost everything I put in. This doesn't work.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RP 4 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">El cliente que se va</span><span class="en">The client who's leaving</span></h3>
+          <p class="out"><span class="es">Reconocer las señales de fuga y saber qué decir en las primeras 24 horas, antes de que sea tarde.</span><span class="en">Recognize the churn signals and know what to say in the first 24 hours, before it's too late.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">ok</span><span class="en">ok</span></div>
+          </div>
+          <p class="rp-ctx2" style="margin-top:8px"><span class="es">Lleva 10 días sin operar. Responde en una palabra.</span><span class="en">10 days without trading. One-word replies.</span></p>
+        </div>
+      </div>
+
+      <!-- RP 5 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 3</span><span class="en">Practices Stage 3</span></div>
+          <h3><span class="es">Subir de paquete</span><span class="en">Moving up a package</span></h3>
+          <p class="out"><span class="es">Hacer evidente el valor del siguiente nivel sin presionar — y reconocer cuándo el cliente todavía no está listo.</span><span class="en">Make the value of the next level obvious without pressuring — and recognize when the client isn't ready yet.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Estoy bien así. No necesito más.</span><span class="en">I'm fine like this. I don't need more.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RP 6 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 4</span><span class="en">Practices Stage 4</span></div>
+          <h3><span class="es">Lo que prometiste hace tres semanas</span><span class="en">What you promised three weeks ago</span></h3>
+          <p class="out"><span class="es">Responder cuando un cliente te recuerda algo que tú ya no recuerdas: sin inventar, sin excusas, y dejando el proceso montado para que no vuelva a pasar.</span><span class="en">Answer when a client reminds you of something you no longer remember: without making things up, without excuses, and setting up the process so it doesn't happen again.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Oye, ¿me ibas a mandar algo, no?</span><span class="en">Hey, you were going to send me something, right?</span></div>
+          </div>
+          <p class="rp-ctx2" style="margin-top:8px"><span class="es">Tú no te acuerdas de qué. El cliente sí.</span><span class="en">You don't remember what. The client does.</span></p>
+        </div>
+      </div>
+
+      <!-- RP 7 -->
+      <div class="rp-sc reveal">
+        <div>
+          <div class="rp-tag"><span class="es">Practica la Etapa 5</span><span class="en">Practices Stage 5</span></div>
+          <h3><span class="es">Reclutar un sub-IB</span><span class="en">Recruiting a sub-IB</span></h3>
+          <p class="out"><span class="es">Detectar al cliente que puede convertirse en tu socio y proponérselo sin que suene a venta.</span><span class="en">Spot the client who can become your partner and propose it without sounding like a pitch.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Yo seré este cliente</span><span class="en">I'll be this client</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">¿Y yo también podría hacer lo que haces tú?</span><span class="en">Could I do what you do, too?</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rp-foot reveal">
+      <span class="es"><b>Sesiones 1 a 1, en vivo y sin grabación.</b> Cada sesión dura <b>30 minutos</b> y trabaja <b>un solo escenario</b>; se agendan en fechas separadas, a medida que avanzas por las etapas. Nadie más escucha: es tu espacio para equivocarte sin que te cueste un cliente.</span>
+      <span class="en"><b>1-on-1 sessions, live and never recorded.</b> Each session lasts <b>30 minutes</b> and works on <b>a single scenario</b>; they're scheduled on separate dates as you move through the stages. Nobody else listens: it's your space to get it wrong without it costing you a client.</span>
     </div>
   </div>
 </section>
@@ -746,14 +873,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         T.hidden=false;requestAnimationFrame(function(){T.classList.add('show')});setTimeout(function(){T.classList.remove('show')},6500)}
       setTimeout(show,6000);setInterval(show,16000)}).catch(function(){});
   }
-  /* role play */
-  var RP=[{"st": ["Etapa 1", "Stage 1"], "t": ["El primer contacto", "The first contact"], "m": ["Vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?", "I saw your ad… but I've seen a lot of scams. Is this a scam?"], "c": ["", ""]}, {"st": ["Etapa 2", "Stage 2"], "t": ["El lead que te dejó en visto", "The lead who left you on read"], "m": ["Ah, ok. Déjame ver y te aviso.", "Ah, ok. Let me look at it and I'll let you know."], "c": ["Fue hace seis días. Desde entonces, nada.", "That was six days ago. Nothing since."]}, {"st": ["Etapa 3", "Stage 3"], "t": ["El cliente que perdió", "The client who lost"], "m": ["Perdí casi todo lo que puse. Esto no funciona.", "I lost almost everything I put in. This doesn't work."], "c": ["", ""]}, {"st": ["Etapa 3", "Stage 3"], "t": ["El cliente que se va", "The client who's leaving"], "m": ["ok", "ok"], "c": ["Lleva 10 días sin operar. Responde en una palabra.", "10 days without trading. One-word replies."]}, {"st": ["Etapa 3", "Stage 3"], "t": ["Subir de paquete", "Moving up a package"], "m": ["Estoy bien así. No necesito más.", "I'm fine like this. I don't need more."], "c": ["", ""]}, {"st": ["Etapa 4", "Stage 4"], "t": ["Lo que prometiste hace tres semanas", "What you promised three weeks ago"], "m": ["Oye, ¿me ibas a mandar algo, no?", "Hey, you were going to send me something, right?"], "c": ["Tú no te acuerdas de qué. El cliente sí.", "You don't remember what. The client does."]}, {"st": ["Etapa 5", "Stage 5"], "t": ["Reclutar un sub-IB", "Recruiting a sub-IB"], "m": ["¿Y yo también podría hacer lo que haces tú?", "Could I do what you do, too?"], "c": ["", ""]}];
-  var list=document.getElementById('rp-list');
-  function pick(i){var d=RP[i];var es=function(p){return '<span class="es">'+p[0]+'</span><span class="en">'+p[1]+'</span>'};
-    document.getElementById('rp-st').innerHTML=es(d.st)+' · '+es(d.t);document.getElementById('rp-msg').innerHTML=es(d.m);
-    document.getElementById('rp-ctx').innerHTML=d.c[0]?es(d.c):'';
-    list.querySelectorAll('.rp-btn').forEach(function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-i')===i))});}
-  list.addEventListener('click',function(ev){var b=ev.target.closest('.rp-btn');if(b)pick(+b.getAttribute('data-i'))});pick(0);
   /* blog: filtro por etiqueta */
   var chips=document.getElementById('chips'),cards=[].slice.call(document.querySelectorAll('#blog-list .card'));
   var seen={};cards.forEach(function(c){var t=c.querySelector('.tag');if(!t)return;var es=t.querySelector('.es'),en=t.querySelector('.en');var k=(es?es.textContent:t.textContent).trim();if(seen[k])return;seen[k]=1;
