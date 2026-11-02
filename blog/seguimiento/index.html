@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.88);b
 .nav-right{display:flex;align-items:center;gap:10px}
 .lang-toggle{display:flex;border:1px solid #22262c;border-radius:999px;padding:3px;font-size:13px;font-weight:700}
 .lang-toggle button,.lang-toggle a{text-decoration:none;background:transparent;color:var(--muted2);border:0;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer}
-.lang-toggle button.on,.lang-toggle a.on{background:var(--accent);color:var(--accent-ink)}
+.lang-toggle button.on,.lang-toggle a.on,.lang-toggle a.on{background:var(--accent);color:var(--accent-ink)}
 .burger{display:none;width:44px;height:44px;border:1px solid var(--line2);border-radius:12px;background:transparent;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
 .burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px}
 .mobile-menu{display:none;flex-direction:column;padding:10px 20px 18px;border-top:1px solid var(--line);background:rgba(8,9,11,.98)}
@@ -107,6 +107,23 @@ h1{font-size:clamp(2.6rem,7vw,4.75rem);font-weight:800;line-height:.98;letter-sp
 .takeaways li{list-style:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--muted)}
 .takeaways li b{color:var(--text);display:block;margin-bottom:4px}
 /* respaldo */
+.who{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start;margin-bottom:48px}
+.who-head{position:sticky;top:96px}
+.who-slogan{margin-top:18px;font-family:var(--head);font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.35;color:var(--gold);font-weight:700}
+.who-story{display:flex;flex-direction:column;gap:14px}
+.who-line{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:2px solid var(--line2)}
+.who-step{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:0 0 18px 20px;position:relative}
+.who-step::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.who-lbl{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--accent);padding-top:3px}
+.who-step p{font-size:16px;line-height:1.6;color:var(--muted);margin:0}
+.js-who .who-more{display:none}.js-who.who-open .who-more{display:grid}
+.who-toggle{align-self:flex-start;background:transparent;border:1px solid var(--line2);color:var(--text);font:inherit;font-weight:600;font-size:14px;border-radius:99px;padding:9px 16px;cursor:pointer;min-height:40px}
+.who-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.who-final{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.who-final p{margin:0;font-size:16px;line-height:1.6;color:var(--muted)}
+.who-final .who-close{color:var(--text);font-weight:600}
+@media(max-width:560px){.who-step{grid-template-columns:1fr;gap:4px}}
+@media(max-width:860px){.who{grid-template-columns:1fr;gap:24px}.who-head{position:static}}
 .resp-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:end;margin-bottom:48px}
 .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px}
@@ -327,7 +344,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <p>En IB ACADEMY este tema tiene nombre propio: <b>la escalera del seguimiento</b> — cuántos contactos, con qué ritmo, qué aporta cada uno y qué decir en cada peldaño. Y lo practicamos en sesiones uno a uno antes de que lo uses con un lead real.</p>
         <a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener">Agenda una reunión de 30 minutos</a>
       </div>
-    <div class="sigue"><h3>Sigue leyendo</h3><ul><li><a href="/blog/que-es-un-ib/">¿Qué es un IB y cómo gana dinero realmente?</a></li><li><a href="/blog/primer-mensaje/">Por qué nadie responde a tu primer mensaje</a></li><li><a href="/blog/por-que-retiran/">Por qué tus clientes depositan y retiran a los pocos días</a></li></ul></div><div class="abox">
+    <div class="sigue"><h3>Sigue leyendo</h3><ul><li><a href="/blog/que-es-un-ib/">¿Qué es un IB y cómo gana dinero realmente?</a></li><li><a href="/blog/primer-mensaje/">Por qué nadie responde a tu primer mensaje</a></li><li><a href="/blog/por-que-retiran/">Por qué tus clientes depositan y retiran a los pocos días</a></li><li><a href="/guia-ib/">Guía completa: cómo ser IB de forex en Latinoamérica</a></li></ul></div><div class="abox">
   <img src="/img/avatar.jpg" alt="Umut Simsek" width="56" height="56">
   <div>
     <div class="an">Umut Simsek</div>
