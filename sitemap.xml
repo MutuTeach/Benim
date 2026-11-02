@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.umutsimsek.co/</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.umutsimsek.co/blog/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.umutsimsek.co/</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.umutsimsek.co/guia-ib/</loc><lastmod>2026-10-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/crecer-con-role-play/</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/role-play-retencion/</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/blog/diferenciarte-como-ib/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/tres-errores-semana/</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/automatizar-tu-trabajo/</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/empezar-sin-dejar-trabajo/</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
@@ -18,4 +22,26 @@
   <url><loc>https://www.umutsimsek.co/blog/seguimiento/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/fundador/</loc><lastmod>2026-09-04</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.umutsimsek.co/blog/por-que-retiran/</loc><lastmod>2026-09-21</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/pt/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/apoyo-del-broker/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/automatizar-tu-trabajo/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/buen-mes-no-es-negocio/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/cinco-errores/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/comunidad-no-crece/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/constancia/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/crecer-con-role-play/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/de-trader-a-empresario/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/diferenciarte-como-ib/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/empezar-sin-dejar-trabajo/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/fundador/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/memoria/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/por-que-retiran/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/primer-mensaje/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/que-es-un-ib/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/role-play-retencion/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/role-play/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/seguimiento/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.umutsimsek.co/en/blog/tres-errores-semana/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
 </urlset>

@@ -1,5 +1,8 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Por qué tu comunidad no crece aunque publiques todos los días | IB ACADEMY</title><meta name="description" content="Vistas no son clientes. Las tres formas de publicar que no traen a nadie, lo que sí hace que alguien te escriba y la cuenta que casi ningún IB hace.">
+<link rel="alternate" hreflang="es" href="https://www.umutsimsek.co/blog/comunidad-no-crece/">
+<link rel="alternate" hreflang="en" href="https://www.umutsimsek.co/en/blog/comunidad-no-crece/">
+<link rel="alternate" hreflang="x-default" href="https://www.umutsimsek.co/blog/comunidad-no-crece/">
 <link rel="canonical" href="https://www.umutsimsek.co/blog/comunidad-no-crece/">
 <meta property="og:type" content="article"><meta property="og:locale" content="es_LA"><meta property="og:site_name" content="IB ACADEMY">
 <meta property="og:title" content="Por qué tu comunidad no crece aunque publiques todos los días | IB ACADEMY"><meta property="og:description" content="Vistas no son clientes. Las tres formas de publicar que no traen a nadie, lo que sí hace que alguien te escriba y la cuenta que casi ningún IB hace."><meta property="og:url" content="https://www.umutsimsek.co/blog/comunidad-no-crece/">
@@ -18,7 +21,7 @@ img{max-width:100%;display:block}
 h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.03em;line-height:1.1}
 h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:800}
 h3{font-size:1.15rem;font-weight:700}
-.en{display:none}body.lang-en .es{display:none}body.lang-en .en{display:inline}
+.en,.pt{display:none}body.lang-en .es{display:none}body.lang-en .en{display:inline}body.lang-pt .pt{display:inline}body.lang-pt .es:has(~ .pt){display:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 section{padding:96px 0 40px}
 .kicker{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700;text-transform:uppercase}
@@ -40,8 +43,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.88);b
 .menu a{color:#c3c9d1}.menu a:hover{color:var(--text)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .lang-toggle{display:flex;border:1px solid #22262c;border-radius:999px;padding:3px;font-size:13px;font-weight:700}
-.lang-toggle button{background:transparent;color:var(--muted2);border:0;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer}
-.lang-toggle button.on{background:var(--accent);color:var(--accent-ink)}
+.lang-toggle button,.lang-toggle a{text-decoration:none;background:transparent;color:var(--muted2);border:0;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer}
+.lang-toggle button.on,.lang-toggle a.on{background:var(--accent);color:var(--accent-ink)}
 .burger{display:none;width:44px;height:44px;border:1px solid var(--line2);border-radius:12px;background:transparent;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
 .burger span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px}
 .mobile-menu{display:none;flex-direction:column;padding:10px 20px 18px;border-top:1px solid var(--line);background:rgba(8,9,11,.98)}
@@ -144,27 +147,30 @@ figure.q figcaption{display:flex;align-items:center;gap:12px;padding-top:18px;bo
 .etapa .n{font-family:var(--head);font-size:36px;font-weight:800;color:var(--line2)}.etapa.last .n{color:var(--gold-line)}
 .etapa .t{font-family:var(--head);font-size:19px;font-weight:700;color:var(--gold)}
 .etapa .s{font-size:15px;color:var(--muted)}
+.etapa .s .elink{display:block;margin-top:10px;font-size:14px;color:var(--accent);font-weight:600}
 .lockline{margin-top:20px;display:flex;align-items:center;gap:10px;color:var(--gold);font-size:15px;font-weight:600}
 /* role play */
-.rp{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start}
-.rp-list{display:flex;flex-direction:column;gap:8px}
-.rp-btn{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font:inherit;font-weight:600;font-size:16px;cursor:pointer;min-height:44px}
-.rp-btn .st{font-size:12px;color:#7d858f;font-weight:700;white-space:nowrap}
-.rp-btn[aria-pressed="true"]{border-color:var(--accent);background:var(--green-bg);color:var(--text);font-weight:700}
-.rp-btn[aria-pressed="true"] .st{color:var(--accent)}
-.phone{background:#0d1013;border:1px solid #22262c;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.phone .hd{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#12161a;border-bottom:1px solid var(--line)}
-.phone .hd .av{background:#2a2f36;color:#c3c9d1;width:42px;height:42px}
-.phone .hd .n{font-weight:700}.phone .hd .st{font-size:13px;color:var(--accent)}
-.phone .body{padding:28px 22px;display:flex;flex-direction:column;gap:14px;min-height:340px}
-.bub{align-self:flex-start;max-width:85%;background:#1a1f24;border-radius:4px 18px 18px 18px;padding:14px 16px;font-size:17px}
-.ctx{align-self:center;font-size:13px;color:var(--muted2);background:#12161a;border:1px solid var(--line);padding:6px 12px;border-radius:99px;text-align:center}
-.ctx:empty{display:none}
-.ans{align-self:flex-end;max-width:85%;background:var(--green-bg);border:1px solid var(--green-line);border-radius:18px 4px 18px 18px;padding:14px 16px;font-size:16px;filter:blur(5px);user-select:none}
-.lockpill{align-self:flex-end;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;border:1px solid var(--gold-line);background:var(--gold-bg);color:var(--gold);font-size:14px;font-weight:700}
-.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);font-size:13px;color:var(--muted2)}
-.steps4>div{padding:14px 12px;border-right:1px solid var(--line)}.steps4>div:last-child{border-right:0}.steps4 b{color:var(--accent)}
-@media(max-width:560px){.steps4{grid-template-columns:1fr 1fr}.steps4>div:nth-child(2){border-right:0}.steps4>div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+#roleplay h2{margin-top:12px}
+.rp-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.rp-2 .card p{color:var(--muted);font-size:16px}.rp-2 .card p b{color:var(--text)}
+.rp-how{list-style:none;counter-reset:rp}
+.rp-how li{counter-increment:rp;position:relative;padding:12px 0 12px 46px;border-bottom:1px solid var(--line);color:var(--muted);font-size:16px}
+.rp-how li:last-child{border-bottom:0}
+.rp-how li::before{content:counter(rp);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:10px;background:var(--green-bg);border:1px solid var(--green-line);color:var(--accent);font-family:var(--head);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.rp-how li b{color:var(--text)}
+.rp-muted{color:var(--muted2);font-size:15px;max-width:680px}
+.rp-scs{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.rp-sc{display:grid;grid-template-columns:1fr;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+@media(min-width:820px){.rp-sc{grid-template-columns:1fr 1fr;align-items:center;padding:30px}}
+.rp-tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--green-bg);border:1px solid var(--green-line);border-radius:99px;padding:4px 11px;margin-bottom:12px}
+.rp-sc h3{font-family:var(--head);color:var(--gold);font-size:clamp(1.15rem,3.4vw,1.4rem);margin-bottom:8px}
+.rp-sc .out{color:var(--muted);font-size:16px;line-height:1.6}
+.peek{border:1px solid var(--line);border-radius:16px;background:#0d1013;padding:18px}
+.peek .plabel{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-bottom:10px}
+.mchat .b{max-width:90%;padding:11px 14px;border-radius:4px 16px 16px 16px;font-size:16px;line-height:1.5;background:#1a1f24;color:var(--text)}
+.rp-ctx2{margin-top:10px;font-size:14px;color:var(--muted2)}
+.rp-foot{margin-top:28px;padding:20px 22px;border-radius:18px;background:var(--gold-bg);border:1px solid var(--gold-line);color:var(--text);font-size:15px}
+.rp-foot b{color:var(--gold)}
 /* filtro */
 .filtro{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
 .filtro .card h3{margin-bottom:12px}.filtro .card.no h3{color:#f87171}
@@ -275,59 +281,59 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .post{display:block;max-width:760px}.rutas{display:grid;gap:12px;grid-template-columns:1fr;margin-top:22px}@media(min-width:720px){.rutas{grid-template-columns:1fr 1fr}}.ruta{display:block;text-decoration:none;color:inherit;padding:14px 16px;border:1px solid rgba(255,255,255,.08);border-radius:12px;border-left:2px solid var(--gold)}.ruta .rlabel{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}.ruta .rpath{display:block;font-size:.92rem;line-height:1.5;color:var(--muted)}.blog-list .card{display:block}main{padding-top:96px}@media(max-width:560px){main{padding-top:84px}}.post .plink a[href^='/blog/']{color:var(--gold)}.abox{display:flex;gap:16px;align-items:flex-start;margin:38px 0 0;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022)}.abox img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:1px solid rgba(231,200,138,.35)}.abox .an{font-weight:700;color:var(--text);font-size:1rem}.abox .ar{color:var(--gold);font-size:.86rem;font-weight:600;margin:2px 0 8px}.abox p{font-size:.92rem;color:var(--muted);margin:0 0 10px;line-height:1.6}.abox .al a{color:var(--accent);text-decoration:none;font-size:.86rem;font-weight:600;margin-right:14px}.abox .al a:hover{text-decoration:underline}@media(max-width:560px){.abox{flex-direction:column;gap:12px}}h1.ptitle{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.14;margin:8px 0 10px}.abox .al a{display:inline-block;padding:7px 0}nav .logo{display:inline-block;padding:8px 0}.post .back{display:inline-block;padding:6px 0}@media(max-width:560px){nav .nav-enter{display:inline-flex!important;padding:10px 14px;font-size:13px}}.post .pfig{margin:26px auto;max-width:560px}.post .pfig img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid rgba(255,255,255,.08)}.post .pfig figcaption{margin-top:10px;font-size:.86rem;line-height:1.5;color:var(--muted)}@media(max-width:560px){.post .pfig{margin:20px 0}}.sigue{margin-top:28px;padding:16px 18px;border:1px solid rgba(255,255,255,.08);border-radius:12px}.sigue h3{margin:0 0 10px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.sigue ul{list-style:none;margin:0;padding:0}.sigue li{padding:6px 0;border-top:1px solid rgba(255,255,255,.06)}.sigue li:first-child{border-top:0}.sigue a{color:var(--gold);text-decoration:none;font-size:.95rem}.sigue a:hover{text-decoration:underline}</style></head><body><nav><div class="nav-inner">
   <a class="logo" href="/" style="text-decoration:none;color:inherit">IB <b>ACADEMY</b></a>
   <div class="nav-right">
-    <div class="lang-toggle"><button id="btn-es" class="on" type="button">ES</button><button id="btn-en" type="button">EN</button></div>
-    <a href="/acceso/academia" class="btn btn-ghost btn-sm nav-enter"><span class="es">Entrar</span><span class="en">Log in</span></a>
-    <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta"><span class="es">Agenda una reunión</span><span class="en">Book a meeting</span></a>
+    <div class="lang-toggle"><a id="btn-es" class="on" href="/blog/comunidad-no-crece/" lang="es" aria-pressed="true">ES</a><a id="btn-en" href="/en/blog/comunidad-no-crece/" lang="en" aria-pressed="false">EN</a></div>
+    <a href="/acceso/academia" class="btn btn-ghost btn-sm nav-enter">Entrar</a>
+    <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">Agenda una reunión</a>
   </div></div></nav>
 <main><section id="blog"><div class="wrap"><article class="post open" id="post-comunidad-no-crece">
 <!-- actualizado: 2026-09-21 -->
-<a class="back" href="/blog/">← <span class="es">Volver al blog</span><span class="en">Back to blog</span></a>
-<div class="kicker"><span class="es">Captación</span><span class="en">Lead generation</span></div>
-<h1 class="ptitle" data-es="Por qué tu comunidad no crece aunque publiques todos los días" data-en="Why your community isn&#x27;t growing even though you post every day">Por qué tu comunidad no crece aunque publiques todos los días</h1>
-<div class="pmeta"><span>Umut Simsek</span><span>·</span><span><span class="es">8 de septiembre de 2026</span><span class="en">September 8, 2026</span></span><span>·</span><span><span class="es">3 min de lectura</span><span class="en">3 min read</span></span></div>
-<p class="plead"><span class="es">Publicas todos los días: análisis, gráficos, alguna operación que salió bien. Tienes vistas, a veces comentarios. Y cuando miras tu lista de clientes activos, el número casi no se mueve. No te falta constancia. Estás midiendo lo que no importa: para conseguir clientes como IB, lo que cuenta no son las vistas.</span><span class="en">You post every day: analysis, charts, the occasional trade that went well. You get views, sometimes comments. And when you look at your list of active clients, the number barely moves. You don't lack consistency. You're measuring the wrong thing: to win clients as an IB, what counts isn't views.</span></p>
-<h3><span class="es">Contenido no es captación de clientes</span><span class="en">Content is not client acquisition</span></h3>
-<p><span class="es">Este es el error más difícil de ver desde adentro: confundir tener audiencia con tener clientes.</span><span class="en">This is the hardest mistake to see from the inside: confusing having an audience with having clients.</span></p>
-<p><span class="es">Una audiencia mira. Un cliente conversa contigo, decide, deposita y sigue ahí al mes siguiente. Entre una cosa y la otra hay un paso que la mayoría del contenido nunca provoca: que alguien te escriba. Si tus publicaciones generan vistas pero no conversaciones, no estás captando. Estás entreteniendo.</span><span class="en">An audience watches. A client talks to you, decides, deposits and is still there the following month. Between the two there's a step most content never triggers: someone writing to you. If your posts generate views but not conversations, you're not acquiring clients. You're entertaining.</span></p>
-<h3><span class="es">Las tres formas de publicar que no traen clientes</span><span class="en">The three ways of posting that bring no clients</span></h3>
+<a class="back" href="/blog/">← Volver al blog</a>
+<div class="kicker">Captación</div>
+<h1 class="ptitle">Por qué tu comunidad no crece aunque publiques todos los días</h1>
+<div class="pmeta"><span>Umut Simsek</span><span>·</span><span>8 de septiembre de 2026</span><span>·</span><span>3 min de lectura</span></div>
+<p class="plead">Publicas todos los días: análisis, gráficos, alguna operación que salió bien. Tienes vistas, a veces comentarios. Y cuando miras tu lista de clientes activos, el número casi no se mueve. No te falta constancia. Estás midiendo lo que no importa: para conseguir clientes como IB, lo que cuenta no son las vistas.</p>
+<h3>Contenido no es captación de clientes</h3>
+<p>Este es el error más difícil de ver desde adentro: confundir tener audiencia con tener clientes.</p>
+<p>Una audiencia mira. Un cliente conversa contigo, decide, deposita y sigue ahí al mes siguiente. Entre una cosa y la otra hay un paso que la mayoría del contenido nunca provoca: que alguien te escriba. Si tus publicaciones generan vistas pero no conversaciones, no estás captando. Estás entreteniendo.</p>
+<h3>Las tres formas de publicar que no traen clientes</h3>
 <ul class="clean">
-<li><span class="es"><b>Lo que podría publicar cualquier IB:</b> el gráfico del día, la frase del trader famoso, la captura de una operación. No dice nada de cómo trabajas.</span><span class="en"><b>What any IB could post:</b> the chart of the day, the famous trader's quote, a screenshot of a trade. It says nothing about how you work.</span></li>
-<li><span class="es"><b>Lo que habla al mercado, no a una persona:</b> análisis correctos dirigidos a nadie en particular.</span><span class="en"><b>What speaks to the market, not to a person:</b> correct analysis addressed to no one in particular.</span></li>
-<li><span class="es"><b>Lo que no tiene salida:</b> termina y no hay siguiente paso. Ni una pregunta, ni una invitación, ni un motivo para escribirte.</span><span class="en"><b>What has no exit:</b> it ends and there's no next step. No question, no invitation, no reason to write to you.</span></li>
+<li><b>Lo que podría publicar cualquier IB:</b> el gráfico del día, la frase del trader famoso, la captura de una operación. No dice nada de cómo trabajas.</li>
+<li><b>Lo que habla al mercado, no a una persona:</b> análisis correctos dirigidos a nadie en particular.</li>
+<li><b>Lo que no tiene salida:</b> termina y no hay siguiente paso. Ni una pregunta, ni una invitación, ni un motivo para escribirte.</li>
 </ul>
-<p><span class="es">Ninguna es mala en sí. El problema es que son las únicas que muchos IBs publican, durante meses.</span><span class="en">None of them is bad in itself. The problem is that they're the only things many IBs post, for months.</span></p>
-<h3><span class="es">Lo que sí hace que alguien te escriba</span><span class="en">What actually makes someone write to you</span></h3>
-<p><span class="es">Un lead no te escribe porque tu análisis fue bueno. Te escribe porque pensó: <span class="q">“</span>este entiende mi situación<span class="q">”</span>. Eso ocurre cuando el contenido muestra lo que el gráfico del día nunca muestra:</span><span class="en">A lead doesn't write to you because your analysis was good. They write because they thought: "this person understands my situation". That happens when your content shows what the chart of the day never shows:</span></p>
+<p>Ninguna es mala en sí. El problema es que son las únicas que muchos IBs publican, durante meses.</p>
+<h3>Lo que sí hace que alguien te escriba</h3>
+<p>Un lead no te escribe porque tu análisis fue bueno. Te escribe porque pensó: <span class="q">“</span>este entiende mi situación<span class="q">”</span>. Eso ocurre cuando el contenido muestra lo que el gráfico del día nunca muestra:</p>
 <ul class="clean">
-<li><span class="es"><b>Cómo trabajas:</b> qué haces cuando alguien empieza, cómo lo acompañas, qué le dices en un mal día.</span><span class="en"><b>How you work:</b> what you do when someone starts, how you accompany them, what you say on a bad day.</span></li>
-<li><span class="es"><b>A quién le hablas:</b> al que nunca ha operado, al que ya perdió con otro bróker, al que tiene una cuenta abandonada. Cada uno necesita un mensaje distinto.</span><span class="en"><b>Who you're talking to:</b> the one who has never traded, the one who already lost with another broker, the one with an abandoned account. Each needs a different message.</span></li>
-<li><span class="es"><b>Qué pasa después:</b> una puerta concreta. <span class="q">“</span>Escríbeme y te cuento<span class="q">”</span>, <span class="q">“</span>mándame tu duda<span class="q">”</span>.</span><span class="en"><b>What happens next:</b> a concrete door. "Write to me and I'll tell you", "send me your question".</span></li>
+<li><b>Cómo trabajas:</b> qué haces cuando alguien empieza, cómo lo acompañas, qué le dices en un mal día.</li>
+<li><b>A quién le hablas:</b> al que nunca ha operado, al que ya perdió con otro bróker, al que tiene una cuenta abandonada. Cada uno necesita un mensaje distinto.</li>
+<li><b>Qué pasa después:</b> una puerta concreta. <span class="q">“</span>Escríbeme y te cuento<span class="q">”</span>, <span class="q">“</span>mándame tu duda<span class="q">”</span>.</li>
 </ul>
-<p><span class="es">El contenido que capta no es el más visto. Es el que hace que la persona correcta sienta que tiene permiso para escribirte.</span><span class="en">The content that acquires clients isn't the most viewed. It's the one that makes the right person feel they have permission to write to you.</span></p>
-<h3><span class="es">La cuenta que casi nadie hace</span><span class="en">The count almost nobody does</span></h3>
-<p><span class="es">Con tus últimas veinte publicaciones:</span><span class="en">With your last twenty posts:</span></p>
+<p>El contenido que capta no es el más visto. Es el que hace que la persona correcta sienta que tiene permiso para escribirte.</p>
+<h3>La cuenta que casi nadie hace</h3>
+<p>Con tus últimas veinte publicaciones:</p>
 <ul class="clean">
-<li><span class="es">¿Cuántas generaron al menos una conversación nueva?</span><span class="en">How many generated at least one new conversation?</span></li>
-<li><span class="es">¿Cuántas de esas conversaciones llegaron a una cuenta abierta?</span><span class="en">How many of those conversations led to an account being opened?</span></li>
-<li><span class="es">¿Cuántas de esas cuentas siguen activas hoy?</span><span class="en">How many of those accounts are still active today?</span></li>
+<li>¿Cuántas generaron al menos una conversación nueva?</li>
+<li>¿Cuántas de esas conversaciones llegaron a una cuenta abierta?</li>
+<li>¿Cuántas de esas cuentas siguen activas hoy?</li>
 </ul>
-<p><span class="es">Si la primera cifra es cercana a cero, publicar más no lo arregla: tendrás más de lo mismo. Lo que cambia el resultado no es la frecuencia, es qué publicas y para quién.</span><span class="en">If the first number is close to zero, posting more won't fix it: you'll get more of the same. What changes the result isn't frequency, it's what you post and for whom.</span></p>
-<h3><span class="es">El contenido abre la puerta; el trabajo empieza después</span><span class="en">Content opens the door; the work starts afterwards</span></h3>
-<p><span class="es">Incluso el mejor contenido solo abre la puerta. Lo que convierte a un lead en cliente es lo que haces cuando te escribe —y sobre todo cuando deja de responder.</span><span class="en">Even the best content only opens the door. What turns a lead into a client is what you do when they write —and above all when they stop replying.</span></p>
-<p><span class="es">Una comunidad que crece no es la que tiene más seguidores. Es la que tiene un flujo predecible: contenido que provoca conversaciones, conversaciones que se sostienen y clientes que se quedan.</span><span class="en">A community that grows isn't the one with the most followers. It's the one with a predictable flow: content that triggers conversations, conversations that hold, and clients who stay.</span></p>
-<p class="plink"><span class="es">Sobre lo que pasa cuando un lead deja de responder escribí en <a href="/blog/seguimiento/">Tus mejores comisiones están en una conversación que no estás teniendo</a>. Y si estás empezando desde cero: <a href="/blog/que-es-un-ib/">¿Qué es un IB y cómo gana dinero realmente?</a>.</span><span class="en">On what happens when a lead stops replying, I wrote <a href="/blog/seguimiento/">Your best commissions are in a conversation you're not having</a>. And if you&#39;re starting from zero: <a href="/blog/que-es-un-ib/">What is an IB and how do they actually make money?</a>.</span></p>
+<p>Si la primera cifra es cercana a cero, publicar más no lo arregla: tendrás más de lo mismo. Lo que cambia el resultado no es la frecuencia, es qué publicas y para quién.</p>
+<h3>El contenido abre la puerta; el trabajo empieza después</h3>
+<p>Incluso el mejor contenido solo abre la puerta. Lo que convierte a un lead en cliente es lo que haces cuando te escribe —y sobre todo cuando deja de responder.</p>
+<p>Una comunidad que crece no es la que tiene más seguidores. Es la que tiene un flujo predecible: contenido que provoca conversaciones, conversaciones que se sostienen y clientes que se quedan.</p>
+<p class="plink">Sobre lo que pasa cuando un lead deja de responder escribí en <a href="/blog/seguimiento/">Tus mejores comisiones están en una conversación que no estás teniendo</a>. Y si estás empezando desde cero: <a href="/blog/que-es-un-ib/">¿Qué es un IB y cómo gana dinero realmente?</a>.</p>
 <div class="card" style="margin-top:36px;border-color:rgba(62,207,142,.24);background:rgba(62,207,142,.06)">
-<h3 style="color:var(--accent);margin:0 0 8px"><span class="es">La captación es la Etapa 1 de la academia</span><span class="en">Client acquisition is Stage 1 of the academy</span></h3>
-<p><span class="es">En IB ACADEMY, la Etapa 1 empieza aquí: de dónde salen tus clientes, qué publicar para que alguien te escriba y qué decir en el primer mensaje. Y lo practicamos en role play antes de que lo uses con un lead real.</span><span class="en">In IB ACADEMY, Stage 1 starts here: where your clients come from, what to post so that someone writes to you, and what to say in the first message. And we practice it in role play before you use it with a real lead.</span></p>
-<a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener"><span class="es">Agenda una reunión de 30 minutos</span><span class="en">Book a 30-minute meeting</span></a>
+<h3 style="color:var(--accent);margin:0 0 8px">La captación es la Etapa 1 de la academia</h3>
+<p>En IB ACADEMY, la Etapa 1 empieza aquí: de dónde salen tus clientes, qué publicar para que alguien te escriba y qué decir en el primer mensaje. Y lo practicamos en role play antes de que lo uses con un lead real.</p>
+<a class="btn btn-primary" href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener">Agenda una reunión de 30 minutos</a>
 </div>
-<div class="sigue"><h3><span class="es">Sigue leyendo</span><span class="en">Keep reading</span></h3><ul><li><a href="/blog/que-es-un-ib/"><span class="es">¿Qué es un IB y cómo gana dinero realmente?</span><span class="en">What is an IB and how do they actually make money?</span></a></li><li><a href="/blog/primer-mensaje/"><span class="es">Por qué nadie responde a tu primer mensaje</span><span class="en">Why nobody replies to your first message</span></a></li><li><a href="/blog/seguimiento/"><span class="es">Tus mejores comisiones están en una conversación que no estás teniendo</span><span class="en">Your best commissions are in a conversation you&#x27;re not having</span></a></li></ul></div><div class="abox">
+<div class="sigue"><h3>Sigue leyendo</h3><ul><li><a href="/blog/que-es-un-ib/">¿Qué es un IB y cómo gana dinero realmente?</a></li><li><a href="/blog/primer-mensaje/">Por qué nadie responde a tu primer mensaje</a></li><li><a href="/blog/seguimiento/">Tus mejores comisiones están en una conversación que no estás teniendo</a></li></ul></div><div class="abox">
   <img src="/img/avatar.jpg" alt="Umut Simsek" width="56" height="56">
   <div>
     <div class="an">Umut Simsek</div>
-    <div class="ar"><span class="es">IB Manager en Weltrade · Más de siete años en forex y sistemas de broker · Fundador de la primera academia de formación para IBs de Latinoamérica</span><span class="en">IB Manager at Weltrade · Over seven years in forex and broker systems · Founder of the first IB training academy in Latin America</span></div>
-    <p><span class="es">Trabajo con los IBs de la red para que su comunidad crezca con un sistema, no con improvisación: captar, atender, retener y organizar una cartera. Aquí escribo sobre ese trabajo, sin promesas de ingresos.</span><span class="en">I work with the IBs in our network so their community grows with a system, not with improvisation: attract, support, retain and organise a portfolio. Here I write about that work, with no income promises.</span></p>
-    <div class="al"><a href="https://www.linkedin.com/in/umutsimsekk/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.tiktok.com/@umutsimsek567" target="_blank" rel="noopener">TikTok</a><a href="/blog/">Blog</a><a href="/#camino"><span class="es">Las 5 etapas</span><span class="en">The 5 stages</span></a></div>
+    <div class="ar">IB Manager en Weltrade · Más de siete años en forex y sistemas de broker · Fundador de la primera academia de formación para IBs de Latinoamérica</div>
+    <p>Trabajo con los IBs de la red para que su comunidad crezca con un sistema, no con improvisación: captar, atender, retener y organizar una cartera. Aquí escribo sobre ese trabajo, sin promesas de ingresos.</p>
+    <div class="al"><a href="https://www.linkedin.com/in/umutsimsekk/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.tiktok.com/@umutsimsek567" target="_blank" rel="noopener">TikTok</a><a href="/blog/">Blog</a><a href="/#camino">Las 5 etapas</a></div>
   </div>
 </div></article></div></section></main>
-<div class="mcta show"><a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span class="es">Agenda una reunión</span><span class="en">Book a meeting</span></a></div><footer>IB ACADEMY — <span class="es">De trader a empresario.</span><span class="en">From trader to entrepreneur.</span> · <a href="/" style="color:inherit"><span class="es">Volver al inicio</span><span class="en">Back to home</span></a> · <a href="/blog/" style="color:inherit">Blog</a> · <a href="https://www.tiktok.com/@umutsimsek567" target="_blank" rel="noopener" style="color:inherit">TikTok</a></footer><script>(function(){var e=document.getElementById('btn-es'),n=document.getElementById('btn-en');function L(l){document.body.classList.toggle('lang-en',l==='en');document.documentElement.lang=l;e.classList.toggle('on',l==='es');n.classList.toggle('on',l==='en');var h=document.querySelector('h1[data-en]');if(h&&h.dataset[l])h.textContent=h.dataset[l];try{localStorage.setItem('ibinv-lang',l)}catch(x){}}e.onclick=function(){L('es')};n.onclick=function(){L('en')};var q=(location.search.match(/[?&]lang=(es|en)/)||[])[1];if(q){L(q)}else{try{if(localStorage.getItem('ibinv-lang')==='en')L('en')}catch(x){}}document.querySelectorAll('.reveal').forEach(function(r){r.classList.add('visible')});})();</script></body></html>
+<div class="mcta show"><a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una reunión</a></div><footer>IB ACADEMY — De trader a empresario. · <a href="/" style="color:inherit">Volver al inicio</a> · <a href="/blog/" style="color:inherit">Blog</a> · <a href="https://www.tiktok.com/@umutsimsek567" target="_blank" rel="noopener" style="color:inherit">TikTok</a></footer><script>(function(){var e=document.getElementById('btn-es'),n=document.getElementById('btn-en');function L(l){document.body.classList.toggle('lang-en',l==='en');document.documentElement.lang=l;e.classList.toggle('on',l==='es');n.classList.toggle('on',l==='en');var h=document.querySelector('h1[data-en]');if(h&&h.dataset[l])h.textContent=h.dataset[l];try{localStorage.setItem('ibinv-lang',l)}catch(x){}}e.onclick=function(){L('es')};n.onclick=function(){L('en')};var q=(location.search.match(/[?&]lang=(es|en)/)||[])[1];if(q){L(q)}else{}document.querySelectorAll('.reveal').forEach(function(r){r.classList.add('visible')});})();</script></body></html>
