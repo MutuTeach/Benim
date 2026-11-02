@@ -411,20 +411,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="respaldo">
   <div class="wrap">
     <div class="who reveal">
-      <div class="who-head"><div class="kicker"><span>Quién está detrás</span></div>
-        <h2 style="margin-top:12px"><span>¿Quién es Umut?</span></h2>
-        <p class="who-slogan">Empecé cuidando ovejas en una aldea. Hoy acompaño redes de IB en Latinoamérica.</p></div>
+      <div class="who-head"><div class="kicker"><span>Who's behind it</span></div>
+        <h2 style="margin-top:12px"><span>Who is Umut?</span></h2>
+        <p class="who-slogan">I started out herding sheep in a village. Today I support IB networks in Latin America.</p></div>
       <div class="who-story">
       <ol class="who-line" id="who-line">
-        <li class="who-step"><span class="who-lbl">La aldea</span><p>Nací en una aldea del sureste de Turquía, en una familia campesina. Soy kurdo. Hasta los 16 años fui pastor de animales.</p></li>
-        <li class="who-step"><span class="who-lbl">Estambul</span><p>Después me fui a Estambul a estudiar y a trabajar. Como no había dinero, no seguí estudiando: terminé el bachillerato y nada más. Fui mesero, salvavidas en piscinas y secretario en hospitales, y trabajé en tiendas, restaurantes, turismo y turismo de salud.</p></li>
-        <li class="who-step"><span class="who-lbl">2020 · La pandemia</span><p>Conocí el forex durante la pandemia. Pasé seis meses sin trabajo, sin dinero y en números rojos. En julio me llamó un amigo: una empresa de forex buscaba gente que hablara español, y dije que sí al instante, porque si no, me moría de hambre.</p></li>
-        <li class="who-step who-more"><span class="who-lbl">3 años en un bróker</span><p>En el bróker trabajé en soporte, en conversión, en retención y como líder del equipo de retención.</p></li>
-        <li class="who-step who-more"><span class="who-lbl">2023 · Barcelona</span><p>Tres años después, en marzo de 2023, me mudé a Barcelona. Los dos primeros años recorrí Europa sin parar.</p></li>
-        <li class="who-step who-more"><span class="who-lbl">2025 · Weltrade</span><p>En 2025 empecé como IB Manager en Weltrade. Trabajando con IBs vi que no sabían cómo gestionar su comunidad, y les fui pasando mi experiencia: cómo hablar con el primer cliente, los tipos de cliente, cómo retenerlos, la disciplina y mucho más.</p></li>
+        <li class="who-step"><span class="who-lbl">The village</span><p>I was born in a village in southeastern Turkey, into a farming family. I'm Kurdish. Until I was 16, I herded animals.</p></li>
+        <li class="who-step"><span class="who-lbl">Istanbul</span><p>Then I moved to Istanbul to study and work. There was no money, so I didn't keep studying: I finished high school and that was it. I worked as a waiter, a pool lifeguard and a hospital secretary, and in shops, restaurants, tourism and health tourism.</p></li>
+        <li class="who-step"><span class="who-lbl">2020 · The pandemic</span><p>I discovered forex during the pandemic. I spent six months without work, without money and in the red. In July a friend called me: a forex company was looking for Spanish speakers, and I said yes on the spot, because otherwise I would have gone hungry.</p></li>
+        <li class="who-step who-more"><span class="who-lbl">3 years at a broker</span><p>At the broker I worked in support, conversion and retention, and as retention team leader.</p></li>
+        <li class="who-step who-more"><span class="who-lbl">2023 · Barcelona</span><p>Three years later, in March 2023, I moved to Barcelona. For the first two years I travelled around Europe non-stop.</p></li>
+        <li class="who-step who-more"><span class="who-lbl">2025 · Weltrade</span><p>In 2025 I started as IB Manager at Weltrade. Working with IBs, I saw they didn't know how to manage their community, so I began passing on my experience: how to talk to the first client, the types of client, how to retain them, discipline and much more.</p></li>
       </ol>
-      <button type="button" class="who-toggle" id="who-toggle" aria-expanded="false" aria-controls="who-line">Ver toda la historia <span aria-hidden="true">↓</span></button>
-      <div class="who-final"><p>Vi cómo los IBs que trabajaban conmigo hacían crecer sus comunidades, y vi también que en Latam no había ninguna academia que formara a los IBs en esto. Soy la persona que fundó la primera academia de IBs, la primera escuela para IBs en Latam, y quien creó el primer Role Play para IBs del mundo.</p><p class="who-close">En resumen: en esta escuela comparto contigo experiencias vividas, comprobadas y que llegaron al éxito.</p></div>
+      <button type="button" class="who-toggle" id="who-toggle" aria-expanded="false" aria-controls="who-line">See the whole story <span aria-hidden="true">↓</span></button>
+      <div class="who-final"><p>I watched the IBs who worked with me grow their communities, and I also saw that in Latam there was no academy training IBs in this. I'm the person who founded the first IB academy, the first school for IBs in Latam, and who created the world's first Role Play for IBs.</p><p class="who-close">In short: in this school I share with you experiences that were lived, tested and led to success.</p></div>
     </div>
     </div>
     <div class="cards3 reveal">
@@ -864,8 +864,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   setLang('en');
   /* Quién es Umut: kısa görünüm */
   ;(function(){var w=document.querySelector('.who'),t=document.getElementById('who-toggle');if(!w||!t)return;w.classList.add('js-who');
-    var lbl={es:['Ver toda la historia','Ver menos'],en:['Ver toda la historia','Ver menos'],pt:['Ver toda la historia','Ver menos']};
-    t.addEventListener('click',function(){var o=w.classList.toggle('who-open');t.setAttribute('aria-expanded',o?'true':'false');t.querySelectorAll('.es,.en,.pt').forEach(function(s){s.textContent=o?'Ver menos':'Ver toda la historia'});t.lastElementChild.textContent=o?'↑':'↓'})})();
+    var lbl={es:['Ver toda la historia','Ver menos'],en:['See the whole story','See less'],pt:['Ver toda a história','Ver menos']};
+    t.addEventListener('click',function(){var o=w.classList.toggle('who-open');t.setAttribute('aria-expanded',o?'true':'false');var lg=(document.documentElement.lang||'es').slice(0,2),k=lbl[lg]||lbl.es;t.innerHTML=k[o?1:0]+' <span aria-hidden="true">'+(o?'↑':'↓')+'</span>'})})();
   /* menú móvil */
   var burger=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
   burger.addEventListener('click',function(){var o=mm.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
