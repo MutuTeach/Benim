@@ -157,19 +157,30 @@ for L,u in home_urls.items():
     report.append(f'home {L}: {len(out)} bytes · es={out.count(chr(60)+"span class=\"es\">")} en={out.count(chr(60)+"span class=\"en\">")} pt={out.count(chr(60)+"span class=\"pt\">")}')
 # ---------- BLOG INDEX + POSTS ----------
 files=['blog/index.html']+sorted(glob.glob('blog/*/index.html'))
+PT_POSTS={f.split('/')[1] for f in glob.glob('blog/*/index.html') if re.search(r'<h1 class="ptitle"[^>]*data-pt="', open(f,encoding='utf-8').read())}
+def has_pt_post(slug):
+    try: return '<span class="pt">' in open(f'blog/{slug}/index.html',encoding='utf-8').read()
+    except Exception: return False
 def blog_lm(href,L):
     if L=='es': return href
-    if href=='/': return '/en/'
-    if href=='/blog/': return '/en/blog/'
+    if href=='/': return f'/{L}/'
+    if href=='/blog/': return '/en/blog/' if L=='en' else '/blog/'
     m=re.match(r'^/blog/([a-z0-9-]+)/$',href)
-    if m and os.path.exists(f'blog/{m.group(1)}/index.html'): return f'/en/blog/{m.group(1)}/'
+    if m:
+        slug=m.group(1)
+        if L=='en' and os.path.exists(f'en/blog/{slug}/index.html'): return f'/en/blog/{slug}/'
+        if L=='pt' and PT_POSTS and slug in PT_POSTS: return f'/pt/blog/{slug}/'
+        return href
     if href.startswith(BASE): return BASE+blog_lm(href[len(BASE):],L)
     return href
 for f in files:
     s=open(f,encoding='utf-8').read()
     if not has_en(s): report.append(f'{f}: zaten tek dilli, atlandı'); continue
     rel='/'+f.replace('index.html','')  # /blog/ or /blog/slug/
+    slug=f.split('/')[1] if f!='blog/index.html' else None
+    want_pt = slug in PT_POSTS if slug else False
     urls={'es':BASE+rel,'en':BASE+'/en'+rel}
+    if want_pt: urls['pt']=BASE+'/pt'+rel
     if f=='blog/index.html':
         t={'es':None,'en':'Blog for IBs: the real work of the Introducing Broker | IB ACADEMY'}
         d={'es':None,'en':'Lead generation, retention, follow-up and systems: the real work of an IB, explained without income promises.'}
@@ -180,15 +191,23 @@ for f in files:
         en_lead=text(pick(pl.group(1),'en')) if pl else ''
         t={'es':None,'en':(en_title+' | IB ACADEMY') if en_title else None}
         d={'es':None,'en':short(en_lead) if en_lead else None}
-    for L in ('es','en'):
+    if want_pt:
+        h1p=re.search(r'<h1 class="ptitle"[^>]*data-pt="([^"]*)"',s)
+        pt_title=(html.unescape(h1p.group(1)) if h1p else None)
+        plp=re.search(r'<p class="plead">(.*?)</p>',s,re.S)
+        pt_lead=text(pick(plp.group(1),'pt')) if plp else ''
+        t['pt']=(pt_title+' | IB ACADEMY') if pt_title else None
+        d['pt']=short(pt_lead) if pt_lead else None
+    langs=('es','en','pt') if want_pt else ('es','en')
+    for L in langs:
         out=transform(s,L,urls['es'],urls,t,d,lambda href,L=L:blog_lm(href,L))
-        write(f if L=='es' else 'en/'+f,out)
-    report.append(f'{f}: es yerinde + en/{f}')
+        write({'es':f,'en':'en/'+f,'pt':'pt/'+f}[L],out)
+    report.append(f'{f}: es yerinde + en/{f}'+(' + pt/'+f if want_pt else ''))
 # ---------- SITEMAP ----------
 sm=open('sitemap.xml',encoding='utf-8').read()
 existing=set(re.findall(r'<loc>([^<]+)</loc>',sm))
 add=[]
-for u in [BASE+'/en/']+([BASE+'/pt/'] if has_pt else [])+[BASE+'/en/blog/']+[BASE+'/en/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('en/'+d+'index.html')]:
+for u in [BASE+'/en/']+([BASE+'/pt/'] if has_pt else [])+[BASE+'/en/blog/']+[BASE+'/en/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('en/'+d+'index.html')]+[BASE+'/pt/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('pt/'+d+'index.html')]:
     if u not in existing: add.append(f'  <url><loc>{u}</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>')
 if add:
     sm=sm.replace('</urlset>','\n'.join(add)+'\n</urlset>'); open('sitemap.xml','w',encoding='utf-8').write(sm)
