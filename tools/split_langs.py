@@ -155,6 +155,39 @@ for L,u in home_urls.items():
     out=transform(src,L,home_urls['es'],home_urls,titles,descs,lm)
     write({'es':'index.html','en':'en/index.html','pt':'pt/index.html'}[L],out)
     report.append(f'home {L}: {len(out)} bytes · es={out.count(chr(60)+"span class=\"es\">")} en={out.count(chr(60)+"span class=\"en\">")} pt={out.count(chr(60)+"span class=\"pt\">")}')
+
+def pt_index_filter(h):
+    """PT blog listesinde sadece PT sayfasi olan yazilar kalsin; numaralari yenile; JSON-LD listesini filtrele."""
+    def keep(m):
+        href=re.search(r'href="([^"]+)"',m.group(0)).group(1)
+        mm=re.match(r'^/pt/blog/([a-z0-9-]+)/$',href)
+        return m.group(0) if (mm and mm.group(1) in PT_POSTS) else ''
+    h=re.sub(r'<a class="card[^"]*" href="[^"]+">.*?</a>',keep,h,flags=re.S)
+    n=[0]
+    def renum(m):
+        n[0]+=1; return f'<span class="bnum">{n[0]}</span>'
+    h=re.sub(r'<span class="bnum">\d+</span>',renum,h)
+    def ldf(m):
+        try: d=json.loads(m.group(1))
+        except Exception: return m.group(0)
+        if isinstance(d.get('blogPost'),list):
+            keep2=[]
+            for b in d['blogPost']:
+                mm=re.search(r'/blog/([a-z0-9-]+)/',b.get('url',''))
+                if mm and mm.group(1) in PT_POSTS:
+                    b['url']=re.sub(r'/blog/','/pt/blog/',b['url'],1); keep2.append(b)
+            d['blogPost']=keep2
+        return '<script type="application/ld+json">'+json.dumps(d,ensure_ascii=False)+'</script>'
+    h=re.sub(r'<script type="application/ld\+json">(.*?)</script>',ldf,h,flags=re.S)
+    # PT'si olmayan yazilara giden 'ruta' kartlarini kaldir; blok bosalirsa bolumu de kaldir
+    def keepruta(m):
+        href=re.search(r'href="([^"]+)"',m.group(0)).group(1)
+        mm=re.match(r'^/(?:pt/)?blog/([a-z0-9-]+)/$',href)
+        return m.group(0) if (mm and mm.group(1) in PT_POSTS) else ''
+    h=re.sub(r'<a class="ruta"[^>]*>.*?</a>',keepruta,h,flags=re.S)
+    h=re.sub(r'<div class="rutas"[^>]*>\s*</div>','',h)
+    return h
+
 # ---------- BLOG INDEX + POSTS ----------
 files=['blog/index.html']+sorted(glob.glob('blog/*/index.html'))
 PT_POSTS={f.split('/')[1] for f in glob.glob('blog/*/index.html') if re.search(r'<h1 class="ptitle"[^>]*data-pt="', open(f,encoding='utf-8').read())}
@@ -164,7 +197,7 @@ def has_pt_post(slug):
 def blog_lm(href,L):
     if L=='es': return href
     if href=='/': return f'/{L}/'
-    if href=='/blog/': return '/en/blog/' if L=='en' else '/blog/'
+    if href=='/blog/': return '/en/blog/' if L=='en' else ('/pt/blog/' if PT_POSTS else '/blog/')
     m=re.match(r'^/blog/([a-z0-9-]+)/$',href)
     if m:
         slug=m.group(1)
@@ -178,7 +211,7 @@ for f in files:
     if not has_en(s): report.append(f'{f}: zaten tek dilli, atlandı'); continue
     rel='/'+f.replace('index.html','')  # /blog/ or /blog/slug/
     slug=f.split('/')[1] if f!='blog/index.html' else None
-    want_pt = slug in PT_POSTS if slug else False
+    want_pt = (slug in PT_POSTS) if slug else bool(PT_POSTS)
     urls={'es':BASE+rel,'en':BASE+'/en'+rel}
     if want_pt: urls['pt']=BASE+'/pt'+rel
     if f=='blog/index.html':
@@ -191,7 +224,10 @@ for f in files:
         en_lead=text(pick(pl.group(1),'en')) if pl else ''
         t={'es':None,'en':(en_title+' | IB ACADEMY') if en_title else None}
         d={'es':None,'en':short(en_lead) if en_lead else None}
-    if want_pt:
+    if want_pt and f=='blog/index.html':
+        t['pt']='Blog para IBs: o trabalho real do Introducing Broker | IB ACADEMY'
+        d['pt']='Captação, retenção, follow-up e sistemas: o trabalho real de um IB, explicado sem promessas de ganho.'
+    elif want_pt:
         h1p=re.search(r'<h1 class="ptitle"[^>]*data-pt="([^"]*)"',s)
         pt_title=(html.unescape(h1p.group(1)) if h1p else None)
         plp=re.search(r'<p class="plead">(.*?)</p>',s,re.S)
@@ -201,6 +237,8 @@ for f in files:
     langs=('es','en','pt') if want_pt else ('es','en')
     for L in langs:
         out=transform(s,L,urls['es'],urls,t,d,lambda href,L=L:blog_lm(href,L))
+        if L=='pt' and f=='blog/index.html':
+            out=pt_index_filter(out)
         write({'es':f,'en':'en/'+f,'pt':'pt/'+f}[L],out)
     report.append(f'{f}: es yerinde + en/{f}'+(' + pt/'+f if want_pt else ''))
 # ---------- SITEMAP ----------
