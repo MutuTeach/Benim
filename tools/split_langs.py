@@ -139,8 +139,8 @@ if not has_en(src): sys.exit('fuente/index.html çok dilli değil')
 has_pt='<span class="pt">' in src
 home_urls={'es':BASE+'/','en':BASE+'/en/'}
 if has_pt: home_urls['pt']=BASE+'/pt/'
-titles={'es':None,'en':'Free training for forex and synthetic indices IBs | IB ACADEMY','pt':'Formação gratuita para IBs de forex e índices sintéticos | IB ACADEMY'}
-descs={'es':None,'en':'Free training for forex and synthetic indices IBs (Introducing Brokers) in Latin America: win, retain and organise your client portfolio as a business. No income promises.','pt':'Formação gratuita para IBs (Introducing Brokers) de forex e índices sintéticos na América Latina: conquistar, reter e organizar sua carteira como um negócio. Sem promessas de renda.'}
+titles={'es':None,'en':'Training for forex and synthetic indices IBs | IB ACADEMY','pt':'Formação para IBs de forex e índices sintéticos | IB ACADEMY'}
+descs={'es':None,'en':'Training for forex and synthetic indices IBs (Introducing Brokers) in Latin America: win, retain and organise your client portfolio as a business. No income promises.','pt':'Formação para IBs (Introducing Brokers) de forex e índices sintéticos na América Latina: conquistar, reter e organizar sua carteira como um negócio. Sem promessas de renda.'}
 en_posts=set()
 for L,u in home_urls.items():
     def lm(href,L=L):
