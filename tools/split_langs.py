@@ -58,6 +58,14 @@ def short(t,n=155):
         acc=(acc+' '+p).strip()
     return acc if acc else t[:n].rsplit(' ',1)[0]
 
+def fit(t,n=162):
+    """Meta description: tam cümlelerle n karaktere sığdır; çok kısa kalırsa kelime sınırında kes."""
+    t=re.sub(r'\s+',' ',t).strip()
+    if len(t)<=n: return t
+    r=short(t,n)
+    if len(r)>=100 and r[-1] in '.!?': return r
+    return t[:n-1].rsplit(' ',1)[0].rstrip(',;:')+'…'
+
 def set_meta(h,name,val,prop=False):
     key='property' if prop else 'name'
     return re.sub(rf'<meta {key}="{name}" content="[^"]*"',f'<meta {key}="{name}" content="{val.replace(chr(34),'&quot;')}"',h)
@@ -133,6 +141,17 @@ def write(path,content):
 def has_en(s): return '<span class="en">' in s
 
 report=[]
+# PT'si olan yazılar: çok dilli üretici çıktısında data-pt taşıyanlar + daha önce ayrılmış pt/blog/<slug>/ sayfaları
+PT_POSTS={f.split('/')[1] for f in glob.glob('blog/*/index.html') if re.search(r'<h1 class="ptitle"[^>]*data-pt="', open(f,encoding='utf-8').read())}
+PT_POSTS|={f.split('/')[2] for f in glob.glob('pt/blog/*/index.html')}
+PT_TITLE={}; PT_DESC={}
+try:
+    _bi=open('blog/index.html',encoding='utf-8').read()
+    for _m in re.finditer(r'<a class="card[^"]*" href="/blog/([a-z0-9-]+)/">(.*?)</a>',_bi,re.S):
+        _h=re.search(r'<h3>(.*?)</h3>',_m.group(2),re.S); _p=re.search(r'<p>(.*?)</p>',_m.group(2),re.S)
+        if _h and '<span class="pt">' in _h.group(1): PT_TITLE[_m.group(1)]=text(pick(_h.group(1),'pt'))
+        if _p and '<span class="pt">' in _p.group(1): PT_DESC[_m.group(1)]=text(pick(_p.group(1),'pt'))
+except Exception: pass
 # ---------- HOME ----------
 src=open('fuente/index.html',encoding='utf-8').read()
 if not has_en(src): sys.exit('fuente/index.html çok dilli değil')
@@ -145,7 +164,13 @@ en_posts=set()
 for L,u in home_urls.items():
     def lm(href,L=L):
         if L=='es': return href
-        if L=='pt': return '/pt/' if href=='/' else href
+        if L=='pt':
+            if href=='/': return '/pt/'
+            if href=='/blog/': return '/pt/blog/' if PT_POSTS else href
+            mp=re.match(r'^/blog/([a-z0-9-]+)/$',href)
+            if mp and mp.group(1) in PT_POSTS: return f'/pt/blog/{mp.group(1)}/'
+            if href.startswith(BASE): return BASE+lm(href[len(BASE):],L)
+            return href
         if href=='/': return '/en/'
         if href=='/blog/': return '/en/blog/'
         m=re.match(r'^/blog/([a-z0-9-]+)/$',href)
@@ -175,8 +200,10 @@ def pt_index_filter(h):
             for b in d['blogPost']:
                 mm=re.search(r'/blog/([a-z0-9-]+)/',b.get('url',''))
                 if mm and mm.group(1) in PT_POSTS:
-                    b['url']=re.sub(r'/blog/','/pt/blog/',b['url'],1); keep2.append(b)
-            d['blogPost']=keep2
+                    b['url']=re.sub(r'/blog/','/pt/blog/',b['url'],1)
+                    if PT_TITLE.get(mm.group(1)): b['headline']=PT_TITLE[mm.group(1)]
+                    keep2.append(b)
+            d['blogPost']=keep2; d['inLanguage']='pt-BR'; d['url']=BASE+'/pt/blog/'; d['name']='Blog para IBs — IB ACADEMY'
         return '<script type="application/ld+json">'+json.dumps(d,ensure_ascii=False)+'</script>'
     h=re.sub(r'<script type="application/ld\+json">(.*?)</script>',ldf,h,flags=re.S)
     # PT'si olmayan yazilara giden 'ruta' kartlarini kaldir; blok bosalirsa bolumu de kaldir
@@ -190,7 +217,6 @@ def pt_index_filter(h):
 
 # ---------- BLOG INDEX + POSTS ----------
 files=['blog/index.html']+sorted(glob.glob('blog/*/index.html'))
-PT_POSTS={f.split('/')[1] for f in glob.glob('blog/*/index.html') if re.search(r'<h1 class="ptitle"[^>]*data-pt="', open(f,encoding='utf-8').read())}
 def has_pt_post(slug):
     try: return '<span class="pt">' in open(f'blog/{slug}/index.html',encoding='utf-8').read()
     except Exception: return False
@@ -233,7 +259,7 @@ for f in files:
         plp=re.search(r'<p class="plead">(.*?)</p>',s,re.S)
         pt_lead=text(pick(plp.group(1),'pt')) if plp else ''
         t['pt']=(pt_title+' | IB ACADEMY') if pt_title else None
-        d['pt']=short(pt_lead) if pt_lead else None
+        d['pt']=(fit(PT_DESC[slug]) if PT_DESC.get(slug) else None) or (short(pt_lead) if pt_lead else None)
     langs=('es','en','pt') if want_pt else ('es','en')
     for L in langs:
         out=transform(s,L,urls['es'],urls,t,d,lambda href,L=L:blog_lm(href,L))
@@ -245,8 +271,11 @@ for f in files:
 sm=open('sitemap.xml',encoding='utf-8').read()
 existing=set(re.findall(r'<loc>([^<]+)</loc>',sm))
 add=[]
-for u in [BASE+'/en/']+([BASE+'/pt/'] if has_pt else [])+[BASE+'/en/blog/']+[BASE+'/en/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('en/'+d+'index.html')]+[BASE+'/pt/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('pt/'+d+'index.html')]:
-    if u not in existing: add.append(f'  <url><loc>{u}</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>')
+for u in [BASE+'/en/']+([BASE+'/pt/'] if has_pt else [])+[BASE+'/en/blog/']+[BASE+'/en/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('en/'+d+'index.html')]+([BASE+'/pt/blog/'] if os.path.exists('pt/blog/index.html') else [])+[BASE+'/pt/blog/'+d.split('/')[1]+'/' for d in sorted(glob.glob('blog/*/')) if os.path.exists('pt/'+d+'index.html')]:
+    if u not in existing:
+        _es=u.replace(BASE+'/en/',BASE+'/').replace(BASE+'/pt/',BASE+'/')
+        _lm=re.search(r'<loc>'+re.escape(_es)+r'</loc><lastmod>([^<]+)</lastmod>',sm)
+        add.append(f'  <url><loc>{u}</loc><lastmod>{_lm.group(1) if _lm else "2026-11-03"}</lastmod><priority>0.6</priority></url>')
 if add:
     sm=sm.replace('</urlset>','\n'.join(add)+'\n</urlset>'); open('sitemap.xml','w',encoding='utf-8').write(sm)
 report.append(f'sitemap +{len(add)}')
