@@ -246,6 +246,8 @@ for f in files:
     else:
         h1=re.search(r'<h1 class="ptitle"[^>]*data-en="([^"]*)"',s)
         en_title=(html.unescape(h1.group(1)) if h1 else None)
+        _se=re.search(r'<!--\s*seo-title-en:\s*(.*?)\s*-->',s)
+        if _se: en_title=_se.group(1)
         pl=re.search(r'<p class="plead">(.*?)</p>',s,re.S)
         en_lead=text(pick(pl.group(1),'en')) if pl else ''
         t={'es':None,'en':(en_title+' | IB ACADEMY') if en_title else None}
@@ -256,6 +258,8 @@ for f in files:
     elif want_pt:
         h1p=re.search(r'<h1 class="ptitle"[^>]*data-pt="([^"]*)"',s)
         pt_title=(html.unescape(h1p.group(1)) if h1p else None)
+        _sp=re.search(r'<!--\s*seo-title-pt:\s*(.*?)\s*-->',s)
+        if _sp: pt_title=_sp.group(1)
         plp=re.search(r'<p class="plead">(.*?)</p>',s,re.S)
         pt_lead=text(pick(plp.group(1),'pt')) if plp else ''
         t['pt']=(pt_title+' | IB ACADEMY') if pt_title else None
