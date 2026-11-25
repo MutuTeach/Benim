@@ -158,7 +158,7 @@ if not has_en(src): sys.exit('fuente/index.html çok dilli değil')
 has_pt='<span class="pt">' in src
 home_urls={'es':BASE+'/','en':BASE+'/en/'}
 if has_pt: home_urls['pt']=BASE+'/pt/'
-titles={'es':None,'en':'IB ACADEMY: the first academy for forex IBs in Latin America','pt':'IB ACADEMY: a primeira academia para IBs de forex na Latam'}
+titles={'es':None,'en':'IB ACADEMY by Umut Simsek: the first academy for forex IBs','pt':'IB ACADEMY de Umut Simsek: primeira academia para IBs de forex'}
 descs={'es':None,'en':'IB ACADEMY, the first academy for forex and synthetic indices IBs in Latin America. Learn to win, retain and organise your client portfolio. No income promises.','pt':'IB ACADEMY, a primeira academia para IBs de forex e índices sintéticos na América Latina. Conquistar, reter e organizar a sua carteira. Sem promessas de renda.'}
 en_posts=set()
 for L,u in home_urls.items():
